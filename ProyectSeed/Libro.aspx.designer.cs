@@ -10,7 +10,7 @@
 namespace ProyectSeed {
     
     
-    public partial class index {
+    public partial class Libro {
         
         /// <summary>
         /// Control ScriptManager1.

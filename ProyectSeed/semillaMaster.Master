@@ -43,10 +43,21 @@
 
                 <ul class="list-unstyled components mb-5" style="font-family: tekton-pro-bold;">
                     <li class="">
-                        <a href="Index.aspx" style="font-size: 28px;"><span class="fa fa-home mr-3"></span>Inicio</a>
+                        <a href="index.aspx" style="font-size: 28px;"><span class="fa fa-home mr-3"></span>Inicio</a>
                     </li>
+
                     <li class="">
-                        <a href="InicioSesion.aspx" style="font-size: 28px;"><span class="fa fa-user mr-3"><small class="d-flex align-items-center justify-content-center"></small></span>Iniciar sesión</a>
+                        <a href="Libro.aspx" style="font-size: 28px;"><span class="fa fa-user-circle"><small class="d-flex align-items-center justify-content-center"></small></span>Libro</a>
+                    </li>
+
+
+                    <li>
+                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-info mr-3"></span>Registrar Usuario</a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-info mr-3"></span>Prestamo</a>
                     </li>
 
                     <li>
