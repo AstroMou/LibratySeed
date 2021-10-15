@@ -1,0 +1,6 @@
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\bin\Debug\ModeloSeed.dll.config
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\bin\Debug\ModeloSeed.dll
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\bin\Debug\ModeloSeed.pdb
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.csprojResolveAssemblyReference.cache
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.dll
+c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.pdb

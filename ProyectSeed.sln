@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectSeed", "ProyectSeed\ProyectSeed.csproj", "{393FB857-374B-411C-A629-359404C599CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloSeed", "ModeloSeed\ModeloSeed.csproj", "{B829A107-C08D-4559-A011-B46C517386FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{393FB857-374B-411C-A629-359404C599CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393FB857-374B-411C-A629-359404C599CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393FB857-374B-411C-A629-359404C599CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393FB857-374B-411C-A629-359404C599CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B829A107-C08D-4559-A011-B46C517386FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B829A107-C08D-4559-A011-B46C517386FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B829A107-C08D-4559-A011-B46C517386FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B829A107-C08D-4559-A011-B46C517386FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="semillaMaster.master.cs" Inherits="ProyectSeed.semillaMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Lotus</title>
+
+    <!--Empiezan los estilo-->
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="RecursosProgramar/Css/style.css" />
+    <script src="index/jquery.min.js"></script>
+
+    <!--Terminalos estilo-->
+
+
+
+    <!--Se puede agregar contenido pero nada especial-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar" style="background-color: #C30174; font-size: 38px;">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary"></button>
+                </div>
+
+
+                <div class="img bg-wrap text-center py-4" style="background-image: url(Contenido/CImagenes/PerfilParner/Logo%20Garden%20Lotus_Mesa%20de%20trabajo%201.png); width: 295px; height: 328px;">
+                </div>
+
+
+                <ul class="list-unstyled components mb-5" style="font-family: tekton-pro-bold;">
+                    <li class="">
+                        <a href="Index.aspx" style="font-size: 28px;"><span class="fa fa-home mr-3"></span>Inicio</a>
+                    </li>
+                    <li class="">
+                        <a href="InicioSesion.aspx" style="font-size: 28px;"><span class="fa fa-user mr-3"><small class="d-flex align-items-center justify-content-center"></small></span>Iniciar sesión</a>
+                    </li>
+
+                    <li>
+                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-info mr-3"></span>Ayuda</a>
+                    </li>
+
+                </ul>
+
+
+
+
+            </nav>
+
+
+
+
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <script src="RecursosProgramar/Js/jquery.min.js"></script>
+    <script src="RecursosProgramar/Js/popper.js"></script>
+    <script src="RecursosProgramar/Js/bootstrap.min.js"></script>
+    <script src="RecursosProgramar/Js/main.js"></script>
+
+</body>
+</html>
