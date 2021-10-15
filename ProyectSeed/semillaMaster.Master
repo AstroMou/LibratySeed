@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Lotus</title>
+    <title>Libreria</title>
 
     <!--Empiezan los estilo-->
 
@@ -47,17 +47,17 @@
                     </li>
 
                     <li class="">
-                        <a href="Libro.aspx" style="font-size: 28px;"><span class="fa fa-user-circle"><small class="d-flex align-items-center justify-content-center"></small></span>Libro</a>
+                        <a href="Libro.aspx" style="font-size: 28px;"><span class="fa fa-book mr-3" ><small class="d-flex align-items-center justify-content-center"></small></span>Libro</a>
                     </li>
 
 
                     <li>
-                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-info mr-3"></span>Registrar Usuario</a>
+                        <a href="AgregarUsuario.aspx" style="font-size: 28px;"><span class="fa fa-user mr-3"></span>Registrar Usuario</a>
                     </li>
 
                     
                     <li>
-                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-info mr-3"></span>Prestamo</a>
+                        <a href="Ayuda.aspx" style="font-size: 28px;"><span class="fa fa-paper-plane mr-3"></span>Prestamo</a>
                     </li>
 
                     <li>

@@ -33,15 +33,15 @@ namespace ModeloSeed
     partial void InsertTBL_AUTOR(TBL_AUTOR instance);
     partial void UpdateTBL_AUTOR(TBL_AUTOR instance);
     partial void DeleteTBL_AUTOR(TBL_AUTOR instance);
+    partial void InsertTBL_USUARIO(TBL_USUARIO instance);
+    partial void UpdateTBL_USUARIO(TBL_USUARIO instance);
+    partial void DeleteTBL_USUARIO(TBL_USUARIO instance);
     partial void InsertTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void UpdateTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void DeleteTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void InsertTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void UpdateTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void DeleteTBL_EDITORIAL(TBL_EDITORIAL instance);
-    partial void InsertTBL_USUARIO(TBL_USUARIO instance);
-    partial void UpdateTBL_USUARIO(TBL_USUARIO instance);
-    partial void DeleteTBL_USUARIO(TBL_USUARIO instance);
     partial void InsertTBL_INVENTARIO(TBL_INVENTARIO instance);
     partial void UpdateTBL_INVENTARIO(TBL_INVENTARIO instance);
     partial void DeleteTBL_INVENTARIO(TBL_INVENTARIO instance);
@@ -94,6 +94,14 @@ namespace ModeloSeed
 			}
 		}
 		
+		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
+		{
+			get
+			{
+				return this.GetTable<TBL_USUARIO>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TBL_CATEGORIA> TBL_CATEGORIA
 		{
 			get
@@ -115,14 +123,6 @@ namespace ModeloSeed
 			get
 			{
 				return this.GetTable<TBL_GESTION_PRESTAMO>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
-		{
-			get
-			{
-				return this.GetTable<TBL_USUARIO>();
 			}
 		}
 		
@@ -195,7 +195,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_aut
 		{
 			get
@@ -321,351 +321,6 @@ namespace ModeloSeed
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CATEGORIA")]
-	public partial class TBL_CATEGORIA : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_categoria;
-		
-		private string _Nombre_Cat;
-		
-		private string _Apell_Cat;
-		
-		private EntitySet<TBL_LIBRO> _TBL_LIBRO;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_categoriaChanging(int value);
-    partial void OnID_categoriaChanged();
-    partial void OnNombre_CatChanging(string value);
-    partial void OnNombre_CatChanged();
-    partial void OnApell_CatChanging(string value);
-    partial void OnApell_CatChanged();
-    #endregion
-		
-		public TBL_CATEGORIA()
-		{
-			this._TBL_LIBRO = new EntitySet<TBL_LIBRO>(new Action<TBL_LIBRO>(this.attach_TBL_LIBRO), new Action<TBL_LIBRO>(this.detach_TBL_LIBRO));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_categoria", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_categoria
-		{
-			get
-			{
-				return this._ID_categoria;
-			}
-			set
-			{
-				if ((this._ID_categoria != value))
-				{
-					this.OnID_categoriaChanging(value);
-					this.SendPropertyChanging();
-					this._ID_categoria = value;
-					this.SendPropertyChanged("ID_categoria");
-					this.OnID_categoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Cat", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nombre_Cat
-		{
-			get
-			{
-				return this._Nombre_Cat;
-			}
-			set
-			{
-				if ((this._Nombre_Cat != value))
-				{
-					this.OnNombre_CatChanging(value);
-					this.SendPropertyChanging();
-					this._Nombre_Cat = value;
-					this.SendPropertyChanged("Nombre_Cat");
-					this.OnNombre_CatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apell_Cat", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Apell_Cat
-		{
-			get
-			{
-				return this._Apell_Cat;
-			}
-			set
-			{
-				if ((this._Apell_Cat != value))
-				{
-					this.OnApell_CatChanging(value);
-					this.SendPropertyChanging();
-					this._Apell_Cat = value;
-					this.SendPropertyChanged("Apell_Cat");
-					this.OnApell_CatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_CATEGORIA_TBL_LIBRO", Storage="_TBL_LIBRO", ThisKey="ID_categoria", OtherKey="ID_categoria")]
-		public EntitySet<TBL_LIBRO> TBL_LIBRO
-		{
-			get
-			{
-				return this._TBL_LIBRO;
-			}
-			set
-			{
-				this._TBL_LIBRO.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_LIBRO(TBL_LIBRO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_CATEGORIA = this;
-		}
-		
-		private void detach_TBL_LIBRO(TBL_LIBRO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_CATEGORIA = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_EDITORIAL")]
-	public partial class TBL_EDITORIAL : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_edit;
-		
-		private string _Nomb_edit;
-		
-		private int _ID_aut;
-		
-		private int _ID_libro;
-		
-		private EntitySet<TBL_LIBRO> _TBL_LIBRO;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_editChanging(int value);
-    partial void OnID_editChanged();
-    partial void OnNomb_editChanging(string value);
-    partial void OnNomb_editChanged();
-    partial void OnID_autChanging(int value);
-    partial void OnID_autChanged();
-    partial void OnID_libroChanging(int value);
-    partial void OnID_libroChanged();
-    #endregion
-		
-		public TBL_EDITORIAL()
-		{
-			this._TBL_LIBRO = new EntitySet<TBL_LIBRO>(new Action<TBL_LIBRO>(this.attach_TBL_LIBRO), new Action<TBL_LIBRO>(this.detach_TBL_LIBRO));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_edit
-		{
-			get
-			{
-				return this._ID_edit;
-			}
-			set
-			{
-				if ((this._ID_edit != value))
-				{
-					this.OnID_editChanging(value);
-					this.SendPropertyChanging();
-					this._ID_edit = value;
-					this.SendPropertyChanged("ID_edit");
-					this.OnID_editChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nomb_edit", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nomb_edit
-		{
-			get
-			{
-				return this._Nomb_edit;
-			}
-			set
-			{
-				if ((this._Nomb_edit != value))
-				{
-					this.OnNomb_editChanging(value);
-					this.SendPropertyChanging();
-					this._Nomb_edit = value;
-					this.SendPropertyChanged("Nomb_edit");
-					this.OnNomb_editChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", DbType="Int NOT NULL")]
-		public int ID_aut
-		{
-			get
-			{
-				return this._ID_aut;
-			}
-			set
-			{
-				if ((this._ID_aut != value))
-				{
-					this.OnID_autChanging(value);
-					this.SendPropertyChanging();
-					this._ID_aut = value;
-					this.SendPropertyChanged("ID_aut");
-					this.OnID_autChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
-		public int ID_libro
-		{
-			get
-			{
-				return this._ID_libro;
-			}
-			set
-			{
-				if ((this._ID_libro != value))
-				{
-					this.OnID_libroChanging(value);
-					this.SendPropertyChanging();
-					this._ID_libro = value;
-					this.SendPropertyChanged("ID_libro");
-					this.OnID_libroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_EDITORIAL_TBL_LIBRO", Storage="_TBL_LIBRO", ThisKey="ID_edit", OtherKey="ID_edit")]
-		public EntitySet<TBL_LIBRO> TBL_LIBRO
-		{
-			get
-			{
-				return this._TBL_LIBRO;
-			}
-			set
-			{
-				this._TBL_LIBRO.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_LIBRO(TBL_LIBRO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_EDITORIAL = this;
-		}
-		
-		private void detach_TBL_LIBRO(TBL_LIBRO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_EDITORIAL = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_GESTION_PRESTAMO")]
-	public partial class TBL_GESTION_PRESTAMO
-	{
-		
-		private int _ID_libro;
-		
-		private int _ID_prestamo;
-		
-		public TBL_GESTION_PRESTAMO()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
-		public int ID_libro
-		{
-			get
-			{
-				return this._ID_libro;
-			}
-			set
-			{
-				if ((this._ID_libro != value))
-				{
-					this._ID_libro = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", DbType="Int NOT NULL")]
-		public int ID_prestamo
-		{
-			get
-			{
-				return this._ID_prestamo;
-			}
-			set
-			{
-				if ((this._ID_prestamo != value))
-				{
-					this._ID_prestamo = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_USUARIO")]
 	public partial class TBL_USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -717,7 +372,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_USUARIO
 		{
 			get
@@ -941,6 +596,351 @@ namespace ModeloSeed
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CATEGORIA")]
+	public partial class TBL_CATEGORIA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_categoria;
+		
+		private string _Nombre_Cat;
+		
+		private string _Apell_Cat;
+		
+		private EntitySet<TBL_LIBRO> _TBL_LIBRO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_categoriaChanging(int value);
+    partial void OnID_categoriaChanged();
+    partial void OnNombre_CatChanging(string value);
+    partial void OnNombre_CatChanged();
+    partial void OnApell_CatChanging(string value);
+    partial void OnApell_CatChanged();
+    #endregion
+		
+		public TBL_CATEGORIA()
+		{
+			this._TBL_LIBRO = new EntitySet<TBL_LIBRO>(new Action<TBL_LIBRO>(this.attach_TBL_LIBRO), new Action<TBL_LIBRO>(this.detach_TBL_LIBRO));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_categoria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_categoria
+		{
+			get
+			{
+				return this._ID_categoria;
+			}
+			set
+			{
+				if ((this._ID_categoria != value))
+				{
+					this.OnID_categoriaChanging(value);
+					this.SendPropertyChanging();
+					this._ID_categoria = value;
+					this.SendPropertyChanged("ID_categoria");
+					this.OnID_categoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Cat", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre_Cat
+		{
+			get
+			{
+				return this._Nombre_Cat;
+			}
+			set
+			{
+				if ((this._Nombre_Cat != value))
+				{
+					this.OnNombre_CatChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre_Cat = value;
+					this.SendPropertyChanged("Nombre_Cat");
+					this.OnNombre_CatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apell_Cat", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Apell_Cat
+		{
+			get
+			{
+				return this._Apell_Cat;
+			}
+			set
+			{
+				if ((this._Apell_Cat != value))
+				{
+					this.OnApell_CatChanging(value);
+					this.SendPropertyChanging();
+					this._Apell_Cat = value;
+					this.SendPropertyChanged("Apell_Cat");
+					this.OnApell_CatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_CATEGORIA_TBL_LIBRO", Storage="_TBL_LIBRO", ThisKey="ID_categoria", OtherKey="ID_categoria")]
+		public EntitySet<TBL_LIBRO> TBL_LIBRO
+		{
+			get
+			{
+				return this._TBL_LIBRO;
+			}
+			set
+			{
+				this._TBL_LIBRO.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBL_LIBRO(TBL_LIBRO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_CATEGORIA = this;
+		}
+		
+		private void detach_TBL_LIBRO(TBL_LIBRO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_CATEGORIA = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_EDITORIAL")]
+	public partial class TBL_EDITORIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_edit;
+		
+		private string _Nomb_edit;
+		
+		private int _ID_aut;
+		
+		private int _ID_libro;
+		
+		private EntitySet<TBL_LIBRO> _TBL_LIBRO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_editChanging(int value);
+    partial void OnID_editChanged();
+    partial void OnNomb_editChanging(string value);
+    partial void OnNomb_editChanged();
+    partial void OnID_autChanging(int value);
+    partial void OnID_autChanged();
+    partial void OnID_libroChanging(int value);
+    partial void OnID_libroChanged();
+    #endregion
+		
+		public TBL_EDITORIAL()
+		{
+			this._TBL_LIBRO = new EntitySet<TBL_LIBRO>(new Action<TBL_LIBRO>(this.attach_TBL_LIBRO), new Action<TBL_LIBRO>(this.detach_TBL_LIBRO));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_edit
+		{
+			get
+			{
+				return this._ID_edit;
+			}
+			set
+			{
+				if ((this._ID_edit != value))
+				{
+					this.OnID_editChanging(value);
+					this.SendPropertyChanging();
+					this._ID_edit = value;
+					this.SendPropertyChanged("ID_edit");
+					this.OnID_editChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nomb_edit", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nomb_edit
+		{
+			get
+			{
+				return this._Nomb_edit;
+			}
+			set
+			{
+				if ((this._Nomb_edit != value))
+				{
+					this.OnNomb_editChanging(value);
+					this.SendPropertyChanging();
+					this._Nomb_edit = value;
+					this.SendPropertyChanged("Nomb_edit");
+					this.OnNomb_editChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", DbType="Int NOT NULL")]
+		public int ID_aut
+		{
+			get
+			{
+				return this._ID_aut;
+			}
+			set
+			{
+				if ((this._ID_aut != value))
+				{
+					this.OnID_autChanging(value);
+					this.SendPropertyChanging();
+					this._ID_aut = value;
+					this.SendPropertyChanged("ID_aut");
+					this.OnID_autChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
+		public int ID_libro
+		{
+			get
+			{
+				return this._ID_libro;
+			}
+			set
+			{
+				if ((this._ID_libro != value))
+				{
+					this.OnID_libroChanging(value);
+					this.SendPropertyChanging();
+					this._ID_libro = value;
+					this.SendPropertyChanged("ID_libro");
+					this.OnID_libroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_EDITORIAL_TBL_LIBRO", Storage="_TBL_LIBRO", ThisKey="ID_edit", OtherKey="ID_edit")]
+		public EntitySet<TBL_LIBRO> TBL_LIBRO
+		{
+			get
+			{
+				return this._TBL_LIBRO;
+			}
+			set
+			{
+				this._TBL_LIBRO.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBL_LIBRO(TBL_LIBRO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_EDITORIAL = this;
+		}
+		
+		private void detach_TBL_LIBRO(TBL_LIBRO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_EDITORIAL = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_GESTION_PRESTAMO")]
+	public partial class TBL_GESTION_PRESTAMO
+	{
+		
+		private int _ID_libro;
+		
+		private int _ID_prestamo;
+		
+		public TBL_GESTION_PRESTAMO()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
+		public int ID_libro
+		{
+			get
+			{
+				return this._ID_libro;
+			}
+			set
+			{
+				if ((this._ID_libro != value))
+				{
+					this._ID_libro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", DbType="Int NOT NULL")]
+		public int ID_prestamo
+		{
+			get
+			{
+				return this._ID_prestamo;
+			}
+			set
+			{
+				if ((this._ID_prestamo != value))
+				{
+					this._ID_prestamo = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_INVENTARIO")]
 	public partial class TBL_INVENTARIO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -981,7 +981,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_inventario", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_inventario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_inventario
 		{
 			get
@@ -1177,7 +1177,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_libro
 		{
 			get
@@ -1479,7 +1479,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_prestamo
 		{
 			get
@@ -1724,7 +1724,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_tipousuario
 		{
 			get

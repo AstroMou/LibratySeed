@@ -4,3 +4,9 @@ c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSe
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.csprojResolveAssemblyReference.cache
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.dll
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ModeloSeed\obj\Debug\ModeloSeed.pdb
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.dll.config
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.dll
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.pdb
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.csprojResolveAssemblyReference.cache
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.dll
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.pdb

@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarUsuario.aspx" />
+    <Content Include="diseno\style.css" />
     <Content Include="semillaMaster.Master" />
     <Content Include="RecursosProgramar\Css\.DS_Store" />
     <Content Include="RecursosProgramar\Css\bootstrap\.DS_Store" />
@@ -178,9 +180,17 @@
     <Content Include="RecursosProgramar\Js\jquery.min.js" />
     <Content Include="RecursosProgramar\Js\main.js" />
     <Content Include="RecursosProgramar\Js\popper.js" />
+    <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarUsuario.aspx.cs">
+      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.aspx.designer.cs">
+      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +212,13 @@
     </Compile>
     <Compile Include="semillaMaster.Master.designer.cs">
       <DependentUpon>semillaMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.aspx.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario.aspx.designer.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

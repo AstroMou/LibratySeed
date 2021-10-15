@@ -6,3 +6,11 @@ c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ProyectS
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ProyectSeed\bin\ModeloSeed.pdb
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ProyectSeed\obj\Debug\ProyectSeed.dll
 c:\users\programacion\documents\visual studio 2013\Projects\ProyectSeed\ProyectSeed\obj\Debug\ProyectSeed.pdb
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ProyectSeed.dll.config
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ProyectSeed.dll
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ProyectSeed.pdb
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ModeloSeed.dll
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ModeloSeed.pdb
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.csprojResolveAssemblyReference.cache
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.dll
+C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.pdb
