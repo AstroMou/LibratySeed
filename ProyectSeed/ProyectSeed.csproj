@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarUsuario.aspx" />
+    <Content Include="diseno\fotos\SEED.png" />
+    <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
     <Content Include="index\bootstrap.css" />
     <Content Include="index\dataTables.bootstrap4.min.css" />
