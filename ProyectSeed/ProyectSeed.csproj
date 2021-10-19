@@ -59,6 +59,11 @@
   <ItemGroup>
     <Content Include="AgregarUsuario.aspx" />
     <Content Include="diseno\style.css" />
+    <Content Include="index\bootstrap.css" />
+    <Content Include="index\dataTables.bootstrap4.min.css" />
+    <Content Include="index\dataTables.bootstrap4.min.js" />
+    <Content Include="index\jquery-3.5.1.js" />
+    <Content Include="index\jquery.dataTables.min.js" />
     <Content Include="semillaMaster.Master" />
     <Content Include="RecursosProgramar\Css\.DS_Store" />
     <Content Include="RecursosProgramar\Css\bootstrap\.DS_Store" />
@@ -180,6 +185,51 @@
     <Content Include="RecursosProgramar\Js\jquery.min.js" />
     <Content Include="RecursosProgramar\Js\main.js" />
     <Content Include="RecursosProgramar\Js\popper.js" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap4.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap5.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bulma.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.bulma.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.dataTables.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.dataTables.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.foundation.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.foundation.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.jqueryui.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.jqueryui.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.semanticui.css" />
+    <Content Include="Table\DataTables-1.11.3\css\dataTables.semanticui.min.css" />
+    <Content Include="Table\DataTables-1.11.3\css\jquery.dataTables.css" />
+    <Content Include="Table\DataTables-1.11.3\css\jquery.dataTables.min.css" />
+    <Content Include="Table\DataTables-1.11.3\images\sort_asc.png" />
+    <Content Include="Table\DataTables-1.11.3\images\sort_asc_disabled.png" />
+    <Content Include="Table\DataTables-1.11.3\images\sort_both.png" />
+    <Content Include="Table\DataTables-1.11.3\images\sort_desc.png" />
+    <Content Include="Table\DataTables-1.11.3\images\sort_desc_disabled.png" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap4.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap5.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bootstrap5.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bulma.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.bulma.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.dataTables.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.dataTables.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.foundation.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.foundation.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.jqueryui.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.jqueryui.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.semanticui.js" />
+    <Content Include="Table\DataTables-1.11.3\js\dataTables.semanticui.min.js" />
+    <Content Include="Table\DataTables-1.11.3\js\jquery.dataTables.js" />
+    <Content Include="Table\DataTables-1.11.3\js\jquery.dataTables.min.js" />
+    <Content Include="Table\datatables.css" />
+    <Content Include="Table\datatables.js" />
+    <Content Include="Table\datatables.min.css" />
+    <Content Include="Table\datatables.min.js" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -213,6 +263,7 @@
     <Compile Include="semillaMaster.Master.designer.cs">
       <DependentUpon>semillaMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="TBL_USUARIOList.cs" />
     <Compile Include="Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

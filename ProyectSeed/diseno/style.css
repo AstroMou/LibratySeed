@@ -1,6 +1,53 @@
 ﻿
  .centro {
-            margin-top: 5%;
+           
             text-align: center;
-            align-items:center;
+            align-items:center; 
+           
+
         }
+
+
+ .Tarjeta{
+
+     background-color:white;
+     width:70%;
+    margin-top:10%;
+
+
+
+ }
+
+ .BotonesFormulario{
+
+
+     margin:0 auto;
+
+ }
+
+ .UltimoMargen{
+     
+     margin-bottom:22px;
+
+ }
+
+ .Ajuste{
+
+    overflow:hidden;
+ }
+
+ .ListaDesplegable{
+     margin-left:40px;
+     margin-top:22px;
+
+ }
+
+ .Magenes{
+
+     margin-left:7%;
+ }
+
+ .BotonesPrincipales{
+
+     margin-top:4%;
+ }
