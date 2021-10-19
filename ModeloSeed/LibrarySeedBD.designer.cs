@@ -33,15 +33,15 @@ namespace ModeloSeed
     partial void InsertTBL_AUTOR(TBL_AUTOR instance);
     partial void UpdateTBL_AUTOR(TBL_AUTOR instance);
     partial void DeleteTBL_AUTOR(TBL_AUTOR instance);
+    partial void InsertTBL_tipousuario(TBL_tipousuario instance);
+    partial void UpdateTBL_tipousuario(TBL_tipousuario instance);
+    partial void DeleteTBL_tipousuario(TBL_tipousuario instance);
     partial void InsertTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void UpdateTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void DeleteTBL_CATEGORIA(TBL_CATEGORIA instance);
     partial void InsertTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void UpdateTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void DeleteTBL_EDITORIAL(TBL_EDITORIAL instance);
-    partial void InsertTBL_USUARIO(TBL_USUARIO instance);
-    partial void UpdateTBL_USUARIO(TBL_USUARIO instance);
-    partial void DeleteTBL_USUARIO(TBL_USUARIO instance);
     partial void InsertTBL_INVENTARIO(TBL_INVENTARIO instance);
     partial void UpdateTBL_INVENTARIO(TBL_INVENTARIO instance);
     partial void DeleteTBL_INVENTARIO(TBL_INVENTARIO instance);
@@ -51,9 +51,9 @@ namespace ModeloSeed
     partial void InsertTBL_PRESTAMO(TBL_PRESTAMO instance);
     partial void UpdateTBL_PRESTAMO(TBL_PRESTAMO instance);
     partial void DeleteTBL_PRESTAMO(TBL_PRESTAMO instance);
-    partial void InsertTBL_tipousuario(TBL_tipousuario instance);
-    partial void UpdateTBL_tipousuario(TBL_tipousuario instance);
-    partial void DeleteTBL_tipousuario(TBL_tipousuario instance);
+    partial void InsertTBL_USUARIO(TBL_USUARIO instance);
+    partial void UpdateTBL_USUARIO(TBL_USUARIO instance);
+    partial void DeleteTBL_USUARIO(TBL_USUARIO instance);
     #endregion
 		
 		public LibrarySeedBDDataContext() : 
@@ -94,6 +94,14 @@ namespace ModeloSeed
 			}
 		}
 		
+		public System.Data.Linq.Table<TBL_tipousuario> TBL_tipousuario
+		{
+			get
+			{
+				return this.GetTable<TBL_tipousuario>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TBL_CATEGORIA> TBL_CATEGORIA
 		{
 			get
@@ -115,14 +123,6 @@ namespace ModeloSeed
 			get
 			{
 				return this.GetTable<TBL_GESTION_PRESTAMO>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
-		{
-			get
-			{
-				return this.GetTable<TBL_USUARIO>();
 			}
 		}
 		
@@ -150,11 +150,11 @@ namespace ModeloSeed
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_tipousuario> TBL_tipousuario
+		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
 		{
 			get
 			{
-				return this.GetTable<TBL_tipousuario>();
+				return this.GetTable<TBL_USUARIO>();
 			}
 		}
 	}
@@ -195,7 +195,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_aut", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_aut
 		{
 			get
@@ -321,6 +321,120 @@ namespace ModeloSeed
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_tipousuario")]
+	public partial class TBL_tipousuario : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_tipousuario;
+		
+		private string _Tipo_Usuario;
+		
+		private EntitySet<TBL_USUARIO> _TBL_USUARIO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_tipousuarioChanging(int value);
+    partial void OnID_tipousuarioChanged();
+    partial void OnTipo_UsuarioChanging(string value);
+    partial void OnTipo_UsuarioChanged();
+    #endregion
+		
+		public TBL_tipousuario()
+		{
+			this._TBL_USUARIO = new EntitySet<TBL_USUARIO>(new Action<TBL_USUARIO>(this.attach_TBL_USUARIO), new Action<TBL_USUARIO>(this.detach_TBL_USUARIO));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_tipousuario
+		{
+			get
+			{
+				return this._ID_tipousuario;
+			}
+			set
+			{
+				if ((this._ID_tipousuario != value))
+				{
+					this.OnID_tipousuarioChanging(value);
+					this.SendPropertyChanging();
+					this._ID_tipousuario = value;
+					this.SendPropertyChanged("ID_tipousuario");
+					this.OnID_tipousuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo_Usuario", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Tipo_Usuario
+		{
+			get
+			{
+				return this._Tipo_Usuario;
+			}
+			set
+			{
+				if ((this._Tipo_Usuario != value))
+				{
+					this.OnTipo_UsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Tipo_Usuario = value;
+					this.SendPropertyChanged("Tipo_Usuario");
+					this.OnTipo_UsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_tipousuario_TBL_USUARIO", Storage="_TBL_USUARIO", ThisKey="ID_tipousuario", OtherKey="ID_tipousuario")]
+		public EntitySet<TBL_USUARIO> TBL_USUARIO
+		{
+			get
+			{
+				return this._TBL_USUARIO;
+			}
+			set
+			{
+				this._TBL_USUARIO.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBL_USUARIO(TBL_USUARIO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_tipousuario = this;
+		}
+		
+		private void detach_TBL_USUARIO(TBL_USUARIO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_tipousuario = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_CATEGORIA")]
 	public partial class TBL_CATEGORIA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -353,7 +467,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_categoria", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_categoria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_categoria
 		{
 			get
@@ -495,7 +609,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_edit
 		{
 			get
@@ -666,281 +780,6 @@ namespace ModeloSeed
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_USUARIO")]
-	public partial class TBL_USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_USUARIO;
-		
-		private string _Nom_usuario;
-		
-		private string _Apell_usuario;
-		
-		private decimal _Telef_usuario;
-		
-		private string _Dirrec_usuario;
-		
-		private string _Correo_usuario;
-		
-		private int _ID_tipousuario;
-		
-		private EntitySet<TBL_PRESTAMO> _TBL_PRESTAMO;
-		
-		private EntityRef<TBL_tipousuario> _TBL_tipousuario;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_USUARIOChanging(int value);
-    partial void OnID_USUARIOChanged();
-    partial void OnNom_usuarioChanging(string value);
-    partial void OnNom_usuarioChanged();
-    partial void OnApell_usuarioChanging(string value);
-    partial void OnApell_usuarioChanged();
-    partial void OnTelef_usuarioChanging(decimal value);
-    partial void OnTelef_usuarioChanged();
-    partial void OnDirrec_usuarioChanging(string value);
-    partial void OnDirrec_usuarioChanged();
-    partial void OnCorreo_usuarioChanging(string value);
-    partial void OnCorreo_usuarioChanged();
-    partial void OnID_tipousuarioChanging(int value);
-    partial void OnID_tipousuarioChanged();
-    #endregion
-		
-		public TBL_USUARIO()
-		{
-			this._TBL_PRESTAMO = new EntitySet<TBL_PRESTAMO>(new Action<TBL_PRESTAMO>(this.attach_TBL_PRESTAMO), new Action<TBL_PRESTAMO>(this.detach_TBL_PRESTAMO));
-			this._TBL_tipousuario = default(EntityRef<TBL_tipousuario>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_USUARIO
-		{
-			get
-			{
-				return this._ID_USUARIO;
-			}
-			set
-			{
-				if ((this._ID_USUARIO != value))
-				{
-					this.OnID_USUARIOChanging(value);
-					this.SendPropertyChanging();
-					this._ID_USUARIO = value;
-					this.SendPropertyChanged("ID_USUARIO");
-					this.OnID_USUARIOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nom_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nom_usuario
-		{
-			get
-			{
-				return this._Nom_usuario;
-			}
-			set
-			{
-				if ((this._Nom_usuario != value))
-				{
-					this.OnNom_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Nom_usuario = value;
-					this.SendPropertyChanged("Nom_usuario");
-					this.OnNom_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apell_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Apell_usuario
-		{
-			get
-			{
-				return this._Apell_usuario;
-			}
-			set
-			{
-				if ((this._Apell_usuario != value))
-				{
-					this.OnApell_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Apell_usuario = value;
-					this.SendPropertyChanged("Apell_usuario");
-					this.OnApell_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telef_usuario", DbType="Decimal(18,0) NOT NULL")]
-		public decimal Telef_usuario
-		{
-			get
-			{
-				return this._Telef_usuario;
-			}
-			set
-			{
-				if ((this._Telef_usuario != value))
-				{
-					this.OnTelef_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Telef_usuario = value;
-					this.SendPropertyChanged("Telef_usuario");
-					this.OnTelef_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dirrec_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Dirrec_usuario
-		{
-			get
-			{
-				return this._Dirrec_usuario;
-			}
-			set
-			{
-				if ((this._Dirrec_usuario != value))
-				{
-					this.OnDirrec_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Dirrec_usuario = value;
-					this.SendPropertyChanged("Dirrec_usuario");
-					this.OnDirrec_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Correo_usuario
-		{
-			get
-			{
-				return this._Correo_usuario;
-			}
-			set
-			{
-				if ((this._Correo_usuario != value))
-				{
-					this.OnCorreo_usuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Correo_usuario = value;
-					this.SendPropertyChanged("Correo_usuario");
-					this.OnCorreo_usuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", DbType="Int NOT NULL")]
-		public int ID_tipousuario
-		{
-			get
-			{
-				return this._ID_tipousuario;
-			}
-			set
-			{
-				if ((this._ID_tipousuario != value))
-				{
-					if (this._TBL_tipousuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_tipousuarioChanging(value);
-					this.SendPropertyChanging();
-					this._ID_tipousuario = value;
-					this.SendPropertyChanged("ID_tipousuario");
-					this.OnID_tipousuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_PRESTAMO", ThisKey="ID_USUARIO", OtherKey="ID_USUARIO")]
-		public EntitySet<TBL_PRESTAMO> TBL_PRESTAMO
-		{
-			get
-			{
-				return this._TBL_PRESTAMO;
-			}
-			set
-			{
-				this._TBL_PRESTAMO.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_tipousuario_TBL_USUARIO", Storage="_TBL_tipousuario", ThisKey="ID_tipousuario", OtherKey="ID_tipousuario", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public TBL_tipousuario TBL_tipousuario
-		{
-			get
-			{
-				return this._TBL_tipousuario.Entity;
-			}
-			set
-			{
-				TBL_tipousuario previousValue = this._TBL_tipousuario.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_tipousuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_tipousuario.Entity = null;
-						previousValue.TBL_USUARIO.Remove(this);
-					}
-					this._TBL_tipousuario.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_USUARIO.Add(this);
-						this._ID_tipousuario = value.ID_tipousuario;
-					}
-					else
-					{
-						this._ID_tipousuario = default(int);
-					}
-					this.SendPropertyChanged("TBL_tipousuario");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_PRESTAMO(TBL_PRESTAMO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_USUARIO = this;
-		}
-		
-		private void detach_TBL_PRESTAMO(TBL_PRESTAMO entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_USUARIO = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_INVENTARIO")]
 	public partial class TBL_INVENTARIO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -981,7 +820,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_inventario", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_inventario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_inventario
 		{
 			get
@@ -1177,7 +1016,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_libro
 		{
 			get
@@ -1440,7 +1279,7 @@ namespace ModeloSeed
 		
 		private int _ID_prestamo;
 		
-		private int _ID_USUARIO;
+		private string _Cedula;
 		
 		private System.DateTime _Fecha_devolucion;
 		
@@ -1460,8 +1299,8 @@ namespace ModeloSeed
     partial void OnCreated();
     partial void OnID_prestamoChanging(int value);
     partial void OnID_prestamoChanged();
-    partial void OnID_USUARIOChanging(int value);
-    partial void OnID_USUARIOChanged();
+    partial void OnCedulaChanging(string value);
+    partial void OnCedulaChanged();
     partial void OnFecha_devolucionChanging(System.DateTime value);
     partial void OnFecha_devolucionChanged();
     partial void OnFecha_entregaChanging(System.DateTime value);
@@ -1479,7 +1318,7 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_prestamo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_prestamo
 		{
 			get
@@ -1499,26 +1338,26 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USUARIO", DbType="Int NOT NULL")]
-		public int ID_USUARIO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
+		public string Cedula
 		{
 			get
 			{
-				return this._ID_USUARIO;
+				return this._Cedula;
 			}
 			set
 			{
-				if ((this._ID_USUARIO != value))
+				if ((this._Cedula != value))
 				{
 					if (this._TBL_USUARIO.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USUARIOChanging(value);
+					this.OnCedulaChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USUARIO = value;
-					this.SendPropertyChanged("ID_USUARIO");
-					this.OnID_USUARIOChanged();
+					this._Cedula = value;
+					this.SendPropertyChanged("Cedula");
+					this.OnCedulaChanged();
 				}
 			}
 		}
@@ -1641,7 +1480,7 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_USUARIO", ThisKey="ID_USUARIO", OtherKey="ID_USUARIO", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_USUARIO", ThisKey="Cedula", OtherKey="Cedula", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public TBL_USUARIO TBL_USUARIO
 		{
 			get
@@ -1664,11 +1503,11 @@ namespace ModeloSeed
 					if ((value != null))
 					{
 						value.TBL_PRESTAMO.Add(this);
-						this._ID_USUARIO = value.ID_USUARIO;
+						this._Cedula = value.Cedula;
 					}
 					else
 					{
-						this._ID_USUARIO = default(int);
+						this._Cedula = default(string);
 					}
 					this.SendPropertyChanged("TBL_USUARIO");
 				}
@@ -1696,35 +1535,178 @@ namespace ModeloSeed
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_tipousuario")]
-	public partial class TBL_tipousuario : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_USUARIO")]
+	public partial class TBL_USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private string _Cedula;
+		
+		private string _Nom_usuario;
+		
+		private string _Apell_usuario;
+		
+		private decimal _Telef_usuario;
+		
+		private string _Dirrec_usuario;
+		
+		private string _Correo_usuario;
+		
 		private int _ID_tipousuario;
 		
-		private string _Tipo_Usuario;
+		private EntitySet<TBL_PRESTAMO> _TBL_PRESTAMO;
 		
-		private EntitySet<TBL_USUARIO> _TBL_USUARIO;
+		private EntityRef<TBL_tipousuario> _TBL_tipousuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnCedulaChanging(string value);
+    partial void OnCedulaChanged();
+    partial void OnNom_usuarioChanging(string value);
+    partial void OnNom_usuarioChanged();
+    partial void OnApell_usuarioChanging(string value);
+    partial void OnApell_usuarioChanged();
+    partial void OnTelef_usuarioChanging(decimal value);
+    partial void OnTelef_usuarioChanged();
+    partial void OnDirrec_usuarioChanging(string value);
+    partial void OnDirrec_usuarioChanged();
+    partial void OnCorreo_usuarioChanging(string value);
+    partial void OnCorreo_usuarioChanged();
     partial void OnID_tipousuarioChanging(int value);
     partial void OnID_tipousuarioChanged();
-    partial void OnTipo_UsuarioChanging(string value);
-    partial void OnTipo_UsuarioChanged();
     #endregion
 		
-		public TBL_tipousuario()
+		public TBL_USUARIO()
 		{
-			this._TBL_USUARIO = new EntitySet<TBL_USUARIO>(new Action<TBL_USUARIO>(this.attach_TBL_USUARIO), new Action<TBL_USUARIO>(this.detach_TBL_USUARIO));
+			this._TBL_PRESTAMO = new EntitySet<TBL_PRESTAMO>(new Action<TBL_PRESTAMO>(this.attach_TBL_PRESTAMO), new Action<TBL_PRESTAMO>(this.detach_TBL_PRESTAMO));
+			this._TBL_tipousuario = default(EntityRef<TBL_tipousuario>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="VarChar(70) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Cedula
+		{
+			get
+			{
+				return this._Cedula;
+			}
+			set
+			{
+				if ((this._Cedula != value))
+				{
+					this.OnCedulaChanging(value);
+					this.SendPropertyChanging();
+					this._Cedula = value;
+					this.SendPropertyChanged("Cedula");
+					this.OnCedulaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nom_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nom_usuario
+		{
+			get
+			{
+				return this._Nom_usuario;
+			}
+			set
+			{
+				if ((this._Nom_usuario != value))
+				{
+					this.OnNom_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Nom_usuario = value;
+					this.SendPropertyChanged("Nom_usuario");
+					this.OnNom_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apell_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Apell_usuario
+		{
+			get
+			{
+				return this._Apell_usuario;
+			}
+			set
+			{
+				if ((this._Apell_usuario != value))
+				{
+					this.OnApell_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Apell_usuario = value;
+					this.SendPropertyChanged("Apell_usuario");
+					this.OnApell_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telef_usuario", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Telef_usuario
+		{
+			get
+			{
+				return this._Telef_usuario;
+			}
+			set
+			{
+				if ((this._Telef_usuario != value))
+				{
+					this.OnTelef_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Telef_usuario = value;
+					this.SendPropertyChanged("Telef_usuario");
+					this.OnTelef_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dirrec_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Dirrec_usuario
+		{
+			get
+			{
+				return this._Dirrec_usuario;
+			}
+			set
+			{
+				if ((this._Dirrec_usuario != value))
+				{
+					this.OnDirrec_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Dirrec_usuario = value;
+					this.SendPropertyChanged("Dirrec_usuario");
+					this.OnDirrec_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Correo_usuario
+		{
+			get
+			{
+				return this._Correo_usuario;
+			}
+			set
+			{
+				if ((this._Correo_usuario != value))
+				{
+					this.OnCorreo_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Correo_usuario = value;
+					this.SendPropertyChanged("Correo_usuario");
+					this.OnCorreo_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_tipousuario", DbType="Int NOT NULL")]
 		public int ID_tipousuario
 		{
 			get
@@ -1735,6 +1717,10 @@ namespace ModeloSeed
 			{
 				if ((this._ID_tipousuario != value))
 				{
+					if (this._TBL_tipousuario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnID_tipousuarioChanging(value);
 					this.SendPropertyChanging();
 					this._ID_tipousuario = value;
@@ -1744,36 +1730,50 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo_Usuario", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Tipo_Usuario
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_PRESTAMO", ThisKey="Cedula", OtherKey="Cedula")]
+		public EntitySet<TBL_PRESTAMO> TBL_PRESTAMO
 		{
 			get
 			{
-				return this._Tipo_Usuario;
+				return this._TBL_PRESTAMO;
 			}
 			set
 			{
-				if ((this._Tipo_Usuario != value))
-				{
-					this.OnTipo_UsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._Tipo_Usuario = value;
-					this.SendPropertyChanged("Tipo_Usuario");
-					this.OnTipo_UsuarioChanged();
-				}
+				this._TBL_PRESTAMO.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_tipousuario_TBL_USUARIO", Storage="_TBL_USUARIO", ThisKey="ID_tipousuario", OtherKey="ID_tipousuario")]
-		public EntitySet<TBL_USUARIO> TBL_USUARIO
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_tipousuario_TBL_USUARIO", Storage="_TBL_tipousuario", ThisKey="ID_tipousuario", OtherKey="ID_tipousuario", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public TBL_tipousuario TBL_tipousuario
 		{
 			get
 			{
-				return this._TBL_USUARIO;
+				return this._TBL_tipousuario.Entity;
 			}
 			set
 			{
-				this._TBL_USUARIO.Assign(value);
+				TBL_tipousuario previousValue = this._TBL_tipousuario.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_tipousuario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_tipousuario.Entity = null;
+						previousValue.TBL_USUARIO.Remove(this);
+					}
+					this._TBL_tipousuario.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_USUARIO.Add(this);
+						this._ID_tipousuario = value.ID_tipousuario;
+					}
+					else
+					{
+						this._ID_tipousuario = default(int);
+					}
+					this.SendPropertyChanged("TBL_tipousuario");
+				}
 			}
 		}
 		
@@ -1797,16 +1797,16 @@ namespace ModeloSeed
 			}
 		}
 		
-		private void attach_TBL_USUARIO(TBL_USUARIO entity)
+		private void attach_TBL_PRESTAMO(TBL_PRESTAMO entity)
 		{
 			this.SendPropertyChanging();
-			entity.TBL_tipousuario = this;
+			entity.TBL_USUARIO = this;
 		}
 		
-		private void detach_TBL_USUARIO(TBL_USUARIO entity)
+		private void detach_TBL_PRESTAMO(TBL_PRESTAMO entity)
 		{
 			this.SendPropertyChanging();
-			entity.TBL_tipousuario = null;
+			entity.TBL_USUARIO = null;
 		}
 	}
 }
