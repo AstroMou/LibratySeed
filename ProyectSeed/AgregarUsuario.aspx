@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="diseno/style.css" />
 
-
+     
     <script>
 
         function openModal() {
@@ -12,6 +12,9 @@
             $('#Alerta').show();
         }
 
+        //$('#myCollapsible').collapse({
+        //    toggle: false
+        //})
 
         //Idiomas con el 1er método   
 
@@ -28,14 +31,13 @@
         <ContentTemplate>
 
 
+
+
             <fieldset class="Ajuste" style="overflow: hidden;">
 
 
                 <div class="row Magenes">
                     <div class="col-sm-6">
-
-
-
 
                         <div class="Tarjeta">
 
@@ -75,8 +77,8 @@
                                 </div>
 
                                 <div class="BotonesFormulario">
-                                    
-                                    <asp:Button ID="Button1" runat="server" Text="Guardar" />
+                                    <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
+                                    <asp:Button ID="Guardar" OnClick="Guardar_Click1" runat="server" Text="Guardar" />
                                     <asp:Button ID="Button2" runat="server" Text="Caselar" />
 
                                 </div>
@@ -89,33 +91,59 @@
 
                         <div id="Botones" class="BotonesPrincipales">
 
+                            <asp:Button ID="Editar" OnClick="Editar_Click" runat="server" Text="Editar" />
 
-                            <button type="button" data-toggle="collapse" data-target="#EditarU" aria-expanded="false" aria-controls="collapseExample">Editar</button>
-                            <button type="button" data-toggle="collapse" data-target="#EliminarU" aria-expanded="false" aria-controls="collapseExample">Eliminar</button>
-
-
-
-                            <div class="collapse" id="EditarU">
-                                <div class="card card-body">
-                                    Editar
-                                </div>
-                            </div>
-
-                            <div class="collapse" id="EliminarU">
-                                <div class="card card-body">
-                                    Eliminar
-                                </div>
-                            </div>
+                          
 
 
 
+                            <%--Aqui esta la tarjeta de editar--%>
+                           <div id="tarjetaEditar" class="card AjustesDeLasTarjetas" runat="server">
+                              <%--cabeza de la tarjeta--%>
+                               <div class="card-header">
+                                   Editar
+                                    <div class="card-subtitle">
+                                      En esta parte Podras editar la informacion de los clientes
+                                  </div>
+                                      
+                               </div>
+
+                               <%--cuerpo de la tarjeta--%>
+                               <div class="card-body ">
+                                  <%-- En este logar podre Programar--%>
+                                 
+                                   
+
+
+
+
+
+
+
+                                   <%--Pie del cuerpo--%>
+                                   <div class="card-footer" >
+
+                                                 <asp:Button ID="CerrarEditar" runat="server" OnClick="CerrarEditar_Click" Text="Cerrar" />
+
+                                   </div>
+
+                                   <%--termian el card de ajuste--%>
+                     
+                               </div>
+                             
+
+                           </div>
+                            
+                            
                         </div>
+
+
+
                     </div>
-
-
                 </div>
 
 
+          
 
 
 
@@ -129,7 +157,9 @@
 
 
 
-                <asp:GridView ID="GWUsuarios" CssClass="ListaDesplegable table-hover  table table-striped table-bordered" AutoGenerateColumns="false" runat="server" PagerSettings-Position="Top" Width="90%">
+
+
+                <asp:GridView ID="GWUsuarios" CssClass="ListaDesplegable table-hover  table table-striped table-bordered" AutoGenerateColumns="False" runat="server" PagerSettings-Position="Top" Width="90%">
                     <Columns>
                         <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
                             <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
@@ -140,7 +170,6 @@
                         <asp:BoundField DataField="Telef_usuario" HeaderText="Telefono Del Cliente"></asp:BoundField>
                         <asp:BoundField DataField="Dirrec_usuario" HeaderText="Direccion Del Cliente"></asp:BoundField>
                         <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario"></asp:BoundField>
-
                     </Columns>
 
                 </asp:GridView>

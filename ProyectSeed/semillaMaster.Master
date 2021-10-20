@@ -52,7 +52,7 @@
                 </div>
 
 
-                <ul class="list-unstyled components mb-5" style="font-family: tekton-pro-bold;">
+                <ul class="list-unstyled components mb-5" >
                     <li class="">
                         <a href="index.aspx" style="font-size: 28px;"><span class="fa fa-home mr-3"></span>Inicio</a>
                     </li>
