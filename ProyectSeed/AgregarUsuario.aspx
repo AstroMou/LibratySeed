@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="diseno/style.css" />
 
-     
+
     <script>
 
         function openModal() {
@@ -89,7 +89,7 @@
 
                     <div class="col-sm-4">
 
-                        <div id="Botones" class="BotonesPrincipales">
+                        <%-- <div id="Botones" class="BotonesPrincipales">
 
                             <asp:Button ID="Editar" OnClick="Editar_Click" runat="server" Text="Editar" />
 
@@ -98,38 +98,51 @@
 
 
                             <%--Aqui esta la tarjeta de editar--%>
-                           <div id="tarjetaEditar" class="card AjustesDeLasTarjetas" runat="server">
-                              <%--cabeza de la tarjeta--%>
-                               <div class="card-header">
+                        <%--<div id="tarjetaEditar" runat="server">--%>
+                        <%--cabeza de la tarjeta--%>
+                        <%-- <div>
                                    Editar
-                                    <div class="card-subtitle">
+                                    <div>
                                       En esta parte Podras editar la informacion de los clientes
                                   </div>
                                       
-                               </div>
+                               </div>--%>
 
-                               <%--cuerpo de la tarjeta--%>
-                               <div class="card-body ">
-                                  <%-- En este logar podre Programar--%>
+                        <%--cuerpo de la tarjeta--%>
+                        <%--<div >
+                        --%>  <%-- En este logar podre Programar--%>
+
+                        <%--<asp:Button ID="Nombre" runat="server" Text="EditarNombre"  OnClientClick="return false;"/>
+
+
+                                   <div id="editarNombre" runat="server">
+                                       <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                       <asp:Button ID="Button1" runat="server" Text="Button" />
+                                   </div>
                                  
                                    
+                                   
+                                   
+                                   
+                                   
+                                   
+                                     <asp:Button ID="Button3" runat="server" Text="Button" OnClientClick="return false;" />
+                                   <asp:Button ID="Button4" runat="server" Text="Button"  OnClientClick="return false;"/>
+                                   <asp:Button ID="Button6" runat="server" Text="Button" OnClientClick="return false;" /> 
+                                   <asp:Button ID="Button5" runat="server" Text="Button" OnClientClick="return false;" />
+                                   <asp:Button ID="Button7" runat="server" Text="Button"  OnClientClick="return false;"/>--%>
 
 
-
-
-
-
-
-                                   <%--Pie del cuerpo--%>
-                                   <div class="card-footer" >
+                        <%--Pie del cuerpo--%>
+                        <%-- <div>
 
                                                  <asp:Button ID="CerrarEditar" runat="server" OnClick="CerrarEditar_Click" Text="Cerrar" />
 
-                                   </div>
+                                   </div>--%>
 
-                                   <%--termian el card de ajuste--%>
-                     
-                               </div>
+                        <%--termian el card de ajuste--%>
+
+                        <%--                               </div>
                              
 
                            </div>
@@ -139,11 +152,39 @@
 
 
 
+                    </div>--%>
+
+
+                        <div id="Editar" class="Tarjeta">
+
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Editar
+                            </button>
+                            </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <asp:Button ID="Nombre" runat="server" Text="Nombre" OnClick="Editar_Click" OnClientClick="return false" />
+
+                                
+                                
+                                <div id="tarjetaEditar" runat="server">
+                                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                                </div>
+                                
+
+
+
+
+                            </div>
+                        </div>
+
+                        </div>
+
+
+
+
                     </div>
-                </div>
-
-
-          
 
 
 
@@ -159,26 +200,23 @@
 
 
 
-                <asp:GridView ID="GWUsuarios" CssClass="ListaDesplegable table-hover  table table-striped table-bordered" AutoGenerateColumns="False" runat="server" PagerSettings-Position="Top" Width="90%">
-                    <Columns>
-                        <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
-                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
-                        </asp:BoundField>
-                        <asp:BoundField DataField="Tipo_Usuario" HeaderText="Tipo"></asp:BoundField>
-                        <asp:BoundField DataField="Nom_usuario" HeaderText="Nombre Del Usuario"></asp:BoundField>
-                        <asp:BoundField DataField="Apell_usuario" HeaderText="Apellido Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Telef_usuario" HeaderText="Telefono Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Dirrec_usuario" HeaderText="Direccion Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario"></asp:BoundField>
-                    </Columns>
-
-                </asp:GridView>
 
 
 
+                    <asp:GridView ID="GWUsuarios" CssClass="ListaDesplegable table-hover  table table-striped table-bordered" AutoGenerateColumns="False" runat="server" PagerSettings-Position="Top" Width="90%">
+                        <Columns>
+                            <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
+                                <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Tipo_Usuario" HeaderText="Tipo"></asp:BoundField>
+                            <asp:BoundField DataField="Nom_usuario" HeaderText="Nombre Del Usuario"></asp:BoundField>
+                            <asp:BoundField DataField="Apell_usuario" HeaderText="Apellido Del Cliente"></asp:BoundField>
+                            <asp:BoundField DataField="Telef_usuario" HeaderText="Telefono Del Cliente"></asp:BoundField>
+                            <asp:BoundField DataField="Dirrec_usuario" HeaderText="Direccion Del Cliente"></asp:BoundField>
+                            <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario"></asp:BoundField>
+                        </Columns>
 
-
-
+                    </asp:GridView>
             </fieldset>
 
 

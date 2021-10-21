@@ -36,6 +36,12 @@ namespace ProyectSeed
 
 
 
+
+            //Cosas dentro de la tarjeta
+            //editarNombre.Visible = false;
+
+
+
             int Numeros = int.Parse(ListaDeTipoUsuario.SelectedValue);
 
 
@@ -102,7 +108,7 @@ namespace ProyectSeed
 
 
             tarjetaEditar.Visible = true;
-
+            //tarjetaEditar.Visible = false;
 
 
 
@@ -113,7 +119,7 @@ namespace ProyectSeed
         {
 
 
-            tarjetaEditar.Visible = false;
+         
 
         }
 
