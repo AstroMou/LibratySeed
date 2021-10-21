@@ -61,6 +61,7 @@
     <Content Include="diseno\fotos\SEED.png" />
     <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
+    <Content Include="IconsAstro\Facebook\facebook.svg" />
     <Content Include="ImagenesAstro\Fondos\i01_5.jpg" />
     <Content Include="ImagenesAstro\Fondos\IMG-20200906-WA0252.jpg" />
     <Content Include="index\bootstrap.css" />

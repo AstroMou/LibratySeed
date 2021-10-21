@@ -13,6 +13,5 @@ C:\Users\PROGRAMACION\Desktop\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.pdb
 C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\bin\Debug\ModeloSeed.dll.config
 C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\bin\Debug\ModeloSeed.dll
 C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\bin\Debug\ModeloSeed.pdb
-C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\obj\Debug\ModeloSeed.csprojResolveAssemblyReference.cache
 C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\obj\Debug\ModeloSeed.dll
 C:\Users\PROGRAMACION\Desktop\definitiva\ModeloSeed\obj\Debug\ModeloSeed.pdb
