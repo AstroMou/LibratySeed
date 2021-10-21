@@ -14,3 +14,11 @@ C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\bin\ModeloSeed.pdb
 C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.csprojResolveAssemblyReference.cache
 C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.dll
 C:\Users\PROGRAMACION\Desktop\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.pdb
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\bin\ProyectSeed.dll.config
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\bin\ProyectSeed.dll
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\bin\ProyectSeed.pdb
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\bin\ModeloSeed.dll
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\bin\ModeloSeed.pdb
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\obj\Debug\ProyectSeed.csprojResolveAssemblyReference.cache
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\obj\Debug\ProyectSeed.dll
+C:\Users\PROGRAMACION\Desktop\definitiva\ProyectSeed\obj\Debug\ProyectSeed.pdb

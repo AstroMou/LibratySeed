@@ -61,6 +61,9 @@
     <Content Include="diseno\fotos\SEED.png" />
     <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
+    <Content Include="IconsAstro\Facebook\facebook.svg" />
+    <Content Include="ImagenesAstro\Fondos\i01_5.jpg" />
+    <Content Include="ImagenesAstro\Fondos\IMG-20200906-WA0252.jpg" />
     <Content Include="index\bootstrap.css" />
     <Content Include="index\dataTables.bootstrap4.min.css" />
     <Content Include="index\dataTables.bootstrap4.min.js" />
@@ -164,6 +167,7 @@
     <Content Include="RecursosProgramar\scss\bootstrap\_utilities.scss" />
     <Content Include="RecursosProgramar\scss\bootstrap\_variables.scss" />
     <Content Include="RecursosProgramar\scss\style.scss" />
+    <Content Include="FuentesAstro\Amazónica_demo.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,6 +191,7 @@
     <Content Include="RecursosProgramar\Js\jquery.min.js" />
     <Content Include="RecursosProgramar\Js\main.js" />
     <Content Include="RecursosProgramar\Js\popper.js" />
+    <Content Include="StylesAstro\StylesAs.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.min.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap4.css" />
