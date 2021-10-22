@@ -189,6 +189,7 @@
     <Content Include="RecursosProgramar\Js\jquery.min.js" />
     <Content Include="RecursosProgramar\Js\main.js" />
     <Content Include="RecursosProgramar\Js\popper.js" />
+    <Content Include="simonpix\StylesAs.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap.min.css" />
     <Content Include="Table\DataTables-1.11.3\css\dataTables.bootstrap4.css" />

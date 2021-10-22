@@ -8,6 +8,8 @@ namespace ModeloSeed
 {
     public class Funciones
     {
+
+        //Agregarpersona
         public void agregarPersonas(int _tipoUsuario, string _Cedula, string _Nombre, string _Apellido, int _Telefono, string _Direccion, string _Correo)
         {
 
@@ -29,7 +31,9 @@ namespace ModeloSeed
 
         }
 
-        public void Actualizar(string _cedula, string _nuevoNombre)
+
+        //Actualizar Nombre
+        public void ActualizarNombre(string _cedula, string _nuevoNombre)
         {
 
             LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
@@ -37,12 +41,102 @@ namespace ModeloSeed
 
             foreach (var TBL_USUARIO in ActualizarUsuario)
             {
-                
+
                 TBL_USUARIO.Nom_usuario = _nuevoNombre;
 
             }
             dc.SubmitChanges();
         }
+
+
+        //Actualizar Apellido
+        public void actualizaApellido(string _cedula, string _Apellido)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
+
+            foreach (var TBL_USUARIO in queryTBL_USUARIO)
+            {
+
+
+                TBL_USUARIO.Apell_usuario = _Apellido;
+
+            }
+            dc.SubmitChanges();
+
+        }
+
+
+        //Actualizar Telefono
+        public void actualizaTelefono(string _cedula, int _telefonousuario)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
+
+            foreach (var TBL_USUARIO in queryTBL_USUARIO)
+            {
+
+
+
+                TBL_USUARIO.Telef_usuario = _telefonousuario;
+
+            }
+            dc.SubmitChanges();
+
+        }
+
+
+        //Actualizar Direccion
+        public void actualizaDireccion(string _cedula, string _direccion)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
+
+            foreach (var TBL_USUARIO in queryTBL_USUARIO)
+            {
+                TBL_USUARIO.Dirrec_usuario = _direccion;
+            }
+            dc.SubmitChanges();
+
+        }
+
+
+        //Actualizar Correo
+        public void actualizaCorreo(string _cedula, string _correo)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
+
+            foreach (var TBL_USUARIO in queryTBL_USUARIO)
+            {
+
+
+                TBL_USUARIO.Correo_usuario = _correo;
+
+            }
+            dc.SubmitChanges();
+
+        }
+
+
+        //Actualizar Tipo Usuario
+        public void actualizaTipoUsuario(string _cedula, int _TipoUsuario)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
+
+            foreach (var TBL_USUARIO in queryTBL_USUARIO)
+            {
+
+                TBL_USUARIO.ID_tipousuario = _TipoUsuario;
+            }
+            dc.SubmitChanges();
+
+        }
+
+    
+
+
 
 
 

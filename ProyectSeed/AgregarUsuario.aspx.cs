@@ -32,11 +32,81 @@ namespace ProyectSeed
             }
 
 
-            tarjetaEditar.Visible = false;
+          
+            //tarjetaEditar.Visible = false;
+           
 
 
+            
 
             int Numeros = int.Parse(ListaDeTipoUsuario.SelectedValue);
+
+           
+            int TipoDeEdicion = int.Parse(Tipo.SelectedValue);
+
+            switch (TipoDeEdicion)
+            {
+
+                   
+                case 1:
+
+                    //Actualizar nombtr
+                    string Cedula = txt_Cedula.Text;
+                    string Nombre = txt_CosaEditar.Text;
+                //comprobar.Text= Tipo.SelectedValue;
+                    Funciones NombreA = new Funciones();
+                    NombreA.ActualizarNombre(Cedula, Nombre);
+                    Response.Redirect(Request.Url.ToString(), false);
+
+
+
+                    break;
+
+                case 2:
+                   
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+
+                case 3:
+                  
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+                case 4:
+                   
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+                case 5:
+                   
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+                case 6:
+                    
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+                case 7:
+                    
+                //comprobar.Text = Tipo.SelectedValue;
+
+                    break;
+
+
+
+
+                default:
+                    break;
+            }
+
+
 
 
 
@@ -101,7 +171,7 @@ namespace ProyectSeed
 
 
 
-            tarjetaEditar.Visible = true;
+            //tarjetaEditar.Visible = true;
 
 
 
@@ -113,7 +183,7 @@ namespace ProyectSeed
         {
 
 
-            tarjetaEditar.Visible = false;
+            //tarjetaEditar.Visible = false;
 
         }
 

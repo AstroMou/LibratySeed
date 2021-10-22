@@ -18,6 +18,18 @@
 
  }
 
+
+ .Tarjetados{
+
+     border-color:none;
+     background-color:white;
+     width:70%;
+    margin-top:10%;
+
+
+
+ }
+
  .AjustesDeLasTarjetas{
 
      margin-top:22px;
@@ -57,4 +69,9 @@
  .BotonesPrincipales{
 
      margin-top:4%;
+ }
+
+ .textoeditar{
+
+     margin-top:22px;
  }

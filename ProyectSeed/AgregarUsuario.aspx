@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="diseno/style.css" />
 
-     
+
     <script>
 
         function openModal() {
@@ -55,22 +55,22 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>cedula</p>
-                                        <asp:TextBox ID="txt_Cedula" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_Cedula" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
                                         <p>Nombre  </p>
-                                        <asp:TextBox ID="Txt_Nombre" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Txt_Nombre" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
                                         <p>Apellido</p>
-                                        <asp:TextBox ID="Txt_Apellido" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Txt_Apellido" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
 
                                     </div>
                                     <div class="col-md-6">
 
 
                                         <p>telefono </p>
-                                        <asp:TextBox ID="Txt_Telefono" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Txt_Telefono" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
                                         <p>Direccion</p>
-                                        <asp:TextBox ID="Txt_Direccion" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Txt_Direccion" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
                                         <p>Correo</p>
-                                        <asp:TextBox ID="Txt_Correo" CssClass="UltimoMargen" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Txt_Correo" placeholder="Ingrese Correo" CssClass="UltimoMargen" runat="server"></asp:TextBox>
 
                                     </div>
 
@@ -89,65 +89,39 @@
 
                     <div class="col-sm-4">
 
-                        <div id="Botones" class="BotonesPrincipales">
-
-                            <asp:Button ID="Editar" OnClick="Editar_Click" runat="server" Text="Editar" />
-
-                          
-
-
-
-                            <%--Aqui esta la tarjeta de editar--%>
-                           <div id="tarjetaEditar" class="card AjustesDeLasTarjetas" runat="server">
-                              <%--cabeza de la tarjeta--%>
-                               <div class="card-header">
-                                   Editar
-                                    <div class="card-subtitle">
-                                      En esta parte Podras editar la informacion de los clientes
-                                  </div>
-                                      
-                               </div>
-
-                               <%--cuerpo de la tarjeta--%>
-                               <div class="card-body ">
-                                  <%-- En este logar podre Programar--%>
-                                 
-                                   
 
 
 
 
 
+                        <div id="cuerpo" class="Tarjeta">
+
+                            <asp:DropDownList CssClass="Tarjetados" ID="Tipo" AutoPostBack="true" runat="server">
+                                <asp:ListItem Value="1">nombre</asp:ListItem>
+                                <asp:ListItem Value="2">Apellido</asp:ListItem>
+                                <asp:ListItem Value="3">Direccion</asp:ListItem>
+                                <asp:ListItem Value="4">Tipo</asp:ListItem>
+                                <asp:ListItem Value="5">Telefono</asp:ListItem>
+                                <asp:ListItem Value="6">CorreoCliente</asp:ListItem>
+                            </asp:DropDownList>
 
 
-                                   <%--Pie del cuerpo--%>
-                                   <div class="card-footer" >
-
-                                                 <asp:Button ID="CerrarEditar" runat="server" OnClick="CerrarEditar_Click" Text="Cerrar" />
-
-                                   </div>
-
-                                   <%--termian el card de ajuste--%>
-                     
-                               </div>
-                             
-
-                           </div>
-                            
-                            
+                            <div>
+                                <asp:TextBox CssClass="Tarjetados" ID="txt_CedulaE" placeholder="ingrese la cedula" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="textoeditar">
+                                <asp:TextBox CssClass="Tarjetados" placeholder="ingrese los datos a editar" ID="txt_CosaEditar" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="textoeditar">
+                                <asp:Button CssClass="Tarjetados" ID="Button1" runat="server" Text="Button" />
+                            </div>
                         </div>
-
-
-
                     </div>
                 </div>
 
 
-          
 
-
-
-
+                
 
 
 

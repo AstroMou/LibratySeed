@@ -139,31 +139,40 @@ namespace ProyectSeed {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control Editar.
+        /// Control Tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Editar;
+        protected global::System.Web.UI.WebControls.DropDownList Tipo;
         
         /// <summary>
-        /// Control tarjetaEditar.
+        /// Control txt_CedulaE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tarjetaEditar;
+        protected global::System.Web.UI.WebControls.TextBox txt_CedulaE;
         
         /// <summary>
-        /// Control CerrarEditar.
+        /// Control txt_CosaEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CerrarEditar;
+        protected global::System.Web.UI.WebControls.TextBox txt_CosaEditar;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control GWUsuarios.
