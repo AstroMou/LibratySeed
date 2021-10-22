@@ -1,4 +1,4 @@
-## Semilla
+#Semilla
 
 Semilla es una aplicacion web para el control de inventariado de libros en una biblioteca, control de usuarios y informacion den esta misma.
 

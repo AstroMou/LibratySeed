@@ -61,6 +61,8 @@
     <Content Include="diseno\fotos\SEED.png" />
     <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
+    <Content Include="ImagenesAstrosi\Fondos\i01_5.jpg" />
+    <Content Include="ImagenesAstrosi\Fondos\IMG-20200906-WA0252.jpg" />
     <Content Include="index\bootstrap.css" />
     <Content Include="index\dataTables.bootstrap4.min.css" />
     <Content Include="index\dataTables.bootstrap4.min.js" />

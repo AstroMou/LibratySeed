@@ -1,0 +1,64 @@
+﻿
+.AjusteDelCarrusel{
+ height:800px;
+
+}
+
+.TarjetasUnicas{
+    margin-top:2px;
+    background-color:#189117;
+    width:100%;
+    margin-bottom:22px;
+    margin-bottom:22px;
+
+}
+
+.centrar{
+    margin:0 auto;
+}
+
+
+.MargenTitulo{
+
+    margin-top:20px;
+
+}
+
+
+.texto{
+
+    width:100%;
+    margin-top:2px;
+    margin-left:60px;
+    color:white;
+    font-size:25px;
+
+}
+
+.Titulo{
+
+    /*margin-top:22px;*/
+    margin-left:22px;
+    color:white;
+
+}
+
+.Fuentes{
+    font-family:Amazónica_demo;
+}
+
+@font-face {
+    font-family: 'Amazónica_demo';
+    src: url('../FuentesAstro/Amazónica_demo.ttf') format('truetype');
+}
+
+@media(max-width:1700px){
+    #carouselExampleFade{
+        display:none;
+    }
+}
+body
+{
+background-color:#189117;
+}
+
