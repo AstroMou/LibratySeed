@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeloSeed
 {
-    public class Listas_obj
+    public class ListaPrueba
     {
         public List<TBL_tipousuario> ListaDeTipoUsuario()
         {
@@ -62,11 +62,12 @@ namespace ModeloSeed
         }
         public class TBL_USUARIOList : List<TBL_USUARIOs>
         {
-            public TBL_USUARIOList(LibrarySeedBDDataContext dc)
+            public  TBL_USUARIOList(LibrarySeedBDDataContext dc, string _Cedula)
             {
                 var query =
                  from TBL_USUARIO in dc.TBL_USUARIO
-               
+                 where
+                   TBL_USUARIO.Cedula == _Cedula
                  select new
                  {
                      TBL_USUARIO.Cedula,
@@ -77,27 +78,18 @@ namespace ModeloSeed
                      TBL_USUARIO.Correo_usuario,
                      TBL_USUARIO.TBL_tipousuario.Tipo_Usuario
                  };
-                foreach (var r in query)
-                    Add(new TBL_USUARIOs(
-                        r.Cedula, r.Nom_usuario, r.Apell_usuario, r.Telef_usuario,
-                        r.Dirrec_usuario, r.Correo_usuario, r.Tipo_Usuario));
+                foreach (var r in query) Add(new TBL_USUARIOs(r.Cedula, r.Nom_usuario, r.Apell_usuario, r.Telef_usuario,r.Dirrec_usuario, r.Correo_usuario, r.Tipo_Usuario));
+          
             }
         }
-        public List<TBL_USUARIOs> ListaUsuariosRelacionada()
+        public List<TBL_USUARIOs> ListaUsuariosRelacionada(string _Cedula)
         {
 
             LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-            return new TBL_USUARIOList(dc);
+            return new TBL_USUARIOList(dc, _Cedula);
         }
 
 
- 
 
-       
-
-         
     }
-
-
-
 }
