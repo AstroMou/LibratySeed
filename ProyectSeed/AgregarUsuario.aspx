@@ -113,7 +113,16 @@
                                 <asp:TextBox CssClass="Tarjetados" placeholder="ingrese los datos a editar" ID="txt_CosaEditar" runat="server"></asp:TextBox>
                             </div>
                             <div class="textoeditar">
-                                <asp:Button CssClass="Tarjetados" ID="Button1" runat="server" Text="Button" />
+
+                                <asp:DropDownList ID="EdicionTipo" AutoPostBack="true" runat="server"></asp:DropDownList>
+
+
+                            </div>
+
+                            <asp:Label ID="MensajeGeneral" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="segundoM" runat="server" Text=""></asp:Label>
+                            <div class="textoeditar">
+                                <asp:Button CssClass="Tarjetados" OnClick="EditarBoton_Click" ID="EditarBoton" runat="server" Text="Editar" />
                             </div>
                         </div>
                     </div>
@@ -121,7 +130,7 @@
 
 
 
-                
+
 
 
 
@@ -138,12 +147,24 @@
                         <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
                             <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
                         </asp:BoundField>
-                        <asp:BoundField DataField="Tipo_Usuario" HeaderText="Tipo"></asp:BoundField>
-                        <asp:BoundField DataField="Nom_usuario" HeaderText="Nombre Del Usuario"></asp:BoundField>
-                        <asp:BoundField DataField="Apell_usuario" HeaderText="Apellido Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Telef_usuario" HeaderText="Telefono Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Dirrec_usuario" HeaderText="Direccion Del Cliente"></asp:BoundField>
-                        <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario"></asp:BoundField>
+                        <asp:BoundField DataField="Tipo_Usuario" HeaderText="Tipo">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Nom_usuario" HeaderText="Nombre Del Usuario">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Apell_usuario" HeaderText="Apellido Del Cliente">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Telef_usuario" HeaderText="Telefono Del Cliente">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Dirrec_usuario" HeaderText="Direccion Del Cliente">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario">
+                            <HeaderStyle CssClass="bg-primary" ForeColor="White"></HeaderStyle>
+                        </asp:BoundField>
                     </Columns>
 
                 </asp:GridView>

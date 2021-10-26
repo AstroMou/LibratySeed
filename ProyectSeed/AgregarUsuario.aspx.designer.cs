@@ -166,13 +166,40 @@ namespace ProyectSeed {
         protected global::System.Web.UI.WebControls.TextBox txt_CosaEditar;
         
         /// <summary>
-        /// Control Button1.
+        /// Control EdicionTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList EdicionTipo;
+        
+        /// <summary>
+        /// Control MensajeGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MensajeGeneral;
+        
+        /// <summary>
+        /// Control segundoM.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label segundoM;
+        
+        /// <summary>
+        /// Control EditarBoton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditarBoton;
         
         /// <summary>
         /// Control GWUsuarios.

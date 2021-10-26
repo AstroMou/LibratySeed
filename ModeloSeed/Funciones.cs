@@ -37,15 +37,23 @@ namespace ModeloSeed
         {
 
             LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-            var ActualizarUsuario = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _cedula select TBL_USUARIO;
 
-            foreach (var TBL_USUARIO in ActualizarUsuario)
+            try
             {
-
-                TBL_USUARIO.Nom_usuario = _nuevoNombre;
+                var queryTBL_USUARIO = from _TBL_USUARIO in dc.TBL_USUARIO where _TBL_USUARIO.Cedula.Equals(_cedula) select _TBL_USUARIO;
+                foreach (var USUARIO in queryTBL_USUARIO)
+                {
+                    USUARIO.Nom_usuario =_nuevoNombre;
+                }
+                dc.SubmitChanges();
 
             }
-            dc.SubmitChanges();
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
 
@@ -134,7 +142,7 @@ namespace ModeloSeed
 
         }
 
-    
+
 
 
 
