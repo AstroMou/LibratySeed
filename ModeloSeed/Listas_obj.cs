@@ -30,7 +30,7 @@ namespace ModeloSeed
 
 
 
-        public class TBL_USUARIOs
+        public class TBL_USUARIO
         {
             private string _ID_USUARIO;
             private string _Nom_usuario;
@@ -39,7 +39,7 @@ namespace ModeloSeed
             private string _Dirrec_usuario;
             private string _Correo_usuario;
             private string _Tipo_Usuario;
-            public TBL_USUARIOs(
+            public TBL_USUARIO(
                 string AID_USUARIO, string ANom_usuario, string AApell_usuario,
                 decimal ATelef_usuario, string ADirrec_usuario, string ACorreo_usuario,
                 string ATipo_Usuario)
@@ -60,44 +60,34 @@ namespace ModeloSeed
             public string Correo_usuario { get { return _Correo_usuario; } }
             public string Tipo_Usuario { get { return _Tipo_Usuario; } }
         }
-        public class TBL_USUARIOList : List<TBL_USUARIOs>
+        public class TBL_USUARIOList : List<TBL_USUARIO>
         {
             public TBL_USUARIOList(LibrarySeedBDDataContext dc)
             {
                 var query =
-                 from TBL_USUARIO in dc.TBL_USUARIO
-               
-                 select new
-                 {
-                     TBL_USUARIO.Cedula,
-                     TBL_USUARIO.Nom_usuario,
-                     TBL_USUARIO.Apell_usuario,
-                     TBL_USUARIO.Telef_usuario,
-                     TBL_USUARIO.Dirrec_usuario,
-                     TBL_USUARIO.Correo_usuario,
-                     TBL_USUARIO.TBL_tipousuario.Tipo_Usuario
-                 };
+                    from TBL_USUARIO in dc.TBL_USUARIO
+                    select new
+                    {
+                        TBL_USUARIO.Cedula,
+                        TBL_USUARIO.Nom_usuario,
+                        TBL_USUARIO.Apell_usuario,
+                        TBL_USUARIO.Telef_usuario,
+                        TBL_USUARIO.Dirrec_usuario,
+                        TBL_USUARIO.Correo_usuario,
+                        TBL_USUARIO.TBL_tipousuario.Tipo_Usuario
+                    };
                 foreach (var r in query)
-                    Add(new TBL_USUARIOs(
+                    Add(new TBL_USUARIO(
                         r.Cedula, r.Nom_usuario, r.Apell_usuario, r.Telef_usuario,
                         r.Dirrec_usuario, r.Correo_usuario, r.Tipo_Usuario));
             }
         }
-        public List<TBL_USUARIOs> ListaUsuariosRelacionada()
+        public List<TBL_USUARIO> ListaUsuariosRelacionada()
         {
 
             LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
             return new TBL_USUARIOList(dc);
         }
 
-
- 
-
-       
-
-         
     }
-
-
-
 }
