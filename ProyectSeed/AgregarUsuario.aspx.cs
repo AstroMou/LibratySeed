@@ -34,10 +34,10 @@ namespace ProyectSeed
                 //ListaDeTipoUsuario.DataBind();
 
 
-                //EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
-                //EdicionTipo.DataTextField = "Tipo_Usuario";
-                //EdicionTipo.DataValueField = "ID_tipousuario";
-                //EdicionTipo.DataBind();
+                EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
+                EdicionTipo.DataTextField = "Tipo_Usuario";
+                EdicionTipo.DataValueField = "ID_tipousuario";
+                EdicionTipo.DataBind();
 
                 Btn_Recargar.Visible = false;
 
