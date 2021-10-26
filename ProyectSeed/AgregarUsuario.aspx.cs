@@ -29,10 +29,17 @@ namespace ProyectSeed
                 GWUsuarios.DataSource = new Listas_obj().ListaUsuariosRelacionada();
                 GWUsuarios.DataBind();
 
-                EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
-                EdicionTipo.DataTextField = "Tipo_Usuario";
-                EdicionTipo.DataValueField = "ID_tipousuario";
-                EdicionTipo.DataBind();
+
+                //GWUsuarios.DataSource = new ListaPrueba().Lista();
+                //ListaDeTipoUsuario.DataBind();
+
+
+                //EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
+                //EdicionTipo.DataTextField = "Tipo_Usuario";
+                //EdicionTipo.DataValueField = "ID_tipousuario";
+                //EdicionTipo.DataBind();
+
+                Btn_Recargar.Visible = false;
 
             }
 
@@ -69,20 +76,20 @@ namespace ProyectSeed
             //Luego voy a Utilizar
             //EdicionTipo.Visible = false;
 
-            int eleccionTipo = int.Parse(Tipo.SelectedValue);
+            //int eleccionTipo = int.Parse(Tipo.SelectedValue);
 
-            switch (eleccionTipo)
-            {
-                case 4:
-                    EdicionTipo.Visible = true;
-                    txt_CosaEditar.Visible = false;
-                    break;
+            //switch (eleccionTipo)
+            //{
+            //    case 4:
+            //        EdicionTipo.Visible = true;
+            //        txt_CosaEditar.Visible = false;
+            //        break;
 
-                default:
-                    EdicionTipo.Visible = false;
-                    txt_CosaEditar.Visible = true;
-                    break;
-            }
+            //    default:
+            //        EdicionTipo.Visible = false;
+            //        txt_CosaEditar.Visible = true;
+            //        break;
+            //}
 
 
 
@@ -151,246 +158,246 @@ namespace ProyectSeed
 
         protected void EditarBoton_Click(object sender, EventArgs e)
         {
-            string Cedula = txt_CedulaE.Text;
-            string cosaEditar = txt_CosaEditar.Text;
-            int eleccionTipo = int.Parse(Tipo.SelectedValue);
+            //string Cedula = txt_CedulaE.Text;
+            //string cosaEditar = txt_CosaEditar.Text;
+            //int eleccionTipo = int.Parse(Tipo.SelectedValue);
 
-            int TipoDeEdicion = int.Parse(Tipo.SelectedValue);
+            //int TipoDeEdicion = int.Parse(Tipo.SelectedValue);
 
-            switch (TipoDeEdicion)
-            {
-                //Nombre
-                case 1:
+            //switch (TipoDeEdicion)
+            //{
+            //    //Nombre
+            //    case 1:
 
-                    try
-                    {
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15 && cosaEditar.Length >= 4)
-                        {
-                            Funciones NombreA = new Funciones();
-                            NombreA.ActualizarNombre(Cedula, cosaEditar);
-                            Response.Redirect(Request.Url.ToString(), false);
+            //            if (Cedula.Length > 15 && cosaEditar.Length >= 4)
+            //            {
+            //                Funciones NombreA = new Funciones();
+            //                NombreA.ActualizarNombre(Cedula, cosaEditar);
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula o Nombre son incorrectos";
+            //                MensajeGeneral.Text = "El campo de cedula o Nombre son incorrectos";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
 
 
 
 
-                //Apellido
-                case 2:
+            //    //Apellido
+            //    case 2:
 
-                    try
-                    {
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15 && cosaEditar.Length >= 4)
-                        {
-                            Funciones Apellido = new Funciones();
-                            Apellido.actualizaApellido(Cedula, cosaEditar);
-                            Response.Redirect(Request.Url.ToString(), false);
+            //            if (Cedula.Length > 15 && cosaEditar.Length >= 4)
+            //            {
+            //                Funciones Apellido = new Funciones();
+            //                Apellido.actualizaApellido(Cedula, cosaEditar);
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula o Apellido son incorrectos";
+            //                MensajeGeneral.Text = "El campo de cedula o Apellido son incorrectos";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
 
-                //Direccion
-                case 3:
+            //    //Direccion
+            //    case 3:
 
-                    try
-                    {
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15 && cosaEditar.Length >= 4)
-                        {
-                            Funciones NombreA = new Funciones();
+            //            if (Cedula.Length > 15 && cosaEditar.Length >= 4)
+            //            {
+            //                Funciones NombreA = new Funciones();
 
-                            NombreA.actualizaApellido(Cedula, cosaEditar);
-                            Response.Redirect(Request.Url.ToString(), false);
+            //                NombreA.actualizaDireccion(Cedula, cosaEditar);
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
+            //                MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
 
 
-                //Tipo
-                case 4:
-                    int Numeros = int.Parse(EdicionTipo.SelectedValue);
-                    try
-                    {
+            //    //Tipo
+            //    case 4:
+            //        int Numeros = int.Parse(EdicionTipo.SelectedValue);
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15)
-                        {
-                            Funciones TipoEditar = new Funciones();
-                            TipoEditar.actualizaTipoUsuario(Cedula, Numeros);
-                            Response.Redirect(Request.Url.ToString(), false);
+            //            if (Cedula.Length > 15)
+            //            {
+            //                Funciones TipoEditar = new Funciones();
+            //                TipoEditar.actualizaTipoUsuario(Cedula, Numeros);
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula es incorrecto";
+            //                MensajeGeneral.Text = "El campo de cedula es incorrecto";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
-                //Telefono
+            //    //Telefono
 
-                case 5:
+            //    case 5:
 
 
-                    try
-                    {
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15 && cosaEditar.Length >= 4)
-                        {
-                            Funciones telefono = new Funciones();
+            //            if (Cedula.Length > 15 && cosaEditar.Length >= 4)
+            //            {
+            //                Funciones telefono = new Funciones();
 
-                            telefono.actualizaTelefono(Cedula, int.Parse(cosaEditar));
-                            Response.Redirect(Request.Url.ToString(), false);
+            //                telefono.actualizaTelefono(Cedula, int.Parse(cosaEditar));
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
+            //                MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
 
-                    //Correo
-                case 6:
+            //        //Correo
+            //    case 6:
 
 
-                    try
-                    {
+            //        try
+            //        {
 
-                        if (Cedula.Length > 15 && cosaEditar.Length >= 4)
-                        {
-                            Funciones Correo = new Funciones();
+            //            if (Cedula.Length > 15 && cosaEditar.Length >= 4)
+            //            {
+            //                Funciones Correo = new Funciones();
 
-                            Correo.actualizaCorreo(Cedula, cosaEditar);
-                            Response.Redirect(Request.Url.ToString(), false);
+            //                Correo.actualizaCorreo(Cedula, cosaEditar);
+            //                Response.Redirect(Request.Url.ToString(), false);
 
-                        }
-                        else
-                        {
+            //            }
+            //            else
+            //            {
 
-                            MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
+            //                MensajeGeneral.Text = "El campo de cedula o Direccion son incorrectos";
 
 
-                        }
+            //            }
 
-                    }
-                    catch (Exception)
-                    {
+            //        }
+            //        catch (Exception)
+            //        {
 
-                        throw;
-                    }
+            //            throw;
+            //        }
 
 
 
 
 
 
-                    break;
+            //        break;
 
 
            
 
 
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
 
 
 
@@ -399,6 +406,27 @@ namespace ProyectSeed
 
 
 
+        }
+
+        protected void btn_buscar_Click(object sender, EventArgs e)
+        {
+            string ClienteBusaqueda = txt_cedulaBuscar.Text ;
+
+            Btn_Recargar.Visible=true;
+            GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
+            GWUsuarios.DataBind();
+
+            txt_cedulaBuscar.Text = "";
+
+            //Response.Redirect(Request.Url.ToString(), false);
+         
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            GWUsuarios.DataSource = new Listas_obj().ListaUsuariosRelacionada();
+            GWUsuarios.DataBind();
+            Btn_Recargar.Visible = false;
         }
 
 

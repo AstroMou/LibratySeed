@@ -139,67 +139,40 @@ namespace ProyectSeed {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control Tipo.
+        /// Control ActualizarDataGri.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Tipo;
+        protected global::System.Web.UI.UpdatePanel ActualizarDataGri;
         
         /// <summary>
-        /// Control txt_CedulaE.
+        /// Control btn_buscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_CedulaE;
+        protected global::System.Web.UI.WebControls.Button btn_buscar;
         
         /// <summary>
-        /// Control txt_CosaEditar.
+        /// Control txt_cedulaBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_CosaEditar;
+        protected global::System.Web.UI.WebControls.TextBox txt_cedulaBuscar;
         
         /// <summary>
-        /// Control EdicionTipo.
+        /// Control Btn_Recargar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList EdicionTipo;
-        
-        /// <summary>
-        /// Control MensajeGeneral.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MensajeGeneral;
-        
-        /// <summary>
-        /// Control segundoM.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label segundoM;
-        
-        /// <summary>
-        /// Control EditarBoton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditarBoton;
+        protected global::System.Web.UI.WebControls.Button Btn_Recargar;
         
         /// <summary>
         /// Control GWUsuarios.
