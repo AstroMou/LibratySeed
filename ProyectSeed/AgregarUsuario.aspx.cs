@@ -391,7 +391,7 @@ namespace ProyectSeed
             //        break;
 
 
-           
+
 
 
 
@@ -410,23 +410,41 @@ namespace ProyectSeed
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
-            string ClienteBusaqueda = txt_cedulaBuscar.Text ;
 
-            Btn_Recargar.Visible=true;
-            GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
-            GWUsuarios.DataBind();
+            string ClienteBusaqueda = txt_cedulaBuscar.Text;
+            Funciones existe = new Funciones();
 
-            txt_cedulaBuscar.Text = "";
+            bool existeU = existe.ExisteLaPersona(ClienteBusaqueda);
+
+            if (existeU)
+            {
+                Btn_Recargar.Visible = true;
+                GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
+                GWUsuarios.DataBind();
+
+                txt_cedulaBuscar.Text = "";
+            }
+            else
+            {
+                Btn_Recargar.Visible = true;
+                lbl_Anuncio.Text = "EL usuario no existe";
+                GWUsuarios.Visible = false;
+            }
+
+
 
             //Response.Redirect(Request.Url.ToString(), false);
-         
+
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            GWUsuarios.Visible = true;
             GWUsuarios.DataSource = new Listas_obj().ListaUsuariosRelacionada();
             GWUsuarios.DataBind();
             Btn_Recargar.Visible = false;
+            txt_cedulaBuscar.Text = "";
+            lbl_Anuncio.Text = "";
         }
 
 

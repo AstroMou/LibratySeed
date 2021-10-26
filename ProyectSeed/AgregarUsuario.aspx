@@ -220,12 +220,15 @@
                                 </asp:BoundField>
                             </Columns>
                         </asp:GridView>
+                        <div>
+                            <asp:Label ID="lbl_Anuncio" runat="server"></asp:Label>
+                        </div>
+
                     </ContentTemplate>
 
 
 
                 </asp:UpdatePanel>
-
                 <div>
                 </div>
 
