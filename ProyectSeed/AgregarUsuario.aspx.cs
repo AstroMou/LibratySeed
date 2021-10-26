@@ -420,6 +420,7 @@ namespace ProyectSeed
             {
                 Btn_Recargar.Visible = true;
                 GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
+               
                 GWUsuarios.DataBind();
 
                 txt_cedulaBuscar.Text = "";
