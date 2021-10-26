@@ -1,61 +1,77 @@
 ﻿
-.centro {
-    text-align: center;
-    align-items: center;
-}
+ .centro {
+           
+            text-align: center;
+            align-items:center; 
+           
+
+        }
 
 
-.Tarjeta {
-    background-color: white;
-    width: 70%;
-    margin-top: 10%;
-}
+ .Tarjeta{
+
+     background-color:white;
+     width:70%;
+    margin-top:10%;
 
 
-.Tarjetados {
-    border-color: none;
-    background-color: white;
-    width: 70%;
-    margin-top: 10%;
-}
 
-.AjustesDeLasTarjetas {
-    margin-top: 22px;
-}
+ }
 
-.BotonesFormulario {
-    margin: 0 auto;
-}
 
-.UltimoMargen {
-    margin-bottom: 22px;
-}
+ .Tarjetados{
 
-.Ajuste {
-    overflow: hidden;
-}
+     border-color:none;
+     background-color:white;
+     width:70%;
+    margin-top:10%;
 
-.ListaDesplegable {
-    margin-left: 40px;
-    margin-top: 22px;
-}
 
-.Magenes {
-    margin-left: 7%;
-}
 
-.BotonesPrincipales {
-    margin-top: 4%;
-}
+ }
 
-.textoeditar {
-    margin-top: 22px;
-}
+ .AjustesDeLasTarjetas{
 
-.iconprin {
-    width: 100px;
-    height: 100px;
-    fill: currentColor;
-     text-align: center;
-    align-items: center;
-}
+     margin-top:22px;
+
+
+ }
+
+ .BotonesFormulario{
+
+
+     margin:0 auto;
+
+ }
+
+ .UltimoMargen{
+     
+     margin-bottom:22px;
+
+ }
+
+ .Ajuste{
+
+    overflow:hidden;
+ }
+
+ .ListaDesplegable{
+     margin-left:40px;
+     margin-top:22px;
+
+ }
+
+ .Magenes{
+
+     margin-left:7%;
+ }
+
+ .BotonesPrincipales{
+
+     margin-top:4%;
+ }
+
+ .textoeditar{
+
+     margin-top:22px;
+ }

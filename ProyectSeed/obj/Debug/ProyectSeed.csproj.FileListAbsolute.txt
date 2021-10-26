@@ -22,11 +22,3 @@ C:\Users\PROGRAMACION\Desktop\nuevaVersion\ProyectSeed\bin\ModeloSeed.pdb
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ProyectSeed\obj\Debug\ProyectSeed.csprojResolveAssemblyReference.cache
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ProyectSeed\obj\Debug\ProyectSeed.dll
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ProyectSeed\obj\Debug\ProyectSeed.pdb
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\bin\ProyectSeed.dll.config
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\bin\ProyectSeed.dll
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\bin\ProyectSeed.pdb
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\bin\ModeloSeed.dll
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\bin\ModeloSeed.pdb
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\obj\Debug\ProyectSeed.csprojResolveAssemblyReference.cache
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\obj\Debug\ProyectSeed.dll
-C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\obj\Debug\ProyectSeed.pdb
