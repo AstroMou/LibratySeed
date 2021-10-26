@@ -142,8 +142,31 @@ namespace ModeloSeed
 
         }
 
+        public Boolean ExisteLaPersona(string _Cedula)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            try
+            {
+                if (dc.TBL_USUARIO.Any(a => a.Cedula == _Cedula))
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+                
+                return false;
+            }
 
 
+        }
+        
 
 
 
