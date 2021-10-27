@@ -13,7 +13,11 @@ namespace ProyectSeed
     {
 
 
+        public void actualizarTabla() {
 
+            GWUsuarios.DataSource = new Listas_obj().ListaUsuariosRelacionada();
+            GWUsuarios.DataBind();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,19 +29,17 @@ namespace ProyectSeed
                 ListaDeTipoUsuario.DataValueField = "ID_tipousuario";
                 ListaDeTipoUsuario.DataBind();
 
-
-                GWUsuarios.DataSource = new Listas_obj().ListaUsuariosRelacionada();
-                GWUsuarios.DataBind();
+                actualizarTabla();
 
 
                 //GWUsuarios.DataSource = new ListaPrueba().Lista();
                 //ListaDeTipoUsuario.DataBind();
 
 
-                EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
-                EdicionTipo.DataTextField = "Tipo_Usuario";
-                EdicionTipo.DataValueField = "ID_tipousuario";
-                EdicionTipo.DataBind();
+                //EdicionTipo.DataSource = lU.ListaDeTipoUsuario();
+                //EdicionTipo.DataTextField = "Tipo_Usuario";
+                //EdicionTipo.DataValueField = "ID_tipousuario";
+                //EdicionTipo.DataBind();
 
                 Btn_Recargar.Visible = false;
 
@@ -149,6 +151,7 @@ namespace ProyectSeed
             funciono.Text = "Funciona el boton";
             Funciones Agregar = new Funciones();
             Agregar.agregarPersonas(IdTipoUsuario, cedula, Nombre, Apellido, Telefono, Direccion, Correo);
+            ActualizarDataGri.Update();
             Response.Redirect(Request.Url.ToString(), false);
 
 
@@ -408,34 +411,7 @@ namespace ProyectSeed
 
         }
 
-        protected void btn_buscar_Click(object sender, EventArgs e)
-        {
 
-            string ClienteBusaqueda = txt_cedulaBuscar.Text;
-            Funciones existe = new Funciones();
-
-            bool existeU = existe.ExisteLaPersona(ClienteBusaqueda);
-
-            if (existeU)
-            {
-                Btn_Recargar.Visible = true;
-                GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
-                GWUsuarios.DataBind();
-
-                txt_cedulaBuscar.Text = "";
-            }
-            else
-            {
-                Btn_Recargar.Visible = true;
-                lbl_Anuncio.Text = "EL usuario no existe";
-                GWUsuarios.Visible = false;
-            }
-
-
-
-            //Response.Redirect(Request.Url.ToString(), false);
-
-        }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
@@ -459,7 +435,7 @@ namespace ProyectSeed
 
         }
 
-      
+
         protected void GWUsuarios_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
@@ -467,16 +443,117 @@ namespace ProyectSeed
 
         protected void GWUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
         {
-        
+
         }
 
+        protected void txt_cedulaBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string ClienteBusaqueda = txt_cedulaBuscar.Text;
+            Funciones existe = new Funciones();
+
+            bool existeU = existe.ExisteLaPersona(ClienteBusaqueda);
+
+            if (existeU)
+            {
+                Btn_Recargar.Visible = true;
+                GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
+                GWUsuarios.DataBind();
+
+                txt_cedulaBuscar.Text = "";
+            }
+            else
+            {
+                Btn_Recargar.Visible = true;
+                lbl_Anuncio.Text = "EL usuario no existe";
+                GWUsuarios.Visible = false;
+            }
 
 
 
+            //Response.Redirect(Request.Url.ToString(), false);
+        }
+
+        protected void GWUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "editar":
+                    GWUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+                    string CedulaEditar = GWUsuarios.SelectedValue.ToString();
+                    Session["CedulaEditando"] = CedulaEditar;
+                    LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+                    TBL_USUARIO usuarioEditar = (from _usuario in
+                                                    dc.TBL_USUARIO
+                                                 where (_usuario.Cedula.Equals(CedulaEditar))
+                                                 select _usuario).FirstOrDefault();
+
+                    ListaDeTipoUsuario.SelectedValue = usuarioEditar.ID_tipousuario.ToString();
+                    txt_Cedula.Text = usuarioEditar.Cedula;
+                    Txt_Nombre.Text = usuarioEditar.Nom_usuario;
+                    Txt_Apellido.Text = usuarioEditar.Apell_usuario;
+                    Txt_Telefono.Text = usuarioEditar.Telef_usuario.ToString();
+                    Txt_Direccion.Text = usuarioEditar.Dirrec_usuario;
+                    Txt_Correo.Text = usuarioEditar.Correo_usuario;
+                    Guardar.Visible = false;
+                    Editar.Visible = true;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEditar();", true);
+                    break;
+                case "eliminar":
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        protected void Editar_Click1(object sender, EventArgs e)
+        {
+            if (Session["CedulaEditando"] != null)
+            {
+                try
+                {
+                    string cedula = (string)Session["CedulaEditando"];
+                    int tipoUsuario = int.Parse(ListaDeTipoUsuario.SelectedValue);
 
 
+                    LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+                    TBL_USUARIO usuarioEditar = (from _usuario in
+                                                      dc.TBL_USUARIO
+                                                 where (_usuario.Cedula.Equals(cedula))
+                                                 select _usuario).FirstOrDefault();
+                    usuarioEditar.Cedula = txt_Cedula.Text;
+                    usuarioEditar.Nom_usuario = Txt_Nombre.Text;
+                    usuarioEditar.Apell_usuario = Txt_Apellido.Text;
+                    usuarioEditar.Telef_usuario = int.Parse(Txt_Telefono.Text);
+                    usuarioEditar.Dirrec_usuario = Txt_Direccion.Text;
+                    usuarioEditar.Correo_usuario = Txt_Correo.Text;
+                    usuarioEditar.ID_tipousuario = tipoUsuario;
+                    dc.SubmitChanges();
+                    PanelPrincipal.Update();
+                    ActualizarDataGri.Update();
+                    Session["CedulaEditando"] = null;
+                    actualizarTabla();
+                    Response.Redirect(Request.Url.ToString(), false);
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
+            }
+        }
 
-
+        protected void Nuevo_Click(object sender, EventArgs e)
+        {
+            Guardar.Visible = true;
+            Editar.Visible = false;
+            txt_Cedula.Text = String.Empty;
+            Txt_Nombre.Text = String.Empty;
+            Txt_Apellido.Text = String.Empty;
+            Txt_Telefono.Text = String.Empty;
+            Txt_Direccion.Text = String.Empty;
+            Txt_Correo.Text = String.Empty;
+            PanelPrincipal.Update();
+            ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEditar();", true);
+        }
     }
 }
