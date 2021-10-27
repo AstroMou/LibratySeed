@@ -10,9 +10,10 @@
 
  .Tarjeta{
 
+     margin-left:22px;
      background-color:white;
-     width:70%;
-    margin-top:10%;
+     width:80%;
+    margin-top:9%;
 
 
 
@@ -74,4 +75,8 @@
  .textoeditar{
 
      margin-top:22px;
+ }
+
+ .moberBoton{
+     margin-left:22%;
  }

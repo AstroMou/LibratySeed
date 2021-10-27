@@ -37,106 +37,114 @@
 
 
                 <div class="row">
-                    <div class="col-sm-6">
 
-                        <div class="Tarjeta" style="margin-left: 22px;">
+                    <div class="col-sm-5" style="margin-left: 80px;">
+                        <h5>
+                            <div class="Tarjeta shadow-none p-3 mb-5 bg-light rounded">
 
+                                <h5>
+                                    <asp:Label ID="Titulo" runat="server" Text="Label"></asp:Label></h5>
 
-                            <div class="centro">
-                                <asp:DropDownList ID="ListaDeTipoUsuario" runat="server" AutoPostBack="true"></asp:DropDownList>
-                            </div>
-
-                            <h5>
-                                <asp:Label ID="Titulo" runat="server" Text="Label"></asp:Label></h5>
-
-                            <div id="CuerpoDeAgregar" runat="server">
+                                <div class="centro">
+                                    <asp:DropDownList ID="ListaDeTipoUsuario" runat="server" CssClass="custom-select" AutoPostBack="true"></asp:DropDownList>
+                                </div>
 
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p>cedula</p>
-                                        <asp:TextBox ID="txt_Cedula" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
-                                        <p>Nombre  </p>
-                                        <asp:TextBox ID="Txt_Nombre" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
-                                        <p>Apellido</p>
-                                        <asp:TextBox ID="Txt_Apellido" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
+
+                                <div id="CuerpoDeAgregar" runat="server">
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>cedula</p>
+                                            <asp:TextBox ID="txt_Cedula" CssClass="form-control" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
+                                            <p>Nombre  </p>
+                                            <asp:TextBox ID="Txt_Nombre" CssClass="form-control" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
+                                            <p>Apellido</p>
+                                            <asp:TextBox ID="Txt_Apellido" CssClass="form-control" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <p>telefono </p>
+                                            <asp:TextBox ID="Txt_Telefono" CssClass="form-control" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
+                                            <p>Direccion</p>
+                                            <asp:TextBox ID="Txt_Direccion" CssClass="form-control" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
+                                            <p>Correo</p>
+                                            <asp:TextBox ID="Txt_Correo" placeholder="Ingrese Correo" CssClass="UltimoMargen form-control" runat="server"></asp:TextBox>
+
+                                        </div>
 
                                     </div>
-                                    <div class="col-md-6">
 
-
-                                        <p>telefono </p>
-                                        <asp:TextBox ID="Txt_Telefono" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
-                                        <p>Direccion</p>
-                                        <asp:TextBox ID="Txt_Direccion" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
-                                        <p>Correo</p>
-                                        <asp:TextBox ID="Txt_Correo" placeholder="Ingrese Correo" CssClass="UltimoMargen" runat="server"></asp:TextBox>
+                                    <div class="BotonesFormulario">
+                                        <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
+                                        <asp:Button ID="Guardar" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
+                                        <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Caselar" />
 
                                     </div>
 
                                 </div>
-
-                                <div class="BotonesFormulario">
-                                    <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
-                                    <asp:Button ID="Guardar" OnClick="Guardar_Click1" runat="server" Text="Guardar" />
-                                    <asp:Button ID="Button2" runat="server" Text="Caselar" />
-
-                                </div>
-
                             </div>
-                        </div>
+                            <h5></h5>
+                            <h5></h5>
+                        </h5>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
+                        <h5>
+                            <div class="Tarjeta shadow-none p-3 mb-5 bg-light rounded">
 
-                        <div class="Tarjeta">
+                                <h5>
+                                    <asp:Label ID="LBL_Editar" runat="server" Text="Editar Usuario"></asp:Label></h5>
+                                <div class="centro">
 
+                                    <asp:DropDownList ID="EdicionTipo" AutoPostBack="true" runat="server" CssClass="custom-select"></asp:DropDownList>
 
-                            <div class="centro">
-
-                                <asp:DropDownList ID="EdicionTipo" AutoPostBack="true" runat="server"></asp:DropDownList>
-
-                            </div>
-
-                            <h5>
-                                <asp:Label ID="LBL_Editar" runat="server" Text="EDITAR USUARIOS"></asp:Label></h5>
-
-                            <div id="Div1" runat="server">
+                                </div>
 
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p>cedula</p>
-                                        <asp:TextBox ID="CedulaEditar" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
-                                        <p>Nombre  </p>
-                                        <asp:TextBox ID="NombreEditar" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
-                                        <p>Apellido</p>
-                                        <asp:TextBox ID="ApelldioE" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
+
+                                <div id="CuerpoEditar" runat="server">
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>cedula</p>
+                                            <asp:TextBox ID="CedulaEditar" CssClass="form-control" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
+                                            <p>Nombre  </p>
+                                            <asp:TextBox ID="NombreEditar" CssClass="form-control" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
+                                            <p>Apellido</p>
+                                            <asp:TextBox ID="ApelldioE" CssClass="form-control" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <p>telefono </p>
+                                            <asp:TextBox ID="TelefonoEditar" CssClass="form-control" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
+                                            <p>Direccion</p>
+                                            <asp:TextBox ID="DireccionEditar" CssClass="form-control" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
+                                            <p>Correo</p>
+                                            <asp:TextBox ID="CorreoEditae" placeholder="Ingrese Correo" CssClass="UltimoMargen form-control" runat="server"></asp:TextBox>
+
+                                        </div>
 
                                     </div>
-                                    <div class="col-md-6">
 
-
-                                        <p>telefono </p>
-                                        <asp:TextBox ID="TelefonoEditar" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
-                                        <p>Direccion</p>
-                                        <asp:TextBox ID="DireccionEditar" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
-                                        <p>Correo</p>
-                                        <asp:TextBox ID="CorreoEditae" placeholder="Ingrese Correo" CssClass="UltimoMargen" runat="server"></asp:TextBox>
+                                    <div class="BotonesFormulario">
+                                        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                                        <asp:Button ID="Btn_GuardarEdit" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
+                                        <asp:Button ID="Btn_CancelarEdit" CssClass="btn-danger" runat="server" Text="Caselar" />
 
                                     </div>
 
                                 </div>
-
-                                <div class="BotonesFormulario">
-                                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
-                                    <asp:Button ID="Button1" OnClick="Guardar_Click1" runat="server" Text="Guardar" />
-                                    <asp:Button ID="Button3" runat="server" Text="Caselar" />
-
-                                </div>
-
                             </div>
-                        </div>
+                            <h5></h5>
+                            <h5></h5>
+                        </h5>
                     </div>
 
 
@@ -191,10 +199,11 @@
 
 
                     <ContentTemplate>
-                        <asp:Button ID="btn_buscar" runat="server" OnClick="btn_buscar_Click" Text="Buscar" Width="187px" />
+
+                        <asp:Button ID="btn_buscar" CssClass="moberBoton btn-info " runat="server" OnClick="btn_buscar_Click" Text="Buscar" Width="187px" Visible="True" />
                         <asp:TextBox ID="txt_cedulaBuscar" runat="server" CssClass="" Width="373px"></asp:TextBox>
-                        <asp:Button ID="Btn_Recargar" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
-                        <asp:GridView ID="GWUsuarios" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass="ListaDesplegable table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="90%">
+                        <asp:Button ID="Btn_Recargar" CssClass="alert-info" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
+                        <asp:GridView ID="GWUsuarios" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" AutoGenerateEditButton="True">
 
                             <Columns>
                                 <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">

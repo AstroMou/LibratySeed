@@ -447,6 +447,29 @@ namespace ProyectSeed
             lbl_Anuncio.Text = "";
         }
 
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+            txt_Cedula.Text = "";
+            Txt_Nombre.Text = "";
+            Txt_Apellido.Text = "";
+            Txt_Telefono.Text = "";
+            Txt_Direccion.Text = "";
+            Txt_Correo.Text = "";
+
+
+        }
+
+      
+        protected void GWUsuarios_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GWUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+        
+        }
+
 
 
 
