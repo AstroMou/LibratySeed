@@ -61,13 +61,20 @@
     <Content Include="diseno\fotos\SEED.png" />
     <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
+    <Content Include="Help.aspx" />
+    <Content Include="ImagenesAstrosi\Fondos\ANKE.png" />
+    <Content Include="ImagenesAstrosi\Fondos\biblioteca.png" />
+    <Content Include="ImagenesAstrosi\Fondos\Cabra loca.png" />
     <Content Include="ImagenesAstrosi\Fondos\i01_5.jpg" />
     <Content Include="ImagenesAstrosi\Fondos\IMG-20200906-WA0252.jpg" />
+    <Content Include="ImagenesAstrosi\Fondos\villansicos.png" />
     <Content Include="index\bootstrap.css" />
     <Content Include="index\dataTables.bootstrap4.min.css" />
     <Content Include="index\dataTables.bootstrap4.min.js" />
     <Content Include="index\jquery-3.5.1.js" />
     <Content Include="index\jquery.dataTables.min.js" />
+    <Content Include="practica\practica.css" />
+    <Content Include="practica\practica.html" />
     <Content Include="semillaMaster.Master" />
     <Content Include="RecursosProgramar\Css\.DS_Store" />
     <Content Include="RecursosProgramar\Css\bootstrap\.DS_Store" />
@@ -245,6 +252,13 @@
     </Compile>
     <Compile Include="AgregarUsuario.aspx.designer.cs">
       <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

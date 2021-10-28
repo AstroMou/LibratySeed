@@ -41,6 +41,7 @@
     margin-left:22px;
     color:white;
 
+
 }
 
 .Fuentes{
@@ -62,3 +63,7 @@ body
 background-color:#189117;
 }
 
+.help{
+margin-top:auto;
+margin-bottom: 1rem;
+}
