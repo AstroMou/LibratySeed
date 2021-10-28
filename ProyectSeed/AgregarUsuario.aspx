@@ -11,7 +11,9 @@
             $('#Guardar').modal('show');
             $('#Alerta').show();
         }
-
+        function abrirEditar() {
+            $('#exampleModal').modal('show');
+        }
         //$('#myCollapsible').collapse({
         //    toggle: false
         //})
@@ -27,163 +29,89 @@
 
 
 
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="PanelPrincipal" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
 
 
 
 
             <fieldset class="Ajuste" style="overflow: hidden;">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <asp:Button ID="Button1" OnClick="Editar_Click1" CssClass="btn-warning" runat="server" Text="Guardar Cambios" Visible="false" />
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
+                                    <ContentTemplate>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h5>
+                                                    <div class="shadow-none p-3 mb-5 bg-light rounded">
+
+                                                        <h5>
+                                                            <asp:Label ID="Titulo" runat="server" Text="Label"></asp:Label></h5>
+
+                                                        <div class="centro">
+                                                            <asp:DropDownList ID="ListaDeTipoUsuario" runat="server" CssClass="custom-select" AutoPostBack="true"></asp:DropDownList>
+                                                        </div>
 
 
-                <div class="row">
 
-                    <div class="col-sm-5" style="margin-left: 80px;">
-                        <h5>
-                            <div class="Tarjeta shadow-none p-3 mb-5 bg-light rounded">
-
-                                <h5>
-                                    <asp:Label ID="Titulo" runat="server" Text="Label"></asp:Label></h5>
-
-                                <div class="centro">
-                                    <asp:DropDownList ID="ListaDeTipoUsuario" runat="server" CssClass="custom-select" AutoPostBack="true"></asp:DropDownList>
-                                </div>
+                                                        <div id="CuerpoDeAgregar" runat="server">
 
 
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <p>cedula</p>
+                                                                    <asp:TextBox ID="txt_Cedula" CssClass="form-control" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
+                                                                    <p>Nombre  </p>
+                                                                    <asp:TextBox ID="Txt_Nombre" CssClass="form-control" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
+                                                                    <p>Apellido</p>
+                                                                    <asp:TextBox ID="Txt_Apellido" CssClass="form-control" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
 
-                                <div id="CuerpoDeAgregar" runat="server">
+                                                                </div>
+                                                                <div class="col-md-6">
 
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p>cedula</p>
-                                            <asp:TextBox ID="txt_Cedula" CssClass="form-control" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
-                                            <p>Nombre  </p>
-                                            <asp:TextBox ID="Txt_Nombre" CssClass="form-control" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
-                                            <p>Apellido</p>
-                                            <asp:TextBox ID="Txt_Apellido" CssClass="form-control" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
+                                                                    <p>telefono </p>
+                                                                    <asp:TextBox ID="Txt_Telefono" CssClass="form-control" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
+                                                                    <p>Direccion</p>
+                                                                    <asp:TextBox ID="Txt_Direccion" CssClass="form-control" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
+                                                                    <p>Correo</p>
+                                                                    <asp:TextBox ID="Txt_Correo" TextMode="Email" placeholder="Ingrese Correo" CssClass="UltimoMargen form-control" runat="server"></asp:TextBox>
+                                                                </div>
 
+                                                            </div>
+
+                                                            <div class="BotonesFormulario">
+                                                                <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
+                                                                <asp:Button ID="Guardar" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
+                                                                <asp:Button ID="Editar" OnClick="Editar_Click1" CssClass="btn-warning" runat="server" Text="Guardar Cambios" Visible="false" />
+                                                                <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Caselar" />
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </h5>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-
-
-                                            <p>telefono </p>
-                                            <asp:TextBox ID="Txt_Telefono" CssClass="form-control" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
-                                            <p>Direccion</p>
-                                            <asp:TextBox ID="Txt_Direccion" CssClass="form-control" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
-                                            <p>Correo</p>
-                                            <asp:TextBox ID="Txt_Correo" placeholder="Ingrese Correo" CssClass="UltimoMargen form-control" runat="server"></asp:TextBox>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="BotonesFormulario">
-                                        <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
-                                        <asp:Button ID="Guardar" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
-                                        <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Caselar" />
-
-                                    </div>
-
-                                </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </div>
-                            <h5></h5>
-                            <h5></h5>
-                        </h5>
-                    </div>
-
-                    <div class="col-sm-5">
-                        <h5>
-                            <div class="Tarjeta shadow-none p-3 mb-5 bg-light rounded">
-
-                                <h5>
-                                    <asp:Label ID="LBL_Editar" runat="server" Text="Editar Usuario"></asp:Label></h5>
-                                <div class="centro">
-
-                                    <asp:DropDownList ID="EdicionTipo" AutoPostBack="true" runat="server" CssClass="custom-select"></asp:DropDownList>
-
-                                </div>
-
-
-
-                                <div id="CuerpoEditar" runat="server">
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p>cedula</p>
-                                            <asp:TextBox ID="CedulaEditar" CssClass="form-control" placeholder="Ingrese cedula" MaxLength="16" runat="server"></asp:TextBox>
-                                            <p>Nombre  </p>
-                                            <asp:TextBox ID="NombreEditar" CssClass="form-control" placeholder="Ingrese Nombre" MaxLength="16" runat="server"></asp:TextBox>
-                                            <p>Apellido</p>
-                                            <asp:TextBox ID="ApelldioE" CssClass="form-control" placeholder="Ingrese Apellido" MaxLength="16" runat="server"></asp:TextBox>
-
-                                        </div>
-                                        <div class="col-md-6">
-
-
-                                            <p>telefono </p>
-                                            <asp:TextBox ID="TelefonoEditar" CssClass="form-control" placeholder="Ingrese Numero" runat="server"></asp:TextBox>
-                                            <p>Direccion</p>
-                                            <asp:TextBox ID="DireccionEditar" CssClass="form-control" placeholder="Ingrese Direccion" runat="server"></asp:TextBox>
-                                            <p>Correo</p>
-                                            <asp:TextBox ID="CorreoEditae" placeholder="Ingrese Correo" CssClass="UltimoMargen form-control" runat="server"></asp:TextBox>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="BotonesFormulario">
-                                        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
-                                        <asp:Button ID="Btn_GuardarEdit" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
-                                        <asp:Button ID="Btn_CancelarEdit" CssClass="btn-danger" runat="server" Text="Caselar" />
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <h5></h5>
-                            <h5></h5>
-                        </h5>
-                    </div>
-
-
-
-
-
-                    <%--                        <div id="cuerpo" class="Tarjeta">
-
-                            <asp:DropDownList CssClass="Tarjetados" ID="Tipo" AutoPostBack="true" runat="server">
-                                <asp:ListItem Value="1">nombre</asp:ListItem>
-                                <asp:ListItem Value="2">Apellido</asp:ListItem>
-                                <asp:ListItem Value="3">Direccion</asp:ListItem>
-                                <asp:ListItem Value="4">Tipo</asp:ListItem>
-                                <asp:ListItem Value="5">Telefono</asp:ListItem>
-                                <asp:ListItem Value="6">CorreoCliente</asp:ListItem>
-                            </asp:DropDownList>
-
-
-                            <div>
-                                <asp:TextBox CssClass="Tarjetados" ID="txt_CedulaE" placeholder="ingrese la cedula" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="textoeditar">
-                                <asp:TextBox CssClass="Tarjetados" placeholder="ingrese los datos a editar" ID="txt_CosaEditar" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="textoeditar">
-
-                                <asp:DropDownList ID="EdicionTipo" AutoPostBack="true" runat="server"></asp:DropDownList>
-
-
-                            </div>
-
-                            <asp:Label ID="MensajeGeneral" runat="server" Text=""></asp:Label>
-                            <asp:Label ID="segundoM" runat="server" Text=""></asp:Label>
-                            <div class="textoeditar">
-                                <asp:Button CssClass="Tarjetados" OnClick="EditarBoton_Click" ID="EditarBoton" runat="server" Text="Editar" />
+                            <div class="modal-footer">
                             </div>
                         </div>
-                    </div>--%>
+                    </div>
                 </div>
+
 
 
 
@@ -194,16 +122,32 @@
                 </div>
 
 
-                <asp:UpdatePanel ID="ActualizarDataGri" runat="server">
+                <asp:UpdatePanel ID="ActualizarDataGri" UpdateMode="Conditional" runat="server">
 
 
 
                     <ContentTemplate>
+                        <!-- Button trigger modal -->
+                        <div class="row">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="btn_agregar">Agregar</label>
+                                    <asp:Button ID="Nuevo" OnClick="Nuevo_Click" CssClass="btn-success form-control" runat="server" Text="Agregar" UseSubmitBehavior="false" CausesValidation="false" />
+                                </div>
 
-                        <asp:Button ID="btn_buscar" CssClass="moberBoton btn-info " runat="server" OnClick="btn_buscar_Click" Text="Buscar" Width="187px" Visible="True" />
-                        <asp:TextBox ID="txt_cedulaBuscar" runat="server" CssClass="" Width="373px"></asp:TextBox>
-                        <asp:Button ID="Btn_Recargar" CssClass="alert-info" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
-                        <asp:GridView ID="GWUsuarios" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" AutoGenerateEditButton="True">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="txt_cedulaBuscar">Buscar</label>
+                                    <asp:TextBox ID="txt_cedulaBuscar" runat="server" CssClass="form-control" OnTextChanged="txt_cedulaBuscar_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                </div>
+                                <asp:Button ID="Btn_Recargar" CssClass="alert-info" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
+                            </div>
+
+                        </div>
+                        <asp:GridView ID="GWUsuarios" DataKeyNames="ID_USUARIO" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" OnRowCommand="GWUsuarios_RowCommand">
 
                             <Columns>
                                 <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
@@ -227,6 +171,12 @@
                                 <asp:BoundField DataField="Correo_usuario" HeaderText="Correo Del Usuario">
                                     <HeaderStyle CssClass="bg-primary" ForeColor="White" />
                                 </asp:BoundField>
+                                <asp:ButtonField CommandName="editar" Text="Editar" ButtonType="Button" ShowHeader="True" AccessibleHeaderText="Editar" HeaderText="Editar">
+                                    <ControlStyle CssClass="btn btn-warning"></ControlStyle>
+                                </asp:ButtonField>
+                                <asp:ButtonField Text="Eliminar" AccessibleHeaderText="Eliminar" HeaderText="Eliminar" CommandName="eliminar">
+                                    <ControlStyle CssClass="btn btn-danger"></ControlStyle>
+                                </asp:ButtonField>
                             </Columns>
                         </asp:GridView>
                         <div>
@@ -238,8 +188,7 @@
 
 
                 </asp:UpdatePanel>
-                <div>
-                </div>
+
 
 
 

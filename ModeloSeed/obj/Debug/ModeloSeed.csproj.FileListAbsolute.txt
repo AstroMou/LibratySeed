@@ -16,3 +16,10 @@ C:\Users\PROGRAMACION\Desktop\nuevaVersion\ModeloSeed\obj\Debug\ModeloSeed.pdb
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ModeloSeed\bin\Debug\ModeloSeed.dll.config
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ModeloSeed\bin\Debug\ModeloSeed.dll
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ModeloSeed\bin\Debug\ModeloSeed.pdb
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.dll.config
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.dll
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\bin\Debug\ModeloSeed.pdb
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.csproj.AssemblyReference.cache
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.csproj.CoreCompileInputs.cache
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.dll
+C:\Users\CBSHOP\Source\Repos\LibratySeed\ModeloSeed\obj\Debug\ModeloSeed.pdb
