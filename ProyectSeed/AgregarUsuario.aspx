@@ -14,6 +14,10 @@
         function abrirEditar() {
             $('#exampleModal').modal('show');
         }
+
+        function abrirEliminar() {
+            $('#ModalEliminar').modal('show');
+        }
         //$('#myCollapsible').collapse({
         //    toggle: false
         //})
@@ -33,7 +37,32 @@
         <ContentTemplate>
 
 
+            <%--Modal de alerta eliminar --%>
 
+
+            <div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="ModalAlerta" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalAlerta">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Estas serguro que quieres eliminar
+                            <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%--fin modal alerta eliminar--%>
 
             <fieldset class="Ajuste" style="overflow: hidden;">
                 <!-- Modal -->
@@ -94,7 +123,7 @@
                                                                 <asp:Label ID="funciono" runat="server" Text=""></asp:Label>
                                                                 <asp:Button ID="Guardar" OnClick="Guardar_Click1" CssClass="btn-info" runat="server" Text="Guardar" />
                                                                 <asp:Button ID="Editar" OnClick="Editar_Click1" CssClass="btn-warning" runat="server" Text="Guardar Cambios" Visible="false" />
-                                                                <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Caselar" />
+                                                                <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Canselar" />
 
                                                             </div>
 
@@ -130,21 +159,50 @@
                         <!-- Button trigger modal -->
                         <div class="row">
                             <div class="col-md-2">
-                            </div>
-                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="btn_agregar">Agregar</label>
-                                    <asp:Button ID="Nuevo" OnClick="Nuevo_Click" CssClass="btn-success form-control" runat="server" Text="Agregar" UseSubmitBehavior="false" CausesValidation="false" />
+                                     
+
+                              
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+
+                            <div class="col-md-4">
+
+
+
+                                <div class="form-group">
+                                </div>
+                                <div class="form-group">
+                                     <span class="fa fa-user mr-3">
+                                      <asp:Button ID="Nuevo" OnClick="Nuevo_Click" CssClass="btn-success " runat="server" Text="Agregar" UseSubmitBehavior="false" CausesValidation="false" /></span>
+                                    <asp:TextBox ID="txt_cedulaBuscar" placeholder="Buscar..." runat="server" CssClass="" OnTextChanged="txt_cedulaBuscar_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                   
+
+
+                                    <span class="fa fa-search mr-3">
+                                        <label for="txt_cedulaBuscar">Buscar</label>
+                                    </span>
+
+
+
+
+
+
+
+                                    <asp:Button ID="Btn_Recargar" CssClass="alert-info" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
+
+
                                 </div>
 
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="txt_cedulaBuscar">Buscar</label>
-                                    <asp:TextBox ID="txt_cedulaBuscar" runat="server" CssClass="form-control" OnTextChanged="txt_cedulaBuscar_TextChanged" AutoPostBack="true"></asp:TextBox>
-                                </div>
-                                <asp:Button ID="Btn_Recargar" CssClass="alert-info" runat="server" OnClick="Unnamed1_Click" Text="Recargar" Width="123px" />
-                            </div>
+
+
+
+
+
 
                         </div>
                         <asp:GridView ID="GWUsuarios" DataKeyNames="ID_USUARIO" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" OnRowCommand="GWUsuarios_RowCommand">
