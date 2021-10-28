@@ -166,7 +166,19 @@ namespace ModeloSeed
 
 
         }
-        
+
+        public void EliminarUsuario(string _Cedula)
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _Cedula select TBL_USUARIO;
+          
+            foreach (var del in queryTBL_USUARIO)
+            {
+                dc.TBL_USUARIO.DeleteOnSubmit(del);
+            }
+            dc.SubmitChanges();
+
+        }
 
 
 

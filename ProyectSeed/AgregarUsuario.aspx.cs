@@ -431,21 +431,13 @@ namespace ProyectSeed
             Txt_Telefono.Text = "";
             Txt_Direccion.Text = "";
             Txt_Correo.Text = "";
+            Response.Redirect(Request.Url.ToString(), false);
 
 
         }
 
 
-        protected void GWUsuarios_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void GWUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-
-        }
-
+     
         protected void txt_cedulaBuscar_TextChanged(object sender, EventArgs e)
         {
             string ClienteBusaqueda = txt_cedulaBuscar.Text;
@@ -455,17 +447,23 @@ namespace ProyectSeed
 
             if (existeU)
             {
+                GWUsuarios.Visible = true;
                 Btn_Recargar.Visible = true;
                 GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
                 GWUsuarios.DataBind();
-
+                ActualizarDataGri.Update();
                 txt_cedulaBuscar.Text = "";
+                lbl_Anuncio.Visible = false;
+                ClienteBusaqueda = null;
             }
             else
             {
+                ActualizarDataGri.Update();
+                lbl_Anuncio.Visible = true;
                 Btn_Recargar.Visible = true;
                 lbl_Anuncio.Text = "EL usuario no existe";
                 GWUsuarios.Visible = false;
+                ClienteBusaqueda = null;
             }
 
 
@@ -499,6 +497,14 @@ namespace ProyectSeed
                     ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEditar();", true);
                     break;
                 case "eliminar":
+
+                    GWUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+                    string CedulaEliminar= GWUsuarios.SelectedValue.ToString();
+                    Session["CedulaEliminar"] = CedulaEliminar;
+
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEliminar();", true);
+
                     break;
                 default:
                     break;
@@ -528,6 +534,8 @@ namespace ProyectSeed
                     usuarioEditar.Correo_usuario = Txt_Correo.Text;
                     usuarioEditar.ID_tipousuario = tipoUsuario;
                     dc.SubmitChanges();
+                   
+                    
                     PanelPrincipal.Update();
                     ActualizarDataGri.Update();
                     Session["CedulaEditando"] = null;
@@ -554,6 +562,21 @@ namespace ProyectSeed
             Txt_Correo.Text = String.Empty;
             PanelPrincipal.Update();
             ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEditar();", true);
+        }
+
+        protected void Elimina_Click(object sender, EventArgs e)
+        {
+
+
+            Funciones ELiminar = new Funciones();
+            ELiminar.EliminarUsuario((string)Session["CedulaEliminar"]);
+            PanelPrincipal.Update();
+            ActualizarDataGri.Update();
+            Session["CedulaEliminar"] = null;
+            actualizarTabla();
+            Response.Redirect(Request.Url.ToString(), false);
+
+
         }
     }
 }

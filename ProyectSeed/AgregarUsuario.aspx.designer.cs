@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectSeed
-{
-
-
-    public partial class AgregarUsuario
-    {
-
+namespace ProyectSeed {
+    
+    
+    public partial class AgregarUsuario {
+        
         /// <summary>
         /// Control ScriptManager1.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-
+        
         /// <summary>
         /// Control PanelPrincipal.
         /// </summary>
@@ -31,7 +29,16 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel PanelPrincipal;
-
+        
+        /// <summary>
+        /// Control Elimina.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Elimina;
+        
         /// <summary>
         /// Control Button1.
         /// </summary>
@@ -40,7 +47,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
+        
         /// <summary>
         /// Control UpdatePanel2.
         /// </summary>
@@ -49,7 +56,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-
+        
         /// <summary>
         /// Control Titulo.
         /// </summary>
@@ -58,7 +65,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Titulo;
-
+        
         /// <summary>
         /// Control ListaDeTipoUsuario.
         /// </summary>
@@ -67,7 +74,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ListaDeTipoUsuario;
-
+        
         /// <summary>
         /// Control CuerpoDeAgregar.
         /// </summary>
@@ -76,7 +83,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl CuerpoDeAgregar;
-
+        
         /// <summary>
         /// Control txt_Cedula.
         /// </summary>
@@ -85,7 +92,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Cedula;
-
+        
         /// <summary>
         /// Control Txt_Nombre.
         /// </summary>
@@ -94,7 +101,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Txt_Nombre;
-
+        
         /// <summary>
         /// Control Txt_Apellido.
         /// </summary>
@@ -103,7 +110,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Txt_Apellido;
-
+        
         /// <summary>
         /// Control Txt_Telefono.
         /// </summary>
@@ -112,7 +119,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Txt_Telefono;
-
+        
         /// <summary>
         /// Control Txt_Direccion.
         /// </summary>
@@ -121,7 +128,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Txt_Direccion;
-
+        
         /// <summary>
         /// Control Txt_Correo.
         /// </summary>
@@ -130,7 +137,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Txt_Correo;
-
+        
         /// <summary>
         /// Control funciono.
         /// </summary>
@@ -139,7 +146,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label funciono;
-
+        
         /// <summary>
         /// Control Guardar.
         /// </summary>
@@ -148,7 +155,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Guardar;
-
+        
         /// <summary>
         /// Control Editar.
         /// </summary>
@@ -157,7 +164,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Editar;
-
+        
         /// <summary>
         /// Control Cancelar.
         /// </summary>
@@ -166,7 +173,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Cancelar;
-
+        
         /// <summary>
         /// Control ActualizarDataGri.
         /// </summary>
@@ -175,7 +182,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel ActualizarDataGri;
-
+        
         /// <summary>
         /// Control Nuevo.
         /// </summary>
@@ -184,7 +191,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Nuevo;
-
+        
         /// <summary>
         /// Control txt_cedulaBuscar.
         /// </summary>
@@ -193,7 +200,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_cedulaBuscar;
-
+        
         /// <summary>
         /// Control Btn_Recargar.
         /// </summary>
@@ -202,7 +209,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Recargar;
-
+        
         /// <summary>
         /// Control GWUsuarios.
         /// </summary>
@@ -211,7 +218,7 @@ namespace ProyectSeed
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GWUsuarios;
-
+        
         /// <summary>
         /// Control lbl_Anuncio.
         /// </summary>
