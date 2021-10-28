@@ -43,6 +43,7 @@
             <div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="ModalAlerta" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
+
                         <div class="modal-header">
                             <h5 class="modal-title" id="ModalAlerta">Modal title</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -51,7 +52,8 @@
                         </div>
                         <div class="modal-body">
                             Estas serguro que quieres eliminar
-                           <%-- <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />--%>
+                            <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />
+                        
 
                         </div>
                         <div class="modal-footer">
