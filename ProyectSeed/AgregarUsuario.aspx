@@ -51,7 +51,7 @@
                         </div>
                         <div class="modal-body">
                             Estas serguro que quieres eliminar
-                            <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />
+                           <%-- <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />--%>
 
                         </div>
                         <div class="modal-footer">
