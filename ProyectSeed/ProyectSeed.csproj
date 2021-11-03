@@ -40,6 +40,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -64,6 +69,7 @@
     <Content Include="diseno\fotos\SEED.png" />
     <Content Include="diseno\fotos\seedlogo.png" />
     <Content Include="diseno\style.css" />
+    <Content Include="diseno\styleLibros.css" />
     <Content Include="Help.aspx" />
     <Content Include="ImagenesAstrosi\Fondos\ANKE.png" />
     <Content Include="ImagenesAstrosi\Fondos\biblioteca.png" />
@@ -285,7 +291,6 @@
     <Compile Include="semillaMaster.Master.designer.cs">
       <DependentUpon>semillaMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="TBL_USUARIOList.cs" />
     <Compile Include="Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,7 +305,9 @@
       <Name>ModeloSeed</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

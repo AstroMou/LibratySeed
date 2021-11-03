@@ -1,26 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_LIBRARY_SEED" Class="LibrarySeedBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=BD_LIBRARY_SEED;User ID=sa" SettingsObjectName="ModeloSeed.Properties.Settings" SettingsPropertyName="BD_LIBRARY_SEEDConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=45LAB3PC03\SA;Initial Catalog=BD_LIBRARY_SEED;User ID=sa" SettingsObjectName="ModeloSeed.Properties.Settings" SettingsPropertyName="BD_LIBRARY_SEEDConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
+    <Type Name="TBL_USUARIO">
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(70) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apell_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telef_usuario" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Dirrec_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="Cedula" OtherKey="Cedula" Type="TBL_PRESTAMO" />
+      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_tipousuario" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_tipousuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EditorialesYSusLibros" Member="EditorialesYSusLibros">
+    <Type Name="EditorialesYSusLibros">
+      <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_EDITORIAL_EditorialesYSusLibros" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TBL_LIBRO_EditorialesYSusLibros" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TBL_AUTOR" Member="TBL_AUTOR">
     <Type Name="TBL_AUTOR">
       <Column Name="ID_aut" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nacionalidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Nomb_aut" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Apell_aut" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Apell_aut" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="TBL_AUTOR_TBL_LIBRO" Member="TBL_LIBRO" ThisKey="ID_aut" OtherKey="ID_aut" Type="TBL_LIBRO" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBL_tipousuario" Member="TBL_tipousuario">
-    <Type Name="TBL_tipousuario">
-      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Tipo_Usuario" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_USUARIO" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_USUARIO" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_CATEGORIA" Member="TBL_CATEGORIA">
     <Type Name="TBL_CATEGORIA">
       <Column Name="ID_categoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nombre_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Apell_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ref_Cat" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Association Name="TBL_CATEGORIA_TBL_LIBRO" Member="TBL_LIBRO" ThisKey="ID_categoria" OtherKey="ID_categoria" Type="TBL_LIBRO" />
     </Type>
   </Table>
@@ -28,14 +42,13 @@
     <Type Name="TBL_EDITORIAL">
       <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nomb_edit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_aut" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_libro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_EDITORIAL_EditorialesYSusLibros" Member="EditorialesYSusLibros" ThisKey="ID_edit" OtherKey="ID_edit" Type="EditorialesYSusLibros" />
       <Association Name="TBL_EDITORIAL_TBL_LIBRO" Member="TBL_LIBRO" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_LIBRO" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO">
     <Type Name="TBL_GESTION_PRESTAMO">
-      <Column Name="ID_libro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="ID_prestamo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_PRESTAMO_TBL_GESTION_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="ID_prestamo" OtherKey="ID_prestamo" Type="TBL_PRESTAMO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
@@ -53,16 +66,18 @@
   </Table>
   <Table Name="dbo.TBL_LIBRO" Member="TBL_LIBRO">
     <Type Name="TBL_LIBRO">
-      <Column Name="ID_libro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_aut" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Titulo_libro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Idioma_libro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Existencia" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_LIBRO_EditorialesYSusLibros" Member="EditorialesYSusLibros" ThisKey="ID_libro" OtherKey="ID_libro" Type="EditorialesYSusLibros" />
       <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_GESTION_PRESTAMO" />
       <Association Name="TBL_AUTOR_TBL_LIBRO" Member="TBL_AUTOR" ThisKey="ID_aut" OtherKey="ID_aut" Type="TBL_AUTOR" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_CATEGORIA_TBL_LIBRO" Member="TBL_CATEGORIA" ThisKey="ID_categoria" OtherKey="ID_categoria" Type="TBL_CATEGORIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="TBL_EDITORIAL_TBL_LIBRO" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TBL_EDITORIAL_TBL_LIBRO" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_PRESTAMO" Member="TBL_PRESTAMO">
@@ -78,17 +93,11 @@
       <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_USUARIO" ThisKey="Cedula" OtherKey="Cedula" Type="TBL_USUARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
-    <Type Name="TBL_USUARIO">
-      <Column Name="Cedula" Type="System.String" DbType="VarChar(70) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nom_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Apell_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Telef_usuario" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="Dirrec_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Correo_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="Cedula" OtherKey="Cedula" Type="TBL_PRESTAMO" />
-      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_tipousuario" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_tipousuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+  <Table Name="dbo.TBL_tipousuario" Member="TBL_tipousuario">
+    <Type Name="TBL_tipousuario">
+      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo_Usuario" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_USUARIO" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_USUARIO" />
     </Type>
   </Table>
 </Database>

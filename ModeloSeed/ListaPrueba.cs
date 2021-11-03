@@ -15,6 +15,7 @@ namespace ModeloSeed
                 LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
                 List<TBL_tipousuario> ListaDeLosTiposUsuarios = (from _TipoUsuario in dc.TBL_tipousuario select _TipoUsuario).ToList();
                 return ListaDeLosTiposUsuarios;
+
             }
             catch (Exception)
             {

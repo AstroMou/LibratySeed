@@ -11,13 +11,25 @@
             $('#Guardar').modal('show');
             $('#Alerta').show();
         }
-        function abrirEditar() {
-            $('#exampleModal').modal('show');
-        }
+
 
         function abrirEliminar() {
             $('#ModalEliminar').modal('show');
         }
+
+
+
+        function abrirEditar() {
+            $('#exampleModal').modal('show');
+        }
+
+     
+
+      
+
+
+
+    
         //$('#myCollapsible').collapse({
         //    toggle: false
         //})
@@ -126,6 +138,8 @@
                                                                 <asp:Button ID="Editar" OnClick="Editar_Click1" CssClass="btn-warning" runat="server" Text="Guardar Cambios" Visible="false" />
                                                                 <asp:Button ID="Cancelar" OnClick="Cancelar_Click" CssClass="btn-danger" runat="server" Text="Canselar" />
 
+                                                              
+
                                                             </div>
 
                                                         </div>
@@ -232,8 +246,10 @@
                                 </asp:BoundField>
                                 <asp:ButtonField CommandName="editar" Text="Editar" ButtonType="Button" ShowHeader="True" AccessibleHeaderText="Editar" HeaderText="Editar">
                                     <ControlStyle CssClass="btn btn-warning"></ControlStyle>
+                                     <HeaderStyle CssClass="bg-primary" ForeColor="White" />
                                 </asp:ButtonField>
                                 <asp:ButtonField Text="Eliminar" AccessibleHeaderText="Eliminar" HeaderText="Eliminar" CommandName="eliminar">
+                                     <HeaderStyle CssClass="bg-primary" ForeColor="White" />
                                     <ControlStyle CssClass="btn btn-danger"></ControlStyle>
                                 </asp:ButtonField>
                             </Columns>

@@ -1,115 +1,135 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17.125" name="LibrarySeedBD">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17" name="LibrarySeedBD">
   <DataContextMoniker Name="/LibrarySeedBDDataContext" />
   <nestedChildShapes>
-    <classShape Id="f6607899-a3bc-44bd-abab-7a0c39b7fa37" absoluteBounds="0.75, 4.25, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_AUTOR" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4a33730c-b4c3-4c55-8b45-a0bf0a1a32f2" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f8118098-3898-4945-a135-47154b96b51d" absoluteBounds="1.5, 15.625, 2, 1.1939925130208327">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_tipousuario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c603ff6d-01ad-42ff-a488-7376273d06ca" absoluteBounds="1.5150000000000001, 16.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="19c81352-a331-4dc8-9b6c-24b78ae15e2c" absoluteBounds="0.75, 1.25, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_CATEGORIA" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e75d0b84-19cb-4f38-a689-5c2a26ab1925" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4309082f-582c-43de-9d40-d112b01f54b9" absoluteBounds="0.75, 6.5, 2, 1.5785953776041657">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6bcd4f1c-bb15-44ba-acb9-108336d2f186" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c5ebffa3-910e-4d3b-8290-23530a625a70" absoluteBounds="6.25, 1.25, 2, 1.1939925130208338">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_GESTION_PRESTAMO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="83bfeeb2-3550-4101-8313-829b053167e9" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2ea27e9d-fd66-408b-830e-61503d365dcd" absoluteBounds="0.75, 9.625, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_INVENTARIO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f66f99cc-eac4-4e63-83b2-973fa200ad6d" absoluteBounds="0.765, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5217a9a9-6ebb-45e2-89ad-2eddec0dee2c" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="89ad263e-f1c2-45e2-b951-241f0fc67957" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="90c48f8b-9c50-4a88-a853-1e9b5113144b" absoluteBounds="3.5, 11, 2, 1.9631982421874987">
-      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_PRESTAMO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d369e0c9-edf8-4f9c-8940-8653dfbac812" absoluteBounds="3.515, 11.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f971149f-84ba-414c-9bb5-31e433a310cb" absoluteBounds="0.75, 12.125, 2, 2.1554996744791666">
+    <classShape Id="1d50d591-5513-40a0-98e7-eef98151e8f2" absoluteBounds="0.75, 12, 2, 2.1554996744791666">
       <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_USUARIO" />
       <nestedChildShapes>
-        <elementListCompartment Id="4e4e6701-122b-4d0c-8b0d-7ad44f3050f9" absoluteBounds="0.765, 12.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ede2eefd-e855-43cd-a7fc-2b5ec4807de5" absoluteBounds="0.765, 12.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="37d48cff-da63-441e-9f9f-1a3c19df3523" absoluteBounds="3.5, 4.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/EditorialesYSusLibros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e3b6694-2d47-4f41-ae59-8be19f266654" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="610cf454-66a0-4de1-9e6a-f064ec220081" absoluteBounds="0.75, 7.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_AUTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6afee742-914e-4416-8238-ceaee02efc5c" absoluteBounds="0.765, 7.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b09f7127-bd08-48e7-8261-881d9f023c42" absoluteBounds="0.75, 2, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_CATEGORIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="514c6103-0119-46e3-8166-03a945a4e277" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b46b389-3f62-4f79-ba3c-616f905dbd49" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="430d0326-ea80-474d-addc-aad0ff0ff148" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90ec47f3-b5ca-4d56-b0b7-92e67d4f23cc" absoluteBounds="6.25, 1.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_GESTION_PRESTAMO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53289528-1f57-4301-8c94-d45d1673650f" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4dc11eb4-6878-4bc1-b2fc-ee608b758205" absoluteBounds="0.75, 9.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_INVENTARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd413f46-cfec-4558-a31e-55ea651f89a7" absoluteBounds="0.765, 9.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ff024e2-2474-4cd2-afa2-885adad636db" absoluteBounds="3.5, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54b82595-452c-487c-b5be-9e9e806e58e4" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c0e0616-b3b3-4230-913b-931835153289" absoluteBounds="3.5, 10.875, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_PRESTAMO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62e5cc74-ea4a-4157-a94c-ae44c300d46b" absoluteBounds="3.515, 11.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35422b56-cd1d-445a-a114-80efeae4bd6a" absoluteBounds="1.5, 15.5, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/LibrarySeedBDDataContext/TBL_tipousuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bc0b55a-3b87-43de-abc9-880721b137b8" absoluteBounds="1.5150000000000001, 15.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.04166666666667 : 4.84699625651042 : JumpStart); (3.20833333333333 : 4.84699625651042 : JumpEnd); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL/TBL_EDITORIAL_EditorialesYSusLibros" />
+      <nodes>
+        <classShapeMoniker Id="3b46b389-3f62-4f79-ba3c-616f905dbd49" />
+        <classShapeMoniker Id="37d48cff-da63-441e-9f9f-1a3c19df3523" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 2.90549967447917); (4.5 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO/TBL_LIBRO_EditorialesYSusLibros" />
+      <nodes>
+        <classShapeMoniker Id="1ff024e2-2474-4cd2-afa2-885adad636db" />
+        <classShapeMoniker Id="37d48cff-da63-441e-9f9f-1a3c19df3523" />
+      </nodes>
+    </associationConnector>
     <associationConnector edgePoints="[(5.5 : 1.84699625651042); (6.25 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO/TBL_LIBRO_TBL_GESTION_PRESTAMO" />
       <nodes>
-        <classShapeMoniker Id="5217a9a9-6ebb-45e2-89ad-2eddec0dee2c" />
-        <classShapeMoniker Id="c5ebffa3-910e-4d3b-8290-23530a625a70" />
+        <classShapeMoniker Id="1ff024e2-2474-4cd2-afa2-885adad636db" />
+        <classShapeMoniker Id="90ec47f3-b5ca-4d56-b0b7-92e67d4f23cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.03929768880208); (3.88541416666667 : 5.03929768880208 : JumpStart); (4.05208083333333 : 5.03929768880208 : JumpEnd); (4.5 : 5.03929768880208); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.12621330413662); (3.125 : 6.75121330413662); (3.125 : 1.82774983723958); (3.19791666666667 : 1.82774983723958 : JumpStart); (3.36458333333333 : 1.82774983723958 : JumpEnd); (3.5 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_AUTOR/TBL_AUTOR_TBL_LIBRO" />
       <nodes>
-        <classShapeMoniker Id="f6607899-a3bc-44bd-abab-7a0c39b7fa37" />
-        <classShapeMoniker Id="5217a9a9-6ebb-45e2-89ad-2eddec0dee2c" />
+        <classShapeMoniker Id="610cf454-66a0-4de1-9e6a-f064ec220081" />
+        <classShapeMoniker Id="1ff024e2-2474-4cd2-afa2-885adad636db" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.94314697265625); (3.5 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.45274983723958); (3.04166666666667 : 2.45274983723958 : JumpStart); (3.36458333333333 : 2.45274983723958 : JumpEnd); (3.5 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_CATEGORIA/TBL_CATEGORIA_TBL_LIBRO" />
       <nodes>
-        <classShapeMoniker Id="19c81352-a331-4dc8-9b6c-24b78ae15e2c" />
-        <classShapeMoniker Id="5217a9a9-6ebb-45e2-89ad-2eddec0dee2c" />
+        <classShapeMoniker Id="b09f7127-bd08-48e7-8261-881d9f023c42" />
+        <classShapeMoniker Id="1ff024e2-2474-4cd2-afa2-885adad636db" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.28929768880208); (3.9687475 : 7.28929768880208); (3.9687475 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.28214495227364); (3.06607443490112 : 3.96607051737252 : JumpStart); (3.18392556509888 : 3.84821938717476 : JumpEnd); (3.28125 : 3.75089495227364); (3.28125 : 1.25762291861979); (3.5 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL/TBL_EDITORIAL_TBL_LIBRO" />
       <nodes>
-        <classShapeMoniker Id="4309082f-582c-43de-9d40-d112b01f54b9" />
-        <classShapeMoniker Id="5217a9a9-6ebb-45e2-89ad-2eddec0dee2c" />
+        <classShapeMoniker Id="3b46b389-3f62-4f79-ba3c-616f905dbd49" />
+        <classShapeMoniker Id="1ff024e2-2474-4cd2-afa2-885adad636db" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.9815991210937); (7.25 : 11.9815991210937); (7.25 : 2.44399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 11.8565991210937); (7.25 : 11.8565991210937); (7.25 : 2.44399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_PRESTAMO/TBL_PRESTAMO_TBL_GESTION_PRESTAMO" />
       <nodes>
-        <classShapeMoniker Id="90c48f8b-9c50-4a88-a853-1e9b5113144b" />
-        <classShapeMoniker Id="c5ebffa3-910e-4d3b-8290-23530a625a70" />
+        <classShapeMoniker Id="8c0e0616-b3b3-4230-913b-931835153289" />
+        <classShapeMoniker Id="90ec47f3-b5ca-4d56-b0b7-92e67d4f23cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.1979484049479); (3.5 : 11.1979484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 11.0729484049479); (3.5 : 11.0729484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_INVENTARIO/TBL_INVENTARIO_TBL_PRESTAMO" />
       <nodes>
-        <classShapeMoniker Id="2ea27e9d-fd66-408b-830e-61503d365dcd" />
-        <classShapeMoniker Id="90c48f8b-9c50-4a88-a853-1e9b5113144b" />
+        <classShapeMoniker Id="4dc11eb4-6878-4bc1-b2fc-ee608b758205" />
+        <classShapeMoniker Id="8c0e0616-b3b3-4230-913b-931835153289" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 12.5440991210937); (3.5 : 12.5440991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 12.4190991210937); (3.5 : 12.4190991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_USUARIO/TBL_USUARIO_TBL_PRESTAMO" />
       <nodes>
-        <classShapeMoniker Id="f971149f-84ba-414c-9bb5-31e433a310cb" />
-        <classShapeMoniker Id="90c48f8b-9c50-4a88-a853-1e9b5113144b" />
+        <classShapeMoniker Id="1d50d591-5513-40a0-98e7-eef98151e8f2" />
+        <classShapeMoniker Id="8c0e0616-b3b3-4230-913b-931835153289" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 15.625); (2.125 : 14.2804996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.125 : 15.5); (2.125 : 14.1554996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_tipousuario/TBL_tipousuario_TBL_USUARIO" />
       <nodes>
-        <classShapeMoniker Id="f8118098-3898-4945-a135-47154b96b51d" />
-        <classShapeMoniker Id="f971149f-84ba-414c-9bb5-31e433a310cb" />
+        <classShapeMoniker Id="35422b56-cd1d-445a-a114-80efeae4bd6a" />
+        <classShapeMoniker Id="1d50d591-5513-40a0-98e7-eef98151e8f2" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -447,17 +447,20 @@ namespace ProyectSeed
 
             if (existeU)
             {
+
+                txt_cedulaBuscar.Text = "";
                 GWUsuarios.Visible = true;
                 Btn_Recargar.Visible = true;
                 GWUsuarios.DataSource = new ListaPrueba().ListaUsuariosRelacionada(ClienteBusaqueda);
                 GWUsuarios.DataBind();
                 ActualizarDataGri.Update();
-                txt_cedulaBuscar.Text = "";
+               
                 lbl_Anuncio.Visible = false;
                 ClienteBusaqueda = null;
             }
             else
             {
+                txt_cedulaBuscar.Text = "";
                 ActualizarDataGri.Update();
                 lbl_Anuncio.Visible = true;
                 Btn_Recargar.Visible = true;
@@ -480,10 +483,7 @@ namespace ProyectSeed
                     string CedulaEditar = GWUsuarios.SelectedValue.ToString();
                     Session["CedulaEditando"] = CedulaEditar;
                     LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-                    TBL_USUARIO usuarioEditar = (from _usuario in
-                                                    dc.TBL_USUARIO
-                                                 where (_usuario.Cedula.Equals(CedulaEditar))
-                                                 select _usuario).FirstOrDefault();
+                    TBL_USUARIO usuarioEditar = (from _usuario in dc.TBL_USUARIO where (_usuario.Cedula.Equals(CedulaEditar)) select _usuario).FirstOrDefault();
 
                     ListaDeTipoUsuario.SelectedValue = usuarioEditar.ID_tipousuario.ToString();
                     txt_Cedula.Text = usuarioEditar.Cedula;
@@ -578,5 +578,7 @@ namespace ProyectSeed
 
 
         }
+
+        
     }
 }
