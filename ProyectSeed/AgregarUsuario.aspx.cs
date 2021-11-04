@@ -480,12 +480,13 @@ namespace ProyectSeed
             {
                 case "editar":
                     GWUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-                    string CedulaEditar = GWUsuarios.SelectedValue.ToString();
-                    Session["CedulaEditando"] = CedulaEditar;
+                    int ID  = (int)GWUsuarios.SelectedValue;
+                    Session["IDEditar"] = ID;
                     LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-                    TBL_USUARIO usuarioEditar = (from _usuario in dc.TBL_USUARIO where (_usuario.Cedula.Equals(CedulaEditar)) select _usuario).FirstOrDefault();
+                    TBL_USUARIO usuarioEditar = (from _usuario in dc.TBL_USUARIO where (_usuario.ID_Usuario.Equals(ID)) select _usuario).FirstOrDefault();
 
                     ListaDeTipoUsuario.SelectedValue = usuarioEditar.ID_tipousuario.ToString();
+                   // Session["CedulaEditando"] = usuarioEditar.Cedula;
                     txt_Cedula.Text = usuarioEditar.Cedula;
                     Txt_Nombre.Text = usuarioEditar.Nom_usuario;
                     Txt_Apellido.Text = usuarioEditar.Apell_usuario;
@@ -499,8 +500,8 @@ namespace ProyectSeed
                 case "eliminar":
 
                     GWUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-                    string CedulaEliminar= GWUsuarios.SelectedValue.ToString();
-                    Session["CedulaEliminar"] = CedulaEliminar;
+                    int IDEliminar = (int)GWUsuarios.SelectedValue;
+                    Session["IDEliminar"] = IDEliminar;
 
 
                     ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEliminar", "abrirEliminar();", true);
@@ -513,34 +514,45 @@ namespace ProyectSeed
 
         protected void Editar_Click1(object sender, EventArgs e)
         {
-            if (Session["CedulaEditando"] != null)
+            if (Session["IDEditar"] != null)
             {
                 try
                 {
-                    string cedula = (string)Session["CedulaEditando"];
+                    int ID = (int)Session["IDEditar"];
                     int tipoUsuario = int.Parse(ListaDeTipoUsuario.SelectedValue);
+               
+
+                    string cedulaNueva = txt_Cedula.Text;
+                    string Nombre = Txt_Nombre.Text;
+                    string Apellido = Txt_Apellido.Text;
+                    int Telefono = int.Parse(Txt_Telefono.Text);
+                    string Direccion = Txt_Direccion.Text;
+                    string Correo = Txt_Correo.Text;
 
 
-                    LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-                    TBL_USUARIO usuarioEditar = (from _usuario in
-                                                      dc.TBL_USUARIO
-                                                 where (_usuario.Cedula.Equals(cedula))
-                                                 select _usuario).FirstOrDefault();
-                    usuarioEditar.Cedula = txt_Cedula.Text;
-                    usuarioEditar.Nom_usuario = Txt_Nombre.Text;
-                    usuarioEditar.Apell_usuario = Txt_Apellido.Text;
-                    usuarioEditar.Telef_usuario = int.Parse(Txt_Telefono.Text);
-                    usuarioEditar.Dirrec_usuario = Txt_Direccion.Text;
-                    usuarioEditar.Correo_usuario = Txt_Correo.Text;
-                    usuarioEditar.ID_tipousuario = tipoUsuario;
-                    dc.SubmitChanges();
-                   
+
+                    Funciones Actualizar = new Funciones();
+
+                    bool nuevo = Actualizar.Actualizar(ID, cedulaNueva, Nombre, Apellido, Telefono, Direccion, Correo, tipoUsuario);
+
+                   if (nuevo)
+                   {
                     
-                    PanelPrincipal.Update();
-                    ActualizarDataGri.Update();
-                    Session["CedulaEditando"] = null;
-                    actualizarTabla();
-                    Response.Redirect(Request.Url.ToString(), false);
+                       PanelPrincipal.Update();
+                       ActualizarDataGri.Update();
+                       Session["IDEditar"] = null;
+                       actualizarTabla();
+                       Response.Redirect(Request.Url.ToString(), false);
+                   }
+                   else
+                   {
+                      
+
+                   }
+                     
+
+                    
+                    
                 }
                 catch (Exception)
                 {
@@ -569,10 +581,10 @@ namespace ProyectSeed
 
 
             Funciones ELiminar = new Funciones();
-            ELiminar.EliminarUsuario((string)Session["CedulaEliminar"]);
+            ELiminar.EliminarUsuario((int)Session["IDEliminar"]);
             PanelPrincipal.Update();
             ActualizarDataGri.Update();
-            Session["CedulaEliminar"] = null;
+            Session["IDEliminar"] = null;
             actualizarTabla();
             Response.Redirect(Request.Url.ToString(), false);
 

@@ -86,19 +86,19 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
-		{
-			get
-			{
-				return this.GetTable<TBL_USUARIO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<EditorialesYSusLibros> EditorialesYSusLibros
 		{
 			get
 			{
 				return this.GetTable<EditorialesYSusLibros>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_USUARIO> TBL_USUARIO
+		{
+			get
+			{
+				return this.GetTable<TBL_USUARIO>();
 			}
 		}
 		
@@ -167,6 +167,51 @@ namespace ModeloSeed
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EditorialesYSusLibros")]
+	public partial class EditorialesYSusLibros
+	{
+		
+		private int _ID_edit;
+		
+		private string _ID_libro;
+		
+		public EditorialesYSusLibros()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", DbType="Int NOT NULL")]
+		public int ID_edit
+		{
+			get
+			{
+				return this._ID_edit;
+			}
+			set
+			{
+				if ((this._ID_edit != value))
+				{
+					this._ID_edit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string ID_libro
+		{
+			get
+			{
+				return this._ID_libro;
+			}
+			set
+			{
+				if ((this._ID_libro != value))
+				{
+					this._ID_libro = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_USUARIO")]
 	public partial class TBL_USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -186,6 +231,8 @@ namespace ModeloSeed
 		private string _Correo_usuario;
 		
 		private int _ID_tipousuario;
+		
+		private int _ID_Usuario;
 		
 		private EntitySet<TBL_PRESTAMO> _TBL_PRESTAMO;
 		
@@ -209,6 +256,8 @@ namespace ModeloSeed
     partial void OnCorreo_usuarioChanged();
     partial void OnID_tipousuarioChanging(int value);
     partial void OnID_tipousuarioChanged();
+    partial void OnID_UsuarioChanging(int value);
+    partial void OnID_UsuarioChanged();
     #endregion
 		
 		public TBL_USUARIO()
@@ -217,8 +266,21 @@ namespace ModeloSeed
 			this._TBL_tipousuario = default(EntityRef<TBL_tipousuario>);
 			OnCreated();
 		}
+
+        public TBL_USUARIO(int p1, string p2, string p3, string p4, decimal p5, string p6, string p7, string p8)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.p2 = p2;
+            this.p3 = p3;
+            this.p4 = p4;
+            this.p5 = p5;
+            this.p6 = p6;
+            this.p7 = p7;
+            this.p8 = p8;
+        }
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="VarChar(70) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
 		public string Cedula
 		{
 			get
@@ -362,7 +424,27 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_PRESTAMO", ThisKey="Cedula", OtherKey="Cedula")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Usuario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_Usuario
+		{
+			get
+			{
+				return this._ID_Usuario;
+			}
+			set
+			{
+				if ((this._ID_Usuario != value))
+				{
+					this.OnID_UsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._ID_Usuario = value;
+					this.SendPropertyChanged("ID_Usuario");
+					this.OnID_UsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_PRESTAMO", ThisKey="ID_Usuario", OtherKey="ID_Usuario")]
 		public EntitySet<TBL_PRESTAMO> TBL_PRESTAMO
 		{
 			get
@@ -412,6 +494,14 @@ namespace ModeloSeed
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
+        private int p1;
+        private string p2;
+        private string p3;
+        private string p4;
+        private decimal p5;
+        private string p6;
+        private string p7;
+        private string p8;
 		
 		protected virtual void SendPropertyChanging()
 		{
@@ -440,52 +530,9 @@ namespace ModeloSeed
 			this.SendPropertyChanging();
 			entity.TBL_USUARIO = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EditorialesYSusLibros")]
-	public partial class EditorialesYSusLibros
-	{
-		
-		private int _ID_edit;
-		
-		private string _ID_libro;
-		
-		public EditorialesYSusLibros()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_edit", DbType="Int NOT NULL")]
-		public int ID_edit
-		{
-			get
-			{
-				return this._ID_edit;
-			}
-			set
-			{
-				if ((this._ID_edit != value))
-				{
-					this._ID_edit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string ID_libro
-		{
-			get
-			{
-				return this._ID_libro;
-			}
-			set
-			{
-				if ((this._ID_libro != value))
-				{
-					this._ID_libro = value;
-				}
-			}
-		}
-	}
+
+        public static string Tipo_Usuario { get; set; }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_AUTOR")]
 	public partial class TBL_AUTOR : INotifyPropertyChanging, INotifyPropertyChanged
@@ -1469,7 +1516,7 @@ namespace ModeloSeed
 		
 		private int _ID_prestamo;
 		
-		private string _Cedula;
+		private int _ID_Usuario;
 		
 		private System.DateTime _Fecha_devolucion;
 		
@@ -1489,8 +1536,8 @@ namespace ModeloSeed
     partial void OnCreated();
     partial void OnID_prestamoChanging(int value);
     partial void OnID_prestamoChanged();
-    partial void OnCedulaChanging(string value);
-    partial void OnCedulaChanged();
+    partial void OnID_UsuarioChanging(int value);
+    partial void OnID_UsuarioChanged();
     partial void OnFecha_devolucionChanging(System.DateTime value);
     partial void OnFecha_devolucionChanged();
     partial void OnFecha_entregaChanging(System.DateTime value);
@@ -1528,26 +1575,26 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="VarChar(70) NOT NULL", CanBeNull=false)]
-		public string Cedula
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Usuario", DbType="Int NOT NULL")]
+		public int ID_Usuario
 		{
 			get
 			{
-				return this._Cedula;
+				return this._ID_Usuario;
 			}
 			set
 			{
-				if ((this._Cedula != value))
+				if ((this._ID_Usuario != value))
 				{
 					if (this._TBL_USUARIO.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnCedulaChanging(value);
+					this.OnID_UsuarioChanging(value);
 					this.SendPropertyChanging();
-					this._Cedula = value;
-					this.SendPropertyChanged("Cedula");
-					this.OnCedulaChanged();
+					this._ID_Usuario = value;
+					this.SendPropertyChanged("ID_Usuario");
+					this.OnID_UsuarioChanged();
 				}
 			}
 		}
@@ -1670,7 +1717,7 @@ namespace ModeloSeed
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_USUARIO", ThisKey="Cedula", OtherKey="Cedula", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_USUARIO_TBL_PRESTAMO", Storage="_TBL_USUARIO", ThisKey="ID_Usuario", OtherKey="ID_Usuario", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public TBL_USUARIO TBL_USUARIO
 		{
 			get
@@ -1693,11 +1740,11 @@ namespace ModeloSeed
 					if ((value != null))
 					{
 						value.TBL_PRESTAMO.Add(this);
-						this._Cedula = value.Cedula;
+						this._ID_Usuario = value.ID_Usuario;
 					}
 					else
 					{
-						this._Cedula = default(string);
+						this._ID_Usuario = default(int);
 					}
 					this.SendPropertyChanged("TBL_USUARIO");
 				}

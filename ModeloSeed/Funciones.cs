@@ -50,18 +50,18 @@ namespace ModeloSeed
             }
             catch (Exception)
             {
-                
+
                 return false;
             }
 
 
         }
 
-        public void EliminarUsuario(string _Cedula)
+        public void EliminarUsuario(int IDEliminar)
         {
             LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
-            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.Cedula == _Cedula select TBL_USUARIO;
-          
+            var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.ID_Usuario == IDEliminar select TBL_USUARIO;
+
             foreach (var del in queryTBL_USUARIO)
             {
                 dc.TBL_USUARIO.DeleteOnSubmit(del);
@@ -71,6 +71,41 @@ namespace ModeloSeed
         }
 
 
+
+        public Boolean Actualizar(int ID, string _CedulaNueva, string _Nom_usuario, string _Apell_usuario, int _Telef_usuario, string _Dirrec_usuario, string _Correo_usuario, int _ID_tipousuario)
+        {
+
+            try
+            {
+
+                LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+
+                var queryTBL_USUARIO = from TBL_USUARIO in dc.TBL_USUARIO where TBL_USUARIO.ID_Usuario == ID select TBL_USUARIO;
+                foreach (var TBL_USUARIO in queryTBL_USUARIO)
+                {
+                    TBL_USUARIO.Cedula = _CedulaNueva;
+                    TBL_USUARIO.Nom_usuario = _Nom_usuario;
+                    TBL_USUARIO.Apell_usuario = _Apell_usuario;
+                    TBL_USUARIO.Telef_usuario = _Telef_usuario;
+                    TBL_USUARIO.Dirrec_usuario = _Dirrec_usuario;
+                    TBL_USUARIO.Correo_usuario = _Correo_usuario;
+                    TBL_USUARIO.ID_tipousuario = _ID_tipousuario;
+                }
+                dc.SubmitChanges();
+
+                return true;
+
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            
+            
+
+        }
 
 
 

@@ -220,10 +220,10 @@
 
 
                         </div>
-                        <asp:GridView ID="GWUsuarios" DataKeyNames="ID_USUARIO" runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" OnRowCommand="GWUsuarios_RowCommand">
+                        <asp:GridView ID="GWUsuarios" DataKeyNames="ID_Usuario"  runat="server" AutoGenerateColumns="False" AutoPostBack="true" CssClass=" table-hover  table table-striped table-bordered" PagerSettings-Position="Top" Width="100%" OnRowCommand="GWUsuarios_RowCommand">
 
                             <Columns>
-                                <asp:BoundField DataField="ID_USUARIO" HeaderText="Cedula">
+                                <asp:BoundField DataField="Cedula" HeaderText="Cedula">
                                     <HeaderStyle CssClass="bg-primary" ForeColor="White" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="Tipo_Usuario" HeaderText="Tipo">

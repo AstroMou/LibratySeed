@@ -1,24 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_LIBRARY_SEED" Class="LibrarySeedBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=45LAB3PC03\SA;Initial Catalog=BD_LIBRARY_SEED;User ID=sa" SettingsObjectName="ModeloSeed.Properties.Settings" SettingsPropertyName="BD_LIBRARY_SEEDConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
-    <Type Name="TBL_USUARIO">
-      <Column Name="Cedula" Type="System.String" DbType="VarChar(70) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nom_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Apell_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Telef_usuario" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="Dirrec_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Correo_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="Cedula" OtherKey="Cedula" Type="TBL_PRESTAMO" />
-      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_tipousuario" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_tipousuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.EditorialesYSusLibros" Member="EditorialesYSusLibros">
     <Type Name="EditorialesYSusLibros">
       <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="TBL_EDITORIAL_EditorialesYSusLibros" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_LIBRO_EditorialesYSusLibros" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
+    <Type Name="TBL_USUARIO">
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="Nom_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apell_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telef_usuario" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Dirrec_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo_usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_tipousuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="TBL_PRESTAMO" />
+      <Association Name="TBL_tipousuario_TBL_USUARIO" Member="TBL_tipousuario" ThisKey="ID_tipousuario" OtherKey="ID_tipousuario" Type="TBL_tipousuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_AUTOR" Member="TBL_AUTOR">
@@ -83,14 +84,14 @@
   <Table Name="dbo.TBL_PRESTAMO" Member="TBL_PRESTAMO">
     <Type Name="TBL_PRESTAMO">
       <Column Name="ID_prestamo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Cedula" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Fecha_devolucion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Fecha_entrega" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Entrega" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="ID_inventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TBL_PRESTAMO_TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO" ThisKey="ID_prestamo" OtherKey="ID_prestamo" Type="TBL_GESTION_PRESTAMO" />
       <Association Name="TBL_INVENTARIO_TBL_PRESTAMO" Member="TBL_INVENTARIO" ThisKey="ID_inventario" OtherKey="ID_inventario" Type="TBL_INVENTARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_USUARIO" ThisKey="Cedula" OtherKey="Cedula" Type="TBL_USUARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_USUARIO" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="TBL_USUARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_tipousuario" Member="TBL_tipousuario">
