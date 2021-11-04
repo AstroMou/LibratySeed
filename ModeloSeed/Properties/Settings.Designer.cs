@@ -32,5 +32,16 @@ namespace ModeloSeed.Properties {
                 return ((string)(this["BD_LIBRARY_SEEDConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=45LAB3PC03\\SA;Initial Catalog=BD_LIBRARY_SEED;User ID=sa;Password=123" +
+            "456")]
+        public string BD_LIBRARY_SEEDConnectionString1 {
+            get {
+                return ((string)(this["BD_LIBRARY_SEEDConnectionString1"]));
+            }
+        }
     }
 }
