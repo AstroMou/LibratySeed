@@ -51,7 +51,8 @@
                         </div>
                         <div class="modal-body">
                             Estas serguro que quieres eliminar
-                            <%--<asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />--%>
+                            <asp:Button ID="Elimina" OnClick="Elimina_Click" runat="server" Text="Eliminar" />
+
 
                         </div>
                         <div class="modal-footer">
@@ -160,11 +161,8 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                     
-
-                              
                                 </div>
-                                
+
                             </div>
                             <div class="col-md-6">
                             </div>
@@ -176,10 +174,10 @@
                                 <div class="form-group">
                                 </div>
                                 <div class="form-group">
-                                     <span class="fa fa-user mr-3">
-                                      <asp:Button ID="Nuevo" OnClick="Nuevo_Click" CssClass="btn-success " runat="server" Text="Agregar" UseSubmitBehavior="false" CausesValidation="false" /></span>
+                                    <span class="fa fa-user mr-3">
+                                        <asp:Button ID="Nuevo" OnClick="Nuevo_Click" CssClass="btn-success " runat="server" Text="Agregar" UseSubmitBehavior="false" CausesValidation="false" /></span>
                                     <asp:TextBox ID="txt_cedulaBuscar" placeholder="Buscar..." runat="server" CssClass="" OnTextChanged="txt_cedulaBuscar_TextChanged" AutoPostBack="true"></asp:TextBox>
-                                   
+
 
 
                                     <span class="fa fa-search mr-3">

@@ -503,7 +503,7 @@ namespace ProyectSeed
                     Session["CedulaEliminar"] = CedulaEliminar;
 
 
-                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEditar", "abrirEliminar();", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarEliminar", "abrirEliminar();", true);
 
                     break;
                 default:
