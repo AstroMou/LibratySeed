@@ -34,6 +34,15 @@
             $('#CuerpoAgregarAutor').collapse('hide');
         }
 
+
+        function AbrirAlertaCerrar() {
+            $('#AlertaCerrar').modal('show');
+        }
+
+        function CerrarAlertaCerrar() {
+            $('#AlertaCerrar').modal('hide');
+        }
+
     </script>
 
 
@@ -48,6 +57,50 @@
 
 
             <fieldset>
+
+
+
+
+
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="AlertaCerrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ¿Estas seguro que quieres cerrar?
+                                Los cambios puede que no se guarden
+                            </div>
+
+
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <div class="modal-footer">
+
+                                        <asp:Button ID="CancelarCerrar" runat="server" OnClick="CancelarCerrar_Click" Text="Cancelar" />
+
+                                        <asp:Button ID="CerrarTodo" runat="server" OnClick="CerrarTodo_Click" Text="Aceptar" />
+
+
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
 
 
                 <%--Empieza el codigo --%>
@@ -98,8 +151,8 @@
 
 
 
-                         
-                             <asp:UpdatePanel ID="UpdateLibro" UpdateMode="Conditional" runat="server">
+
+                            <asp:UpdatePanel ID="UpdateLibro" UpdateMode="Conditional" runat="server">
                                 <ContentTemplate>
 
                                     <div class="collapse" id="CuerpoAgregaLibro">
@@ -133,7 +186,7 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
 
-                             <asp:UpdatePanel ID="PanelAgregarCategoriar" UpdateMode="Conditional" runat="server">
+                            <asp:UpdatePanel ID="PanelAgregarCategoriar" UpdateMode="Conditional" runat="server">
                                 <ContentTemplate>
 
                                     <div class="collapse" id="CuerpoAgregarCategoria">
@@ -166,7 +219,7 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
 
-                             <asp:UpdatePanel ID="PanelEditorial" UpdateMode="Conditional" runat="server">
+                            <asp:UpdatePanel ID="PanelEditorial" UpdateMode="Conditional" runat="server">
                                 <ContentTemplate>
 
                                     <div class="collapse" id="CuerpoAgregarEditorial">
@@ -199,7 +252,7 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
 
-                             <asp:UpdatePanel ID="PanelAutor" UpdateMode="Conditional" runat="server">
+                            <asp:UpdatePanel ID="PanelAutor" UpdateMode="Conditional" runat="server">
                                 <ContentTemplate>
 
                                     <div class="collapse" id="CuerpoAgregarAutor">
@@ -242,10 +295,37 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-6" style="margin-bottom:12px;">
+
+                            <asp:DropDownList ID="DWL_OpcionesDevistas" CssClass="custom-select" AutoPostBack="true" runat="server">
+                                <asp:ListItem Value="0">TODO</asp:ListItem>
+                                <asp:ListItem Value="1">CATEGORIAS</asp:ListItem>
+                                <asp:ListItem Value="2">Solo Existentes</asp:ListItem>
+
+                            </asp:DropDownList>
+
+
+                        </div>
+                    </div>
+                </div>
 
 
 
 
+
+                <asp:UpdatePanel ID="TablaDeDatos" UpdateMode="Conditional" runat="server">
+
+                    <ContentTemplate>
+
+
+
+                        <asp:GridView ID="DGW_Listas" CssClass=" table-hover  table table-striped table-bordered" runat="server"></asp:GridView>
+
+                    </ContentTemplate>
+
+                </asp:UpdatePanel>
 
 
 

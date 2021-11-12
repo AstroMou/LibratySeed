@@ -33,7 +33,7 @@
                                     <p class="card-text"></p>
 
                                     <asp:Button ID="Btn_Guardar" runat="server" Text="Button"></asp:Button>
-                                    <asp:Button ID="Btn_Cancelar" runat="server" Text="Button"></asp:Button>
+                                    <asp:Button ID="Btn_Cansealar" runat="server" Text="Button"></asp:Button>
 
                                 </div>
                             </div>

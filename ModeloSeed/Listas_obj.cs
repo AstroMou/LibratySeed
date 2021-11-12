@@ -39,7 +39,6 @@ namespace ModeloSeed
             private string _Dirrec_usuario;
             private string _Correo_usuario;
             private int _ID_Usuario;
-
             private string _Tipo_Usuario;
             public TBL_USUARIOs(
                 string ACedula, string ANom_usuario, string AApell_usuario,
@@ -97,7 +96,184 @@ namespace ModeloSeed
 
 
 
+        public class ListaLibro
+        {
+            private string _Titulo_libro;
+            private string _Idioma_libro;
+            private bool _Existencia;
+            private int _ID_Libro;
+            private string _Ref_Libro;
+            private string _Nomb_aut;
+            private string _Nomb_edit;
+            private string _Nombre_Cat;
+            public ListaLibro(
+                string ATitulo_libro, string AIdioma_libro, bool AExistencia,
+                int AID_Libro, string ARef_Libro, string ANomb_aut, string ANomb_edit,
+                string ANombre_Cat)
+            {
+                _Titulo_libro = ATitulo_libro;
+                _Idioma_libro = AIdioma_libro;
+                _Existencia = AExistencia;
+                _ID_Libro = AID_Libro;
+                _Ref_Libro = ARef_Libro;
+                _Nomb_aut = ANomb_aut;
+                _Nomb_edit = ANomb_edit;
+                _Nombre_Cat = ANombre_Cat;
+            }
+            public string Titulo_libro { get { return _Titulo_libro; } }
+            public string Idioma_libro { get { return _Idioma_libro; } }
+            public bool Existencia { get { return _Existencia; } }
+            public int ID_Libro { get { return _ID_Libro; } }
+            public string Ref_Libro { get { return _Ref_Libro; } }
+            public string Nomb_aut { get { return _Nomb_aut; } }
+            public string Nomb_edit { get { return _Nomb_edit; } }
+            public string Nombre_Cat { get { return _Nombre_Cat; } }
+        }
+        public class TBL_LIBROList : List<ListaLibro>
+        {
+            public TBL_LIBROList(LibrarySeedBDDataContext dc)
+            {
+                var query =
+                    from TBL_LIBRO in dc.TBL_LIBRO
+                    select new
+                    {
+                        TBL_LIBRO.Titulo_libro,
+                        TBL_LIBRO.Idioma_libro,
+                        TBL_LIBRO.Existencia,
+                        TBL_LIBRO.ID_Libro,
+                        TBL_LIBRO.Ref_Libro,
+                        TBL_LIBRO.TBL_AUTOR.Nomb_aut,
+                        TBL_LIBRO.TBL_EDITORIAL.Nomb_edit,
+                        TBL_LIBRO.TBL_CATEGORIA.Nombre_Cat
+                    };
+                foreach (var r in query)
+                    Add(new ListaLibro(
+                        r.Titulo_libro, r.Idioma_libro, r.Existencia, r.ID_Libro,
+                        r.Ref_Libro, r.Nomb_aut, r.Nomb_edit, r.Nombre_Cat));
+            }
+        }
 
+
+
+        public List<ListaLibro> ListaDeTodosLosLibro()
+        {
+
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            return new TBL_LIBROList(dc);
+        }
+
+
+
+
+
+        public class TBL_LIBRO
+        {
+            private string _Titulo_libro;
+            private string _Idioma_libro;
+            private bool _Existencia;
+            private int _ID_Libro;
+            private string _Ref_Libro;
+            private string _Nomb_aut;
+            private string _Nomb_edit;
+            private string _Nombre_Cat;
+            public TBL_LIBRO(
+                string ATitulo_libro, string AIdioma_libro, bool AExistencia,
+                int AID_Libro, string ARef_Libro, string ANomb_aut, string ANomb_edit,
+                string ANombre_Cat)
+            {
+                _Titulo_libro = ATitulo_libro;
+                _Idioma_libro = AIdioma_libro;
+                _Existencia = AExistencia;
+                _ID_Libro = AID_Libro;
+                _Ref_Libro = ARef_Libro;
+                _Nomb_aut = ANomb_aut;
+                _Nomb_edit = ANomb_edit;
+                _Nombre_Cat = ANombre_Cat;
+            }
+            public string Titulo_libro { get { return _Titulo_libro; } }
+            public string Idioma_libro { get { return _Idioma_libro; } }
+            public bool Existencia { get { return _Existencia; } }
+            public int ID_Libro { get { return _ID_Libro; } }
+            public string Ref_Libro { get { return _Ref_Libro; } }
+            public string Nomb_aut { get { return _Nomb_aut; } }
+            public string Nomb_edit { get { return _Nomb_edit; } }
+            public string Nombre_Cat { get { return _Nombre_Cat; } }
+        }
+        public class TBL_LIBROLists : List<TBL_LIBRO>
+        {
+            public TBL_LIBROLists(LibrarySeedBDDataContext dc)
+            {
+                var query =
+                    from TBL_LIBRO in dc.TBL_LIBRO
+                    where
+                      TBL_LIBRO.Existencia == true
+                    select new
+                    {
+                        TBL_LIBRO.Titulo_libro,
+                        TBL_LIBRO.Idioma_libro,
+                        TBL_LIBRO.Existencia,
+                        TBL_LIBRO.ID_Libro,
+                        TBL_LIBRO.Ref_Libro,
+                        TBL_LIBRO.TBL_AUTOR.Nomb_aut,
+                        TBL_LIBRO.TBL_EDITORIAL.Nomb_edit,
+                        TBL_LIBRO.TBL_CATEGORIA.Nombre_Cat
+                    };
+                foreach (var r in query)
+                    Add(new TBL_LIBRO(
+                        r.Titulo_libro, r.Idioma_libro, r.Existencia, r.ID_Libro,
+                        r.Ref_Libro, r.Nomb_aut, r.Nomb_edit, r.Nombre_Cat));
+            }
+        }
+
+
+        public List<TBL_LIBRO> Solohabilitados()
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            return new TBL_LIBROLists(dc);
+        }
+
+
+
+        public class ListaCat
+        {
+            private int? _ID_categoria;
+            private string _Nombre_Cat;
+            private string _Ref_Cat;
+            public ListaCat(
+                int? AID_categoria, string ANombre_Cat, string ARef_Cat)
+            {
+                _ID_categoria = AID_categoria;
+                _Nombre_Cat = ANombre_Cat;
+                _Ref_Cat = ARef_Cat;
+            }
+            public int? ID_categoria { get { return _ID_categoria; } }
+            public string Nombre_Cat { get { return _Nombre_Cat; } }
+            public string Ref_Cat { get { return _Ref_Cat; } }
+        }
+        public class TBL_CATEGORIAList : List<ListaCat>
+        {
+            public TBL_CATEGORIAList(LibrarySeedBDDataContext dc)
+            {
+                var query =
+                    from TBL_CATEGORIA in dc.TBL_CATEGORIA
+                    select new
+                    {
+                        ID_categoria = TBL_CATEGORIA.ID_categoria,
+                        Nombre_Cat = TBL_CATEGORIA.Nombre_Cat,
+                        Ref_Cat = TBL_CATEGORIA.Ref_Cat
+                    };
+                foreach (var r in query)
+                    Add(new ListaCat(
+                        r.ID_categoria, r.Nombre_Cat, r.Ref_Cat));
+            }
+        }
+
+
+        public List<ListaCat> ListaCategoria()
+        {
+            LibrarySeedBDDataContext dc = new LibrarySeedBDDataContext();
+            return new TBL_CATEGORIAList(dc);
+        }
 
 
 
