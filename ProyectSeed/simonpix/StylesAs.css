@@ -1,51 +1,41 @@
 ﻿
-.AjusteDelCarrusel{
- height:800px;
-
+.AjusteDelCarrusel {
+    height: 800px;
 }
 
-.TarjetasUnicas{
-    margin-top:2px;
-    background-color:#189117;
-    width:100%;
-    margin-bottom:22px;
-    margin-bottom:22px;
-
+.TarjetasUnicas {
+    margin-top: 2px;
+    background-color: #189117;
+    width: 100%;
+    margin-bottom: 22px;
+    margin-bottom: 22px;
 }
 
-.centrar{
-    margin:0 auto;
-}
-
-
-.MargenTitulo{
-
-    margin-top:20px;
-
+.centrar {
+    margin: 0 auto;
 }
 
 
-.texto{
-
-    width:100%;
-    margin-top:2px;
-    margin-left:60px;
-    color:white;
-    font-size:25px;
-
+.MargenTitulo {
+    margin-top: 20px;
 }
 
-.Titulo{
 
+.texto {
+    width: 100%;
+    margin-top: 2px;
+    color: white;
+    font-size: 25px;
+}
+
+.Titulo {
     /*margin-top:22px;*/
-    margin-left:22px;
-    color:white;
-
-
+    margin-left: 22px;
+    color: white;
 }
 
-.Fuentes{
-    font-family:Amazónica_demo;
+.Fuentes {
+    font-family: Amazónica_demo;
 }
 
 @font-face {
@@ -53,17 +43,36 @@
     src: url('../FuentesAstro/Amazónica_demo.ttf') format('truetype');
 }
 
-@media(max-width:1700px){
-    #carouselExampleFade{
-        display:none;
+@media(max-width:1700px) {
+    #carouselExampleFade {
+        display: none;
     }
 }
-body
-{
-background-color:#189117;
+
+body {
+    background-color: #189117;
 }
 
-.help{
-margin-top:auto;
-margin-bottom: 1rem;
+.help {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.centrarCaja {
+    position: relative;
+    left: 40%;
+}
+
+.textopremio {
+    width: 100%;
+    margin-top: 2px;
+    margin-left: 60px;
+    color: black;
+    font-size: 25px;
+}
+
+.Titulopremio {
+    /*margin-top:22px;*/
+    margin-left: 22px;
+    color: black;
 }

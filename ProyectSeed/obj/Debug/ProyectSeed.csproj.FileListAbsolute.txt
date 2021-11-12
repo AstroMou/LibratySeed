@@ -42,3 +42,4 @@ C:\Users\CBSHOP\Source\Repos\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.cspro
 C:\Users\CBSHOP\Source\Repos\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.dll
 C:\Users\CBSHOP\Source\Repos\LibratySeed\ProyectSeed\obj\Debug\ProyectSeed.pdb
 C:\Users\PROGRAMACION\Desktop\nuevaVersion\ProyectSeed\obj\Debug\ProyectSeed.dll.licenses
+C:\Users\PROGRAMACION\Desktop\lado\ProyectSeed\obj\Debug\ProyectSeed.dll.licenses

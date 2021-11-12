@@ -71,9 +71,12 @@
     <Content Include="diseno\style.css" />
     <Content Include="diseno\styleLibros.css" />
     <Content Include="Help.aspx" />
+    <Content Include="ImagenesAstrosi\Fondos\22.png" />
     <Content Include="ImagenesAstrosi\Fondos\ANKE.png" />
     <Content Include="ImagenesAstrosi\Fondos\biblioteca.png" />
     <Content Include="ImagenesAstrosi\Fondos\Cabra loca.png" />
+    <Content Include="ImagenesAstrosi\Fondos\donacion 1.png" />
+    <Content Include="ImagenesAstrosi\Fondos\donacioncorte 1.png" />
     <Content Include="ImagenesAstrosi\Fondos\i01_5.jpg" />
     <Content Include="ImagenesAstrosi\Fondos\IMG-20200906-WA0252.jpg" />
     <Content Include="ImagenesAstrosi\Fondos\villansicos.png" />
@@ -82,9 +85,6 @@
     <Content Include="index\dataTables.bootstrap4.min.js" />
     <Content Include="index\jquery-3.5.1.js" />
     <Content Include="index\jquery.dataTables.min.js" />
-    <Content Include="practica\practica.css" />
-    <Content Include="practica\practica.html" />
-    <Content Include="Prestamos.aspx" />
     <Content Include="semillaMaster.Master" />
     <Content Include="RecursosProgramar\Css\.DS_Store" />
     <Content Include="RecursosProgramar\Css\bootstrap\.DS_Store" />
@@ -283,13 +283,6 @@
     </Compile>
     <Compile Include="Libro.aspx.designer.cs">
       <DependentUpon>Libro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Prestamos.aspx.cs">
-      <DependentUpon>Prestamos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Prestamos.aspx.designer.cs">
-      <DependentUpon>Prestamos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="semillaMaster.Master.cs">

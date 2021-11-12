@@ -42,6 +42,9 @@ namespace ModeloSeed
     partial void InsertTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void UpdateTBL_EDITORIAL(TBL_EDITORIAL instance);
     partial void DeleteTBL_EDITORIAL(TBL_EDITORIAL instance);
+    partial void InsertTBL_INVENTARIO(TBL_INVENTARIO instance);
+    partial void UpdateTBL_INVENTARIO(TBL_INVENTARIO instance);
+    partial void DeleteTBL_INVENTARIO(TBL_INVENTARIO instance);
     partial void InsertTBL_LIBRO(TBL_LIBRO instance);
     partial void UpdateTBL_LIBRO(TBL_LIBRO instance);
     partial void DeleteTBL_LIBRO(TBL_LIBRO instance);
@@ -128,6 +131,14 @@ namespace ModeloSeed
 			get
 			{
 				return this.GetTable<TBL_GESTION_PRESTAMO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_INVENTARIO> TBL_INVENTARIO
+		{
+			get
+			{
+				return this.GetTable<TBL_INVENTARIO>();
 			}
 		}
 		
@@ -918,7 +929,7 @@ namespace ModeloSeed
 	public partial class TBL_GESTION_PRESTAMO
 	{
 		
-		private int _ID_libro;
+		private string _ID_libro;
 		
 		private int _ID_prestamo;
 		
@@ -926,8 +937,8 @@ namespace ModeloSeed
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
-		public int ID_libro
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string ID_libro
 		{
 			get
 			{
@@ -959,13 +970,199 @@ namespace ModeloSeed
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_INVENTARIO")]
+	public partial class TBL_INVENTARIO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_inventario;
+		
+		private int _ID_libro;
+		
+		private int _Existencia_total;
+		
+		private int _Libro_prestamo;
+		
+		private int _Existencia;
+		
+		private EntitySet<TBL_PRESTAMO> _TBL_PRESTAMO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_inventarioChanging(int value);
+    partial void OnID_inventarioChanged();
+    partial void OnID_libroChanging(int value);
+    partial void OnID_libroChanged();
+    partial void OnExistencia_totalChanging(int value);
+    partial void OnExistencia_totalChanged();
+    partial void OnLibro_prestamoChanging(int value);
+    partial void OnLibro_prestamoChanged();
+    partial void OnExistenciaChanging(int value);
+    partial void OnExistenciaChanged();
+    #endregion
+		
+		public TBL_INVENTARIO()
+		{
+			this._TBL_PRESTAMO = new EntitySet<TBL_PRESTAMO>(new Action<TBL_PRESTAMO>(this.attach_TBL_PRESTAMO), new Action<TBL_PRESTAMO>(this.detach_TBL_PRESTAMO));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_inventario", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_inventario
+		{
+			get
+			{
+				return this._ID_inventario;
+			}
+			set
+			{
+				if ((this._ID_inventario != value))
+				{
+					this.OnID_inventarioChanging(value);
+					this.SendPropertyChanging();
+					this._ID_inventario = value;
+					this.SendPropertyChanged("ID_inventario");
+					this.OnID_inventarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="Int NOT NULL")]
+		public int ID_libro
+		{
+			get
+			{
+				return this._ID_libro;
+			}
+			set
+			{
+				if ((this._ID_libro != value))
+				{
+					this.OnID_libroChanging(value);
+					this.SendPropertyChanging();
+					this._ID_libro = value;
+					this.SendPropertyChanged("ID_libro");
+					this.OnID_libroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Existencia_total", DbType="Int NOT NULL")]
+		public int Existencia_total
+		{
+			get
+			{
+				return this._Existencia_total;
+			}
+			set
+			{
+				if ((this._Existencia_total != value))
+				{
+					this.OnExistencia_totalChanging(value);
+					this.SendPropertyChanging();
+					this._Existencia_total = value;
+					this.SendPropertyChanged("Existencia_total");
+					this.OnExistencia_totalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Libro_prestamo", DbType="Int NOT NULL")]
+		public int Libro_prestamo
+		{
+			get
+			{
+				return this._Libro_prestamo;
+			}
+			set
+			{
+				if ((this._Libro_prestamo != value))
+				{
+					this.OnLibro_prestamoChanging(value);
+					this.SendPropertyChanging();
+					this._Libro_prestamo = value;
+					this.SendPropertyChanged("Libro_prestamo");
+					this.OnLibro_prestamoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Existencia", DbType="Int NOT NULL")]
+		public int Existencia
+		{
+			get
+			{
+				return this._Existencia;
+			}
+			set
+			{
+				if ((this._Existencia != value))
+				{
+					this.OnExistenciaChanging(value);
+					this.SendPropertyChanging();
+					this._Existencia = value;
+					this.SendPropertyChanged("Existencia");
+					this.OnExistenciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_INVENTARIO_TBL_PRESTAMO", Storage="_TBL_PRESTAMO", ThisKey="ID_inventario", OtherKey="ID_inventario")]
+		public EntitySet<TBL_PRESTAMO> TBL_PRESTAMO
+		{
+			get
+			{
+				return this._TBL_PRESTAMO;
+			}
+			set
+			{
+				this._TBL_PRESTAMO.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBL_PRESTAMO(TBL_PRESTAMO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_INVENTARIO = this;
+		}
+		
+		private void detach_TBL_PRESTAMO(TBL_PRESTAMO entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_INVENTARIO = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_LIBRO")]
 	public partial class TBL_LIBRO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Ref_Libro;
+		private string _ID_libro;
 		
 		private int _ID_categoria;
 		
@@ -979,8 +1176,6 @@ namespace ModeloSeed
 		
 		private bool _Existencia;
 		
-		private int _ID_Libro;
-		
 		private EntityRef<TBL_AUTOR> _TBL_AUTOR;
 		
 		private EntityRef<TBL_CATEGORIA> _TBL_CATEGORIA;
@@ -991,8 +1186,8 @@ namespace ModeloSeed
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnRef_LibroChanging(string value);
-    partial void OnRef_LibroChanged();
+    partial void OnID_libroChanging(string value);
+    partial void OnID_libroChanged();
     partial void OnID_categoriaChanging(int value);
     partial void OnID_categoriaChanged();
     partial void OnID_autChanging(int value);
@@ -1005,8 +1200,6 @@ namespace ModeloSeed
     partial void OnID_editChanged();
     partial void OnExistenciaChanging(bool value);
     partial void OnExistenciaChanged();
-    partial void OnID_LibroChanging(int value);
-    partial void OnID_LibroChanged();
     #endregion
 		
 		public TBL_LIBRO()
@@ -1017,22 +1210,22 @@ namespace ModeloSeed
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ref_Libro", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Ref_Libro
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_libro", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID_libro
 		{
 			get
 			{
-				return this._Ref_Libro;
+				return this._ID_libro;
 			}
 			set
 			{
-				if ((this._Ref_Libro != value))
+				if ((this._ID_libro != value))
 				{
-					this.OnRef_LibroChanging(value);
+					this.OnID_libroChanging(value);
 					this.SendPropertyChanging();
-					this._Ref_Libro = value;
-					this.SendPropertyChanged("Ref_Libro");
-					this.OnRef_LibroChanged();
+					this._ID_libro = value;
+					this.SendPropertyChanged("ID_libro");
+					this.OnID_libroChanged();
 				}
 			}
 		}
@@ -1165,26 +1358,6 @@ namespace ModeloSeed
 					this._Existencia = value;
 					this.SendPropertyChanged("Existencia");
 					this.OnExistenciaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Libro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_Libro
-		{
-			get
-			{
-				return this._ID_Libro;
-			}
-			set
-			{
-				if ((this._ID_Libro != value))
-				{
-					this.OnID_LibroChanging(value);
-					this.SendPropertyChanging();
-					this._ID_Libro = value;
-					this.SendPropertyChanged("ID_Libro");
-					this.OnID_LibroChanged();
 				}
 			}
 		}
@@ -1330,6 +1503,8 @@ namespace ModeloSeed
 		
 		private int _ID_inventario;
 		
+		private EntityRef<TBL_INVENTARIO> _TBL_INVENTARIO;
+		
 		private EntityRef<TBL_USUARIO> _TBL_USUARIO;
 		
     #region Definiciones de métodos de extensibilidad
@@ -1352,6 +1527,7 @@ namespace ModeloSeed
 		
 		public TBL_PRESTAMO()
 		{
+			this._TBL_INVENTARIO = default(EntityRef<TBL_INVENTARIO>);
 			this._TBL_USUARIO = default(EntityRef<TBL_USUARIO>);
 			OnCreated();
 		}
@@ -1471,11 +1647,49 @@ namespace ModeloSeed
 			{
 				if ((this._ID_inventario != value))
 				{
+					if (this._TBL_INVENTARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnID_inventarioChanging(value);
 					this.SendPropertyChanging();
 					this._ID_inventario = value;
 					this.SendPropertyChanged("ID_inventario");
 					this.OnID_inventarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_INVENTARIO_TBL_PRESTAMO", Storage="_TBL_INVENTARIO", ThisKey="ID_inventario", OtherKey="ID_inventario", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public TBL_INVENTARIO TBL_INVENTARIO
+		{
+			get
+			{
+				return this._TBL_INVENTARIO.Entity;
+			}
+			set
+			{
+				TBL_INVENTARIO previousValue = this._TBL_INVENTARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_INVENTARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_INVENTARIO.Entity = null;
+						previousValue.TBL_PRESTAMO.Remove(this);
+					}
+					this._TBL_INVENTARIO.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_PRESTAMO.Add(this);
+						this._ID_inventario = value.ID_inventario;
+					}
+					else
+					{
+						this._ID_inventario = default(int);
+					}
+					this.SendPropertyChanged("TBL_INVENTARIO");
 				}
 			}
 		}
