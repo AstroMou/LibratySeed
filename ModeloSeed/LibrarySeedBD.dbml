@@ -5,6 +5,7 @@
       <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="TBL_EDITORIAL_EditorialesYSusLibros" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TBL_LIBRO_EditorialesYSusLibros" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
@@ -48,23 +49,33 @@
   </Table>
   <Table Name="dbo.TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO">
     <Type Name="TBL_GESTION_PRESTAMO">
-      <Column Name="ID_libro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="ID_prestamo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_Libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_LIBRO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_LIBRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_PRESTAMO_TBL_GESTION_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="ID_prestamo" OtherKey="ID_prestamo" Type="TBL_PRESTAMO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_INVENTARIO" Member="TBL_INVENTARIO">
+    <Type Name="TBL_INVENTARIO">
+      <Column Name="ID_inventario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Existencia_total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Libro_prestamo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Existencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_INVENTARIO_TBL_PRESTAMO" Member="TBL_PRESTAMO" ThisKey="ID_inventario" OtherKey="ID_inventario" Type="TBL_PRESTAMO" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_LIBRO" Member="TBL_LIBRO">
     <Type Name="TBL_LIBRO">
-      <Column Name="Ref_Libro" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_libro" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_categoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_aut" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Titulo_libro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Idioma_libro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ID_edit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Existencia" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="ID_Libro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO" ThisKey="ID_Libro" OtherKey="ID_libro" Type="TBL_GESTION_PRESTAMO" />
+      <Association Name="TBL_LIBRO_EditorialesYSusLibros" Member="EditorialesYSusLibros" ThisKey="ID_libro" OtherKey="ID_libro" Type="EditorialesYSusLibros" />
+      <Association Name="TBL_LIBRO_TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO" ThisKey="ID_libro" OtherKey="ID_libro" Type="TBL_GESTION_PRESTAMO" />
       <Association Name="TBL_AUTOR_TBL_LIBRO" Member="TBL_AUTOR" ThisKey="ID_aut" OtherKey="ID_aut" Type="TBL_AUTOR" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_CATEGORIA_TBL_LIBRO" Member="TBL_CATEGORIA" ThisKey="ID_categoria" OtherKey="ID_categoria" Type="TBL_CATEGORIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_EDITORIAL_TBL_LIBRO" Member="TBL_EDITORIAL" ThisKey="ID_edit" OtherKey="ID_edit" Type="TBL_EDITORIAL" IsForeignKey="true" />
@@ -79,6 +90,7 @@
       <Column Name="Entrega" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="ID_inventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TBL_PRESTAMO_TBL_GESTION_PRESTAMO" Member="TBL_GESTION_PRESTAMO" ThisKey="ID_prestamo" OtherKey="ID_prestamo" Type="TBL_GESTION_PRESTAMO" />
+      <Association Name="TBL_INVENTARIO_TBL_PRESTAMO" Member="TBL_INVENTARIO" ThisKey="ID_inventario" OtherKey="ID_inventario" Type="TBL_INVENTARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="TBL_USUARIO_TBL_PRESTAMO" Member="TBL_USUARIO" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="TBL_USUARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>

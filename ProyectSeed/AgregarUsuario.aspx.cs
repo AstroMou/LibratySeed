@@ -97,7 +97,43 @@ namespace ProyectSeed
 
         }
 
-   
+        protected void Guardar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        protected void Editar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            //tarjetaEditar.Visible = true;
+
+
+
+
+
+        }
+
+        protected void CerrarEditar_Click(object sender, EventArgs e)
+        {
+
+
+            //tarjetaEditar.Visible = false;
+
+        }
+
         protected void Guardar_Click1(object sender, EventArgs e)
         {
 
@@ -506,7 +542,7 @@ namespace ProyectSeed
                        ActualizarDataGri.Update();
                        Session["IDEditar"] = null;
                        actualizarTabla();
-                        Response.Redirect(Request.Url.ToString(), false);
+                       Response.Redirect(Request.Url.ToString(), false);
                    }
                    else
                    {
