@@ -62,70 +62,70 @@
         <elementListCompartment Id="8538f0b0-160e-4b30-9359-ad9e56d729b6" absoluteBounds="1.5150000000000001, 16.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.04166666666667 : 4.84699625651042 : JumpStart); (3.20833333333333 : 4.84699625651042 : JumpEnd); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.04166666666667 : 4.84699625651042 : JumpStart); (3.20833333333333 : 4.84699625651042 : JumpEnd); (3.5 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL/TBL_EDITORIAL_EditorialesYSusLibros" />
       <nodes>
         <classShapeMoniker Id="75001a22-4a69-4747-85b6-8f7d42d01fdb" />
         <classShapeMoniker Id="bb27b344-9d3e-4242-85ce-56f7a3a0206f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 2.90549967447917); (4.5 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 2.90549967447917); (4.5 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO/TBL_LIBRO_EditorialesYSusLibros" />
       <nodes>
         <classShapeMoniker Id="ff57cfda-0b81-4652-920b-f401e39d544b" />
         <classShapeMoniker Id="bb27b344-9d3e-4242-85ce-56f7a3a0206f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.84699625651042); (6.25 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.84699625651042); (6.25 : 1.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_LIBRO/TBL_LIBRO_TBL_GESTION_PRESTAMO" />
       <nodes>
         <classShapeMoniker Id="ff57cfda-0b81-4652-920b-f401e39d544b" />
         <classShapeMoniker Id="9e8433ef-1dab-4e81-80ee-70b74a75a250" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.12621330413662); (3.125 : 6.75121330413662); (3.125 : 1.82774983723958); (3.19791666666667 : 1.82774983723958 : JumpStart); (3.36458333333333 : 1.82774983723958 : JumpEnd); (3.5 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.12621330413662); (3.125 : 6.75121330413662); (3.125 : 1.82774983723958); (3.19791666666667 : 1.82774983723958 : JumpStart); (3.36458333333333 : 1.82774983723958 : JumpEnd); (3.5 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_AUTOR/TBL_AUTOR_TBL_LIBRO" />
       <nodes>
         <classShapeMoniker Id="7bc2369b-c4fd-4caf-8c42-9be1c22db5a4" />
         <classShapeMoniker Id="ff57cfda-0b81-4652-920b-f401e39d544b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.45274983723958); (3.04166666666667 : 2.45274983723958 : JumpStart); (3.36458333333333 : 2.45274983723958 : JumpEnd); (3.5 : 2.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.45274983723958); (3.04166666666667 : 2.45274983723958 : JumpStart); (3.36458333333333 : 2.45274983723958 : JumpEnd); (3.5 : 2.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_CATEGORIA/TBL_CATEGORIA_TBL_LIBRO" />
       <nodes>
         <classShapeMoniker Id="e472f13f-74bf-478a-ac25-2374676a3282" />
         <classShapeMoniker Id="ff57cfda-0b81-4652-920b-f401e39d544b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.28214495227364); (3.06607443490112 : 3.96607051737252 : JumpStart); (3.18392556509888 : 3.84821938717476 : JumpEnd); (3.28125 : 3.75089495227364); (3.28125 : 1.25762291861979); (3.5 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.28214495227364); (3.28125 : 3.75089495227364); (3.28125 : 1.25762291861979); (3.5 : 1.25762291861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_EDITORIAL/TBL_EDITORIAL_TBL_LIBRO" />
       <nodes>
         <classShapeMoniker Id="75001a22-4a69-4747-85b6-8f7d42d01fdb" />
         <classShapeMoniker Id="ff57cfda-0b81-4652-920b-f401e39d544b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.9815991210937); (7.25 : 11.9815991210937); (7.25 : 2.44399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 11.9815991210937); (7.25 : 11.9815991210937); (7.25 : 2.44399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_PRESTAMO/TBL_PRESTAMO_TBL_GESTION_PRESTAMO" />
       <nodes>
         <classShapeMoniker Id="82346ad8-3bc7-48c5-b5bc-473dffae07b2" />
         <classShapeMoniker Id="9e8433ef-1dab-4e81-80ee-70b74a75a250" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 10.2499995); (4.5 : 10.2499995); (4.5 : 11)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 10.2499995); (4.5 : 10.2499995); (4.5 : 11)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_INVENTARIO/TBL_INVENTARIO_TBL_PRESTAMO" />
       <nodes>
         <classShapeMoniker Id="a1121ff2-47cb-431d-bc95-3ac83ebca458" />
         <classShapeMoniker Id="82346ad8-3bc7-48c5-b5bc-473dffae07b2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 12.4815991210937); (3.5 : 12.4815991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 12.4815991210937); (3.5 : 12.4815991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_USUARIO/TBL_USUARIO_TBL_PRESTAMO" />
       <nodes>
         <classShapeMoniker Id="bad84087-27b4-46cb-8e01-fd3b38cbaf5f" />
         <classShapeMoniker Id="82346ad8-3bc7-48c5-b5bc-473dffae07b2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 15.625); (2.125 : 14.3478011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.125 : 15.625); (2.125 : 14.3478011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibrarySeedBDDataContext/TBL_tipousuario/TBL_tipousuario_TBL_USUARIO" />
       <nodes>
         <classShapeMoniker Id="c2f6dbbb-98fc-4829-9029-185519066120" />
